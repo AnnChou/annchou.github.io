@@ -1,119 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<title>Hello World CSS Website Layout</title>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/style_resp.css">
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-/* Style the header */
-.header {
-  background-color: #f1f1f1;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Create three unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-}
-
-/* Left and right column */
-.column.side {
-  width: 25%;
-}
-
-/* Middle column */
-.column.middle {
-  width: 50%;
-}
-
-/* Clear floats after the columns */
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column.side, .column.middle {
-    width: 100%;
-  }
-}
-
-/* Style the footer */
-.footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-}
 </style>
 </head>
 <body>
-
-<div class="header">
-  <h1>Header</h1>
-  <p>Resize the browser window to see the responsive effect.</p>
-</div>
-
-<div class="topnav">
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-</div>
-
-<div class="row">
-  <div class="column side">
-    <h2>Side</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+<header>
+  <div class="topnav" id="myTopnav">
+    <a href="#default" class="logo"><img src = "rss/AnnReflectionBannerforLetter_1692696090.webp" height=60 alt="logo"></a>
+    <a class="active" href="#home">
+      <!-- <i class="fa fa-fw fa-home"></i> -->
+      Home 🏠 </a>
+    <a href="#workshop"><i class="fa-solid fa-palette"></i> Workshops 🎨</a>
+    <a href="https://annreflection.square.site/"><i class="fa-solid fa-store"></i>ArtShop 👜</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
   </div>
-
-  <div class="column middle">
-    <h2>Main Content</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-  </div>
-
-  <div class="column side">
-    <h2>Side</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-  </div>
+</header>
+<div class="scroll-container">
+  <img src="rss/ann-reflection-try-it-yourself-table-exhibition-at-market_1692696342.webp" height=300 alt="AnnReflectionatMarket">
+  <img src="rss/AnnKChou1-Peacock Lantern  - made with broken umbrella  and pop bottle.jpg" height=300 alt="AnnKChou1-Peacock Lantern  - made with broken umbrella  and pop bottle">
+  <img src="rss/AnnKChou3-Shadow-movement dance with lit banner painted by me.jpg" height=300 alt="AnnKChou3 -Shadow-movement dance with lit banner painted by me">
 </div>
 
-<div class="footer">
-  <p>Footer</p>
+<div class="icon-bar">
+    <a href="https://www.instagram.com/annreflection/"
+    class="instagram"><i class="fa fa-instagram"></i></a>
+    <a href="https://www.facebook.com/AnnReflectionArts/"
+     class="facebook"><i class="fa fa-facebook"></i></a>
+    <!-- <a style="background-color: #B1C060;" href="#" class="twitter"><i class="fa fa-twitter"></i></a> -->
+    <a href="https://linkedin.com/in/annkchou" class="linkedin"><i class="fa fa-linkedin"></i></a>
+    <a href="http://www.youtube.com/@annchou9171"
+     class="youtube"><i class="fa fa-youtube"></i></a>
+     <a href="https://www.flickr.com/photos/annchou/"
+      class="twitter"><i class="fa-brands fa-flickr"></i></a>
 </div>
+
+<body>
+  <div class=main>
+    <div style="padding-left:40px">
+      <h2>Bio as Artist</h2>
+          <p>
+        Ann K Chou (she/her) is a multi-talent light-oriented visual installation artist,
+        who is mostly fond of spontaneous brush works, in both Chinese calligraphy ink and acrylics.
+        Ann has come from a relative quiet intersectionality -- deaf first-generation immigrant from Hong Kong.
+        Her life-long art media are lanterns in possession and wearable puppet in parades.
+        And she is attending a disability screendance residency at the mome.</p>
+        <p><b> She comes to believe that things are to be broken and then reform.</b></P>
+        <p>
+        She likes to be guided by the "materials', with understanding of their limitations,
+        but want to push their limits, beyond its "intended use". This speaks to my living experience
+        as a person with disabilities. Her material includes papers, and goes beyond papers: such as
+        found materials and objects in gardens and recycling bins, translucent fabric, clear plastics,
+         mesh, bamboos and grape vines.
+        </p>
+
+        <!-- <input type="button" class="button-1" onclick="window.location.href='workshop.html';" value="workshops"> -->
+        <a href="workshop.html" class="button-1">Workshops and Commissions</a>
+  </div>
+</body>
+
+<footer>
+  <div class="flex-container2">
+    <div class="flex-item-left"><pre background color = grey >                         Annreflection creates lanterns, chinese brush ink painting, performs disablity dance and offers workshops. </pre>
+          </div>
+    <div class="flex-item-right"><pre background color = grey >                         All rights reserved Ann K Chou (annreflection) </pre>
+         </div>
+      <!-- <div class="ft-main-item">
+            <pre background color = grey >Annreflection creates lanterns, chinese brush ink painting, performs disablity dance and offers workshops. </pre>
+            </div>
+      <div class="ft-main-item">
+            <pre background color = grey >             All rights reserved Ann K Chou (annreflection) </pre>
+      </div>
+      <!-- </div> -->
+    </div>
+</footer>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+  kofiWidgetOverlay.draw('annreflection', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#f45d22',
+    'floating-chat.donateButton.text-color': '#fff'
+  });
+</script>
 
 </body>
 </html>
