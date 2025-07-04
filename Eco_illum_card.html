@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eco-illuminessence – Virtual Exhibit</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #0b0b0c;
+      color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(to right, #301400, #0b0b0c);
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      color: #ffe066;
+      margin-bottom: 0.5rem;
+    }
+    .toggle {
+      text-align: center;
+      margin: 1rem;
+    }
+    .toggle button {
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #262626;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    section {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .gallery img, video {
+      width: 100%;
+      margin-top: 1rem;
+      border: 4px solid #ffe066;
+    }
+    audio {
+      display: block;
+      margin: 1rem auto;
+    }
+    .en, .zh {
+      display: none;
+    }
+    body.en .en, body.zh .zh {
+      display: block;
+    }
+  </style>
+</head>
+<body class="en">
+  <header>
+    <h1 class="en">Eco-illuminessence: A Sensory Crossing</h1>
+    <h1 class="zh">光之生態：感官穿越</h1>
+  </header>
+
+  <div class="toggle">
+    <button onclick="document.body.className='en'">English</button>
+    <button onclick="document.body.className='zh'">繁體中文</button>
+  </div>
+
+  <section>
+    <div class="en">
+      <h2>Gallery</h2>
+      <p>Lanterns made with natural materials glowing gently in darkness.</p>
+    </div>
+    <div class="zh">
+      <h2>展覽圖像</h2>
+      <p>用天然材料製作的燈籠在黑暗中輕輕發光。</p>
+    </div>
+    <img src="https://via.placeholder.com/800x500.png?text=Lantern+Image" alt="Lantern glowing in dark" />
+    <audio controls src="media/lantern-audio-desc.mp3"></audio>
+  </section>
+
+  <section>
+    <div class="en">
+      <h2>Improvised Performance</h2>
+      <p>This video includes subtitles and an audio description option.</p>
+    </div>
+    <div class="zh">
+      <h2>即興演出</h2>
+      <p>此影片包含字幕及語音描述版本。</p>
+    </div>
+    <video controls src="media/performance.mp4"></video>
+    <audio controls src="media/performance-audio-desc.mp3"></audio>
+  </section>
+
+  <section>
+    <div class="en">
+      <h2>About the Project</h2>
+      <p>Eco-illuminessence blends craft, memory, and movement to tell a story of migration and sensory survival.</p>
+    </div>
+    <div class="zh">
+      <h2>關於此計畫</h2>
+      <p>光之生態融合手作、記憶與動作，訴說一段關於遷徙與感官生存的故事。</p>
+    </div>
+  </section>
+</body>
+</html>
