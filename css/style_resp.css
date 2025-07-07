@@ -204,6 +204,59 @@ body {
 }
 
 /* ----------------------------------
+   📱 General Section Layout
+---------------------------------- */
+section {
+  padding: 4rem 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Section titles */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #f6a21d;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  color: #333;
+}
+
+
+
+
+/* Dual Track section */
+#dual-track {
+  background-color: #f5f5f5;
+}
+
+/* AI Portfolio section */
+#ai-portfolio {
+  background-color: #e8f0fe;
+}
+
+/* ----------------------------------
+   📱 About |  Connect
+---------------------------------- */
+/* About section */
+#about {
+  background-color: #fff8f0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+/* Connect section */
+#connect {
+  background-color: #f0f8ff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+#about #connect {
+  margin-top: 2rem;
+}
+
+/* ----------------------------------
    🧱 PROJECT GRID
 ---------------------------------- */
 .project-grid {
@@ -262,18 +315,6 @@ body {
   clear: both;
 }
 
-
-/* ----------------------------------
-   📱 About |  Connect
----------------------------------- */
-
-#about {
-  margin-top: 2rem;
-}
-
-#connect {
-  margin-top: 2rem;
-}
 
 
 /* ----------------------------------
