@@ -7,9 +7,11 @@
   box-sizing: border-box;
 }
 
+/* Base font settings */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f8f9fa;
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   color: #333;
 }
 
@@ -70,18 +72,45 @@ body {
 /* ----------------------------------
    🎨 TYPOGRAPHY
 ---------------------------------- */
+/* Headings */
 .site-title {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
+h1 {
+  font-size: 2.5rem; /* ~40px */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
 
+/*  Subtitle class for intro text */
 .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.2rem; /* 18px */
   margin-bottom: 1rem;
   max-width: 800px;
 }
 
+h2 {
+  font-size: 2rem; /* ~32px */
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+h3 {
+  font-size: 1.5rem; /* ~24px */
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #444;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1rem; /* 16px */
+  margin-bottom: 1rem;
+  max-width: 800px;
+}
 /* ----------------------------------
    🖱️ BUTTONS
 ---------------------------------- */
