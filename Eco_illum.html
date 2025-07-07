@@ -12,20 +12,23 @@
 
 <body class="dark-mode">
   <header>
-    <div class="topnav" id="myTopnav">
-      <a href="index.html" class="logo">
-        <img src="rss/AnnReflectionBannerforLetter_1692696090.webp" height="60" alt="Ann Chou logo" />
-      </a>
-      <a href="#home">Home 🏠</a>
-      <a href="Eco_illum.html" class="eco-link active">Eco-Illum 🌘</a>
-      <a href="https://annreflection.square.site/">ArtShop 👜</a>
-      <button class="button-ghost dark-toggle" onclick="document.body.classList.toggle('dark-mode')">
-        🌙
-      </button>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a> 
-    </div>
+  <div class="topnav" id="myTopnav">
+    <a href="index.html" class="logo">
+      <img src="rss/AnnReflectionBannerforLetter_1692696090.webp" height="60" alt="Ann Chou logo" />
+    </a>
+    <a href="#home">Home 🏠</a>
+    <a href="Eco_illum.html" class="eco-link active">Eco-Illum 🌘</a>
+    <a href="https://annreflection.square.site/">ArtShop 👜</a>
+  
+    <!-- Dark mode toggle button -->
+    <button id="darkModeToggle" class="button-ghost" onclick="toggleDarkMode()">🌙</button>
+  
+    <!-- Hamburger icon -->
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
   </header>
 
 
@@ -213,6 +216,32 @@
 </script>
 
   <script>
+  function toggleDarkMode() {
+    const body = document.body;
+    const toggleBtn = document.getElementById('darkModeToggle');
+    body.classList.toggle('dark-mode');
+
+    // Update icon
+    if (body.classList.contains('dark-mode')) {
+      toggleBtn.textContent = '☀️';
+    } else {
+      toggleBtn.textContent = '🌙';
+    }
+  }
+  // Optional: set icon on load
+  window.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('darkModeToggle');
+    if (document.body.classList.contains('dark-mode')) {
+      toggleBtn.textContent = '☀️';
+    }
+  });
+
+  // Responsive nav toggle
+  function myFunction() {
+    const nav = document.getElementById("myTopnav");
+    nav.classList.toggle("responsive");
+  }  
+    
   // Load saved mode
   if (localStorage.getItem('mode') === 'dark') {
     document.body.classList.add('dark-mode');
