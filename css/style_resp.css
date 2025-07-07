@@ -275,6 +275,12 @@ body {
 .linkedin  { background: #007bb5; }
 .youtube   { background: #bb1100; }
 
+/* Move Ko-fi button closer to icon bar */
+.floatingchat-container {
+  bottom: 100px !important; /* Adjust vertical position */
+  right: 20px !important;   /* Align with icon bar */
+}
+
 /* ----------------------------------
    👣 FOOTER
 ---------------------------------- */
