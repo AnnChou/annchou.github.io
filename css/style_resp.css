@@ -366,6 +366,8 @@ section h2 {
 
 .project img,
 .project figure {
+  max-height: 220px;
+  object-fit: cover;
   width: 100%;
   height: auto;
   border-radius: 8px;
