@@ -253,6 +253,27 @@ body {
 .project {
   margin-top: 1rem; /* Adds vertical spacing between projects */
 }
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* ----------------------------------
+   📱 About |  Connect
+---------------------------------- */
+
+#about {
+  margin-top: 2rem;
+}
+
+#connect {
+  margin-top: 2rem;
+}
+
+
 /* ----------------------------------
    📱 SOCIAL ICON BAR
 ---------------------------------- */
