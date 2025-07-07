@@ -15,9 +15,13 @@
         <img src="rss/AnnReflectionBannerforLetter_1692696090.webp" height="60" alt="Ann Chou logo" />
       </a>
       <a class="active" href="#home">Home 🏠</a>
-      <!-- <a href="#workshops">Workshops 🎨</a> -->
-      <a href="Eco_illum.html" class="eco-link">Eco-Illum 🌘</a>
+      <a href="Eco-illum.html" class="eco-link">Eco-Illum 🌘</a>
       <a href="https://annreflection.square.site/">ArtShop 👜</a>
+
+      <!-- 🌙 Dark mode toggle button -->
+      <button id="darkModeToggle" class="button-ghost" onclick="toggleDarkMode()">🌙</button>
+
+      <!-- Hamburger icon -->
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
@@ -56,20 +60,16 @@
         <div class="project">
           <h3>Lantern Installation Series</h3>
           <p>Interactive light-based installations exploring resilience, accessibility, and community connection.</p>
-      <figure class="rabbit-figure">
-        <img src="rss/WaterRabbitTrop_storytelling.jpg" alt="Three illuminated rabbit sculptures with umbrellas sit beneath trees at night during rain. They are handmade with sumi-e brushwork and eco-friendly materials for the 2023 Renfrew Ravine Moon Festival." />
-        <figcaption>“Storytelling Water Rabbits Trio” illuminated at the 2023 Renfrew Ravine Streamside Moon Festival.</figcaption>
-      </figure>
-
-
-          
+          <figure class="rabbit-figure">
+            <img src="rss/WaterRabbitTrop_storytelling.jpg" alt="Three illuminated rabbit sculptures with umbrellas sit beneath trees at night during rain. They are handmade with sumi-e brushwork and eco-friendly materials for the 2023 Renfrew Ravine Moon Festival." />
+            <figcaption>“Storytelling Water Rabbits Trio” illuminated at the 2023 Renfrew Ravine Streamside Moon Festival.</figcaption>
+          </figure>
           <a href="contact.html" class="cta glow">Get in Touch</a>
         </div>
         <div class="project">
           <h3>Eco-Illuminessence & Spoon Screendance</h3>
           <p>Exploring the interplay between visual art, movement, and shadow in green public spaces.</p>
-          <a href="Eco_illum.html" class="button-ghost glow-ink">Explore Eco-Illuminessence🌘 </a>
-          <!-- <a href="portfolio.html" class="button-ghost glow-green">See Performance</a>   -->
+          <a href="Eco-illum.html" class="button glow-ink">Explore Eco-Illuminessence🌘 Project</a>
         </div>
         <div class="project">
           <h3>Sumi-e & Shoebox Stages</h3>
@@ -85,11 +85,10 @@
       <p><strong>She believes things are meant to break—and be beautifully rebuilt.</strong></p>
       <p>Her preferred materials range from found objects and translucent fabrics to bamboo, garden clippings, and recycled plastics.</p>
     </section>
-    
+
     <section id="dual-track">
       <h2>Art Meets Service Design</h2>
       <p>This section will showcase my Master’s thesis and how artistic practice intersects with inclusive service design.</p>
-      <!-- Add content or visuals here -->
     </section>
 
     <section id="ai-portfolio">
@@ -98,17 +97,15 @@
         <!-- Add new project cards here -->
       </div>
     </section>
-    
-
 
     <section id="connect">
       <h2>Let’s Collaborate</h2>
       <p>Interested in a storefront activation, co-created workshop, or arts residency? Let’s build it together.</p>
-    <div class="button-group">
-      <a href="contact.html" class="cta glow">Contact Me</a>
-      <a href="workshops.html" class="button glow-ink">Workshops</a>
-      <a href="https://ko-fi.com/annreflection/commissions" class="button-ghost glow-green">Commissions</a>
-    </div>
+      <div class="button-group">
+        <a href="contact.html" class="cta glow">Contact Me</a>
+        <a href="workshops.html" class="button glow-ink">Workshops</a>
+        <a href="https://ko-fi.com/annreflection/commissions" class="button-ghost glow-green">Commissions</a>
+      </div>
     </section>
   </main>
 
@@ -119,13 +116,30 @@
     </div>
   </footer>
 
+  <!-- 🔁 Dark Mode Toggle Script -->
   <script>
+    function toggleDarkMode() {
+      const body = document.body;
+      const toggleBtn = document.getElementById('darkModeToggle');
+      body.classList.toggle('dark-mode');
+      toggleBtn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    }
+
+    // Set icon on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('darkModeToggle');
+      if (document.body.classList.contains('dark-mode')) {
+        toggleBtn.textContent = '☀️';
+      }
+    });
+
     function myFunction() {
       const x = document.getElementById("myTopnav");
       x.className = x.className === "topnav" ? "topnav responsive" : "topnav";
     }
   </script>
 
+  <!-- Ko-fi Floating Chat -->
   <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
   <script>
     kofiWidgetOverlay.draw('annreflection', {
