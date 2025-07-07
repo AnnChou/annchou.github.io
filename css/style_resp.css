@@ -86,11 +86,20 @@ h1 {
 
 /*  Subtitle and highlight-subtitle class for intro text */
 .highlight-subtitle {
-  font-size: 1.25rem; /* Slightly larger */
-  font-weight: 600;   /* Bolder than body text */
+  font-style: italic;
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem /* Slightly larger */
+  font-weight: 800;   /* Bolder than body text */
   color: #C66A53;      /* Accent color to match your palette */
   margin-bottom: 2rem;
   text-align: center;
+  border-left: 4px solid #f6a21d;
+  padding-left: 1rem;
+}
+.highlight-subtitle::before {
+  content: "★ ";
+  color: #f6a21d;
+  font-size: 1.2rem;
 }
 .subtitle {
   font-size: 1.2rem; /* 18px */
