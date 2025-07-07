@@ -505,9 +505,13 @@ section h2 {
    .floatingchat-container {
     bottom: 80px !important;
     right: 12px !important;
-  
+  }
+  .topnav.responsive .eco-link {
+ font-weight: bold;
+ background-color: #444;
+ color: #f6a21d;
+  }
 }
-
 
 /* -----------------------------
    🌓 DARK MODE STYLES
