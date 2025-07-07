@@ -364,6 +364,14 @@ section h2 {
   font-size: 0.95rem;
 }
 
+.project img,
+.project figure {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
 .project a.cta,
 .project a.button,
 .project a.button-ghost {
