@@ -434,6 +434,30 @@ section h2 {
   clear: both;
 }
 
+/* ----------------------------------
+   📱 Lightbox-gallery
+---------------------------------- */
+.lightbox-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.lightbox-gallery img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: zoom-in;
+}
+
+.lightbox-gallery a:hover img {
+  transform: scale(1.04);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
 
 
 /* ----------------------------------
