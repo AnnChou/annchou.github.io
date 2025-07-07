@@ -84,7 +84,14 @@ h1 {
   margin-bottom: 1rem;
 }
 
-/*  Subtitle class for intro text */
+/*  Subtitle and highlight-subtitle class for intro text */
+.highlight-subtitle {
+  font-size: 1.25rem; /* Slightly larger */
+  font-weight: 600;   /* Bolder than body text */
+  color: #C66A53;      /* Accent color to match your palette */
+  margin-bottom: 2rem;
+  text-align: center;
+}
 .subtitle {
   font-size: 1.2rem; /* 18px */
   margin-bottom: 1rem;
