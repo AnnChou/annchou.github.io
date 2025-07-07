@@ -309,7 +309,7 @@ body {
 
 /* Move Ko-fi button closer to icon bar */
 .floatingchat-container {
-  bottom: 120px !important; /* Adjust vertical position */
+  bottom: 240px !important; /* Adjust vertical position */
   right: 20px !important;   /* Align with icon bar */
   z-index: 1001 !important; /* Ensure it's above other elements */
 }
