@@ -140,6 +140,13 @@ body {
   color: #2e7d32;
 }
 
+.button-group {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 /* ----------------------------------
    ✨ GLOW EFFECTS
 ---------------------------------- */
@@ -197,6 +204,12 @@ body {
   font-size: 0.95rem;
 }
 
+.project a.cta,
+.project a.button,
+.project a.button-ghost {
+  display: inline-block;   /* breathing room from the text above */
+  margin-top: 1rem;
+}
 .project .button,
 .project .button-ghost,
 .project .cta {
