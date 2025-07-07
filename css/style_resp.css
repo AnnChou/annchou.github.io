@@ -127,6 +127,24 @@ p {
   margin-bottom: 1rem;
   max-width: 800px;
 }
+
+/* ----------------------------------
+   🖱️ FIGURES
+---------------------------------- */
+figure {
+  margin: 1.5rem 0;
+}
+
+figcaption {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #777;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+
 /* ----------------------------------
    🖱️ BUTTONS
 ---------------------------------- */
