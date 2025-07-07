@@ -458,6 +458,35 @@ section h2 {
   transform: scale(1.04);
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 1rem 0;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  background-color: #e0e0e0;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: #c66a53;
+  color: white;
+}
+
+.gallery-item {
+  display: block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
 
 /* ----------------------------------
