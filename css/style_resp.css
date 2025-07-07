@@ -564,6 +564,23 @@ section h2 {
  background-color: #444;
  color: #f6a21d;
   }
+   .topnav a:not(:first-child),
+  .topnav .button-ghost {
+    display: none;
+  }
+
+  .topnav.responsive a,
+  .topnav.responsive .button-ghost {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 
 /* -----------------------------
