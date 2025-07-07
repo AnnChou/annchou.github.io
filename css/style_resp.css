@@ -92,8 +92,8 @@ h1 {
   font-weight: 800;   /* Bolder than body text */
   color: #C66A53;      /* Accent color to match your palette */
   margin-bottom: 2rem;
-  text-align: center;
-  border-left: 4px solid #f6a21d;
+  /* text-align: center;
+  border-left: 4px solid #f6a21d;*/
   padding-left: 1rem;
 }
 .highlight-subtitle::before {
