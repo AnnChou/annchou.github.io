@@ -275,11 +275,7 @@ body {
 .linkedin  { background: #007bb5; }
 .youtube   { background: #bb1100; }
 
-/* Move Ko-fi button closer to icon bar */
-.floatingchat-container {
-  bottom: 100px !important; /* Adjust vertical position */
-  right: 20px !important;   /* Align with icon bar */
-}
+
 
 /* ----------------------------------
    👣 FOOTER
@@ -301,9 +297,19 @@ body {
   padding: 0.5rem;
 }
 
+/* Move Ko-fi button closer to icon bar */
+.floatingchat-container {
+  bottom: 100px !important; /* Adjust vertical position */
+  right: 20px !important;   /* Align with icon bar */
+}
+
 @media screen and (max-width: 600px) {
   .flex-container2 {
     flex-direction: column;
     text-align: center;
   }
+   .floatingchat-container {
+    bottom: 80px !important;
+    right: 12px !important;
+  
 }
