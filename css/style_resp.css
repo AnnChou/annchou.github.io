@@ -138,9 +138,9 @@ figure {
 figcaption {
   font-family: 'Georgia', serif;
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: 0.80rem;
   color: #777;
-  text-align: center;
+  text-align: inline-block;
   padding-top: 0.5rem;
 }
 
