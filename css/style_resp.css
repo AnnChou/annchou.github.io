@@ -88,13 +88,13 @@ body {
 .cta {
   background-color: #f6a21d;
   color: #fff;
-  padding: 14px 28px;
-  font-size: 18px;
+  padding: 20px 28px;
+  font-size: 16px;
   font-weight: bold;
   border: none;
   border-radius: 8px;
   text-transform: uppercase;
-  text-decoration: none;
+  text-decoration: none; .
   cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   display: inline-block;
@@ -197,13 +197,25 @@ body {
   font-size: 0.95rem;
 }
 
+.project .button,
+.project .button-ghost,
+.project .cta {
+  margin-top: 1rem; /* Adjust as needed */
+}
+
+.project {
+  margin-top: 1rem; /* Adds vertical spacing between projects */
+}
 /* ----------------------------------
    📱 SOCIAL ICON BAR
 ---------------------------------- */
 .icon-bar {
   position: fixed;
-  top: 65%;
+  bottom: 20px; /* Distance from bottom */
+  right: 20px;  /* Distance from right */
+  /* top: 65%;  */
   transform: translateY(-50%);
+  gap: 2px; /* Space between icons */
   z-index: 1000;
 }
 
