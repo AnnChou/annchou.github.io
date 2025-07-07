@@ -213,6 +213,21 @@
   });
 </script>
 
+  <script>
+  // Load saved mode
+  if (localStorage.getItem('mode') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+
+  // Toggle and save mode
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('mode', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+  }
+</script>
+
+<button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
 
 </body>
 </html>
