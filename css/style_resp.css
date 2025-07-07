@@ -189,6 +189,9 @@ body {
 }
 
 .project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: white;
   padding: 1rem;
   padding-bottom: 2rem; /* Add space at the bottom */
