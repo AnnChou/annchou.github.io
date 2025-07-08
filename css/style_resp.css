@@ -334,14 +334,14 @@ section h2 {
 ---------------------------------- */
 /* About section */
 #about {
-  background-color: #fff8f0;
+  /* background-color: #fff8f0;*/
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
 
 /* Connect section */
 #connect {
-  background-color: #f0f8ff;
+ /* background-color: #f0f8ff;*/
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
