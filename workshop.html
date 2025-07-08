@@ -1,215 +1,158 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="topnav.css">
-<link rel="stylesheet" type="text/css" href="3inrow.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshops & Community Arts – Annreflection Studio</title>
+  <meta name="description" content="Accessible art workshops and community-based installations led by Ann K. Chou. Learn lantern making, sumi-e brush painting, sensory storytelling, and more in Victoria & Vancouver." />
+  <meta name="keywords" content="lantern workshop, shadow play, art jam, sumi-e, Chinese brush painting, puppet making, community mural, textile banners, Ann Chou, Annreflection Studio, Victoria artist, Vancouver workshops, disability art, inclusive art" />
+  <link rel="stylesheet" href="css/style_resp.css">
 </head>
 <body>
-<div class="nav-bg-img">
-  <div class="nav-container">
-    <div class="topnav" id="myTopnav">
-      <a href="#home" class="active"><div>
-    <!--    <img src ="rss/AnnReflectionBannerforLetter_1692696090.webp"  >-->
-        <p> Annreflection Artist Statement </p></div>
-      </a>
-      <a href="#workshop"><p>Workshops 🎨</p></a>
-      <!-- <a href="#contact">Contact</a>
-      <a href="#about">About</a> -->
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
+
+<header>
+  <div class="topnav" id="myTopnav">
+    <a href="index.html" class="logo">
+      <img src="rss/AnnReflectionBannerforLetter_clear.png" height="60" alt="Annreflection Studio logo">
+    </a>
+    <a href="index.html">Home</a>
+    <a href="artist_bio.html">About</a>
+    <a href="Eco_illum.html">Eco-Illum</a>
+    <a class="active" href="workshops.html">Workshops</a>
+    <a href="https://annreflection.square.site/">ArtShop</a>
+    <button id="darkModeToggle" class="button-ghost" onclick="toggleDarkMode()">🌙</button>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
   </div>
-</div>
-<div class="icon-bar">
-  <a
-  class="btn btn-primary btn-lg btn-floating"
-  style="background-color: #ac2bac;"
-  href="#!"
-  role="button"
-  ><i class="fa fa-instagram"></i
-></a>
-  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-  <a href="#" class="google"><i class="fa fa-google"></i></a>
-  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+</header>
+
+<div class="icon-bar" aria-label="Social media links">
+  <a href="https://www.instagram.com/annreflection/" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+  <a href="https://www.facebook.com/AnnReflectionArts/" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+  <a href="https://linkedin.com/in/annkchou" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+  <a href="https://www.youtube.com/@annchou9171" aria-label="YouTube"><i class="fa fa-youtube"></i></a>
+  <a href="https://www.flickr.com/photos/annchou/" aria-label="Flickr"><i class="fa fa-flickr"></i></a>
 </div>
 
-<div class="main">
-  <div style="padding-left:16px">
-    <h2>Bio as Artist</h2>
-    <p>
-  Ann K Chou (she/her) is a multi-talent light-oriented visual installation artist,
-  who is mostly fond of spontaneous brush works, in both Chinese calligraphy ink and acrylics.
-  Ann has come from a relative quiet intersectionality -- deaf first-generation immigrant from Hong Kong.
-  Her life-long art media are lanterns in possession and wearable puppet in parades.
-  And she is attending a disability screendance residency at the mome.</p>
-  <p><b> She comes to believe that things are to be broken and then reform.</b></P>
-  <p>
-  She likes to be guided by the "materials', with understanding of their limitations,
-  but want to push their limits, beyond its "intended use". This speaks to my living experience
-  as a person with disabilities. Her material includes papers, and goes beyond papers: such as
-  found materials and objects in gardens and recycling bins, translucent fabric, clear plastics,
-   mesh, bamboos and grape vines.
+<!-- ✅ HERO SECTION -->
+<section class="hero" style="background: linear-gradient(rgba(245,242,237,0.9), rgba(245,242,237,0.95)), url('images/hero-artjam.jpg') center/cover no-repeat; padding: 5rem 2rem; text-align: center;">
+  <div class="hero-content" style="max-width: 800px; margin: auto;">
+    <h1 style="font-size: 2.8rem; margin-bottom: 1rem; font-family: var(--font-serif);">Annreflection Studio</h1>
+    <p style="font-size: 1.2rem; line-height: 1.6;">A creative practice offering inclusive workshops, lantern installations, and community-based artmaking rooted in light, reflection, and interdependence.</p>
+    <a href="#contact" class="button glow-ink" style="margin-top: 1.5rem; display: inline-block;">Book a Workshop</a>
+  </div>
+</section>
+
+<main class="main" style="padding: 2rem; max-width: 900px; margin: auto;">
+
+<section id="accessibility" style="margin-bottom: 2rem;">
+  <h2>Accessibility Statement</h2>
+  <p>Annreflection Studio is committed to creating workshops that are accessible, welcoming, and flexible. We prioritize sensory-friendly environments, visual communication, tactile materials, and inclusive participation across diverse bodies, languages, and learning styles. If you have specific access needs, please contact us—we’re happy to adapt.</p>
+</section>
+
+  <h1 class="site-title">Art Jam Workshops</h1>
+  <p>Annreflection Studio hosts accessible and creative sessions in lantern-making, puppet-making, sensory storytelling, and Chinese brush painting. Each workshop invites participants into joyful, reflective making with a focus on community, identity, and expression.</p>
+
+  <div class="project-grid">
+    <div class="project">
+      <img src="images/placeholder-lantern.jpg" alt="Lantern Art Jam thumbnail" />
+      <h3>Lantern Making Art Jam</h3>
+      <p><strong>BC Culture Days Version:</strong> Begin with meditative brushstrokes using Chinese ink and brush. Then create personal lanterns expressing the release of barriers. Materials include grape vines, wire, and bamboo.</p>
+    </div>
+
+    <div class="project">
+      <img src="images/placeholder-puppet.jpg" alt="Puppet Making Art Jam thumbnail" />
+      <h3>Puppet Making Art Jam</h3>
+      <p><strong>BC Culture Days Version:</strong> Create sock puppets that reflect aspects of your identity. A playful, accessible experience for all ages.</p>
+    </div>
+
+    <div class="project">
+      <img src="images/placeholder-storykit.jpg" alt="Storytelling Kit Art Jam thumbnail" />
+      <h3>Multi-sensory Storytelling Kit Making</h3>
+      <p><strong>BC Culture Days Version:</strong> Design a storytelling kit within a portable shoebox stage using props, textures, and visuals for inclusive narrative play.</p>
+    </div>
+
+    <div class="project">
+      <img src="images/placeholder-ink.jpg" alt="Brush Painting Art Jam thumbnail" />
+      <h3>Chinese Ink / Brush Painting</h3>
+      <p><strong>Workshop Length: 2.5 hours</strong><br> Learn 2–3 brush painting techniques on sumi-e paper focused on gesture, flow, and meditative practice.</p>
+    </div>
+
+    <div class="project">
+      <img src="images/placeholder-shadowplay.jpg" alt="Shadow Play Art Jam thumbnail" />
+      <h3>Shadow Play Workshop</h3>
+      <p><strong>Neighbourhood Small Grant Version:</strong> Participants experiment with light, movement, and handmade shadow props. Designed for all ages and access needs, this workshop supports intergenerational storytelling and improvisation with lantern puppets and silhouettes.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Festival & Community Arts Commissions</h2>
+  <p>Annreflection Studio specializes in collaborative and site-responsive artworks including textile banners, lantern installations, and murals for public festivals and events.</p>
+
+  <div class="project-grid">
+    <div class="project">
+      <img src="images/placeholder-banner.jpg" alt="Textile Banner placeholder" />
+      <h3>Textile Banners</h3>
+      <p>Vivid large-scale banners painted with acrylic-based fabric paints. Custom designs celebrate culture, seasons, and community identity.</p>
+    </div>
+
+    <div class="project">
+      <img src="images/placeholder-lanterninstall.jpg" alt="Lantern Installation placeholder" />
+      <h3>Lantern Building & Installations</h3>
+      <p>Custom lanterns made for festivals and celebrations using grape vines, bamboo, fabric, and translucent materials. Can include authentic Chinese techniques.</p>
+    </div>
+
+    <div class="project">
+      <img src="images/placeholder-mural.jpg" alt="Mural Commission placeholder" />
+      <h3>Murals</h3>
+      <p>Collaborative mural design and accessible painting process. Available for outdoor and community sites with estimates on request.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Support & Collaborations</h2>
+  <p>If you love my work and want to support it, consider purchasing a small piece through my <a href="https://annreflection.square.site/" target="_blank">online shop</a>. I also share behind-the-scenes art tips and reflective writing through <a href="https://annreflection.substack.com" target="_blank">my Substack newsletter</a>.</p>
+  <p>Follow me on <strong>@annreflection</strong> (Instagram) for project updates. I welcome proposals, commissions, and community collaborations rooted in access, culture, and care.</p>
+
+  <section id="contact">
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:annreflection@gmail.com">annreflection@gmail.com</a><br>
+       Facebook DM: @AnnReflection Arts and Tech</p>
+  </section>
+
+  <p style="font-size: 0.9rem; color: #555; margin-top: 2rem;">
+    <em>I acknowledge that I am an uninvited guest living and creating on the unceded traditional territory of the Lək̓ʷəŋən-speaking peoples, and I am grateful to share this land with respect and reciprocity.</em>
   </p>
-    <div class="flex-container2">
-      <div class="flex-item-left">1</div>
-      <div class="flex-item-right">2</div>
-    </div>
+</main>
 
-    <div class="section">
-    <p><script type="text/javascript" src="https://www.juicer.io/embed/annreflection/embed-code.js" async defer></script>
-    </div>
-    <h2>Responsive Topnav Example</h2>
-    <p>Resize the browser window to see how it works.</p>
+<footer>
+  <div class="flex-container2">
+    <div class="flex-item-left">Art across generations: lanterns, sumi-e, movement & workshops</div>
+    <div class="flex-item-right">© 2025 Ann K. Chou (Annreflection Studio) – All rights reserved</div>
   </div>
-  <h1>The flex-wrap Property</h1>
-
-  <p>The "flex-wrap: wrap;" specifies that the flex items will wrap if necessary:</p>
-
-  <div class="flex-container">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
-    <div>10</div>
-    <div>11</div>
-    <div>12</div>
-  </div>
-
-
-
-
-  <h2>Responsive Column Cards</h2>
-  <p>Resize the browser window to see the effect.</p>
-
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <h3>Card 1</h3>
-        <p>Some text</p>
-        <p>Some text</p>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <h3>Card 2</h3>
-        <p>Some text</p>
-        <p>Some text</p>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <h3>Card 3</h3>
-        <p>Some text</p>
-        <p>Some text</p>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <h3>Card 4</h3>
-        <p>Some text</p>
-        <p>Some text</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Photo Grid -->
-  <div class="row">
-    <div class="column">
-      <img src="/w3images/wedding.jpg" style="width:100%">
-      <img src="/w3images/rocks.jpg" style="width:100%">
-      <img src="/w3images/falls2.jpg" style="width:100%">
-      <img src="/w3images/paris.jpg" style="width:100%">
-      <img src="/w3images/nature.jpg" style="width:100%">
-      <img src="/w3images/mist.jpg" style="width:100%">
-      <img src="/w3images/paris.jpg" style="width:100%">
-    </div>
-
-    <div class="column">
-      <img src="/w3images/underwater.jpg" style="width:100%">
-      <img src="/w3images/ocean.jpg" style="width:100%">
-      <img src="/w3images/wedding.jpg" style="width:100%">
-      <img src="/w3images/mountainskies.jpg" style="width:100%">
-      <img src="/w3images/rocks.jpg" style="width:100%">
-      <img src="/w3images/underwater.jpg" style="width:100%">
-    </div>
-
-    <div class="column">
-      <img src="/w3images/wedding.jpg" style="width:100%">
-      <img src="/w3images/rocks.jpg" style="width:100%">
-      <img src="/w3images/falls2.jpg" style="width:100%">
-      <img src="/w3images/paris.jpg" style="width:100%">
-      <img src="/w3images/nature.jpg" style="width:100%">
-      <img src="/w3images/mist.jpg" style="width:100%">
-      <img src="/w3images/paris.jpg" style="width:100%">
-    </div>
-
-    <div class="column">
-      <img src="/w3images/underwater.jpg" style="width:100%">
-      <img src="/w3images/ocean.jpg" style="width:100%">
-      <img src="/w3images/wedding.jpg" style="width:100%">
-      <img src="/w3images/mountainskies.jpg" style="width:100%">
-      <img src="/w3images/rocks.jpg" style="width:100%">
-      <img src="/w3images/underwater.jpg" style="width:100%">
-    </div>
-  </div>
-
-
-</div>
-<div class="right">
-  <h2>Stories</h2>
-
-
-<div class="footer">
-  <footer>
-    <!-- <div class="ft-main-item"> -->
-    <!-- <div class="flex-container2"> -->
-    <div class ="ft-main">
-      <!-- <div class="flex-item-left"> -->
-      <!-- <div class="ft-main-item">
-      </div> -->
-      <!-- <div class="flex-item-right"> -->
-      <div class="ft-main-item">
-            <pre background color = grey >             All rights reserved Ann K Chou (annreflection) </pre>
-      </div>
-      <!-- </div> -->
-    </div>
-  </footer>
-</div>
-
+</footer>
 
 <script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
+  function toggleDarkMode() {
+    const body = document.body;
+    const toggleBtn = document.getElementById('darkModeToggle');
+    body.classList.toggle('dark-mode');
+    toggleBtn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
   }
-}
-</script>
 
-<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-<script>
-  kofiWidgetOverlay.draw('annreflection', {
-    'type': 'floating-chat',
-    'floating-chat.donateButton.text': 'Support me',
-    'floating-chat.donateButton.background-color': '#f45d22',
-    'floating-chat.donateButton.text-color': '#fff'
+  window.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('darkModeToggle');
+    if (document.body.classList.contains('dark-mode')) {
+      toggleBtn.textContent = '☀️';
+    }
   });
+
+  function myFunction() {
+    const nav = document.getElementById("myTopnav");
+    nav.classList.toggle("responsive");
+  }
 </script>
 
 </body>
