@@ -350,6 +350,7 @@ section h2 {
   margin-top: 2rem;
 }
 
+
 /* ----------------------------------
    📱 darkmode adaption to sections
 ---------------------------------- */
@@ -377,6 +378,33 @@ section,
 .project,
 h1, h2, h3, p {
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 🌙 Dark mode overrides for light-background sections */
+body.dark-mode #about {
+  background-color: #1a1a1a;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode #connect {
+  background-color: #121212;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  color: #e0e0e0;
+}
+
+/* Optional: style headings and links inside those sections */
+body.dark-mode #about h2,
+body.dark-mode #connect h2 {
+  color: #f6f6f6;
+  border-bottom: 2px solid #f6a21d;
+}
+
+body.dark-mode #about a,
+body.dark-mode #connect a {
+  color: #f6a21d;
 }
 
 /* ----------------------------------
