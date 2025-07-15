@@ -140,7 +140,7 @@ figcaption {
   font-style: italic;
   font-size: 0.80rem;
   color: #777;
-  text-align: centre;
+  text-align: center;
   padding-top: 0.5rem;
 }
 
@@ -157,8 +157,10 @@ figcaption {
   margin: 0 auto;
   padding: 0;
   max-width: 100%;
+  max-width: 800px; /* set a reasonable max width */
   max-height: 500px;
-  object-fit: cover;
+  object-fit: contain; /* better than cover for infographics */
+  /*object-fit: cover;*/
   border-radius: 8px;
   box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.3); /* inner shadow */
 }
