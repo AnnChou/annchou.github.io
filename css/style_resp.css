@@ -308,7 +308,7 @@ figcaption {
 section {
   padding: 4rem 2rem;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1400px; /* was 1200px */
 }
 
 /* Section titles */
@@ -320,9 +320,6 @@ section h2 {
   padding-bottom: 0.5rem;
   color: #333;
 }
-
-
-
 
 /* Dual Track section */
 #dual-track {
@@ -436,7 +433,7 @@ body.dark-mode #connect a {
 .project-grid {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* was 250px */
   margin-top: 1rem;
   margin-bottom: 3rem;
   overflow: hidden;
