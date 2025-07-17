@@ -181,6 +181,32 @@ figcaption {
 .bio-figure {
   text-align: center;
 }
+
+/* wide figure */
+
+.wide-figure {
+  grid-column: 1 / -1; /* spans full width in grid */
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.wide-figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wide-figure figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 /* ----------------------------------
    🖱️ BUTTONS
 ---------------------------------- */
