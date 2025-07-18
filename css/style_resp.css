@@ -772,9 +772,6 @@ body.dark-mode .flex-container2 {
   color: #aaa;
 }
 
-body.light-mode .icon-bar a {
-  color: #333;
-}
 
 
 body.dark-mode .icon-bar a {
@@ -785,4 +782,20 @@ body.dark-mode .icon-bar a {
 body.dark-mode .icon-bar a:hover {
   background-color: #000;
   color: #fff;
+}
+
+/* -----------------------------
+   🌓 Light mode force
+----------------------------- */
+body.light-mode .icon-bar a {
+  color: #333;
+}
+
+@media (prefers-color-scheme: light) {
+  .icon-bar a.instagram { background: #bc2bac; }
+  .icon-bar a.facebook  { background: #3B5998; }
+  .icon-bar a.twitter   { background: #55ACEE; }
+  .icon-bar a.linkedin  { background: #007bb5; }
+  .icon-bar a.youtube   { background: #bb1100; }
+  .icon-bar a.substack  { background: #ff6719; }
 }
