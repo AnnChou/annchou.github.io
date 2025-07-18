@@ -623,7 +623,7 @@ body.dark-mode #connect a {
 .twitter   { background: #55ACEE; }
 .linkedin  { background: #007bb5; }
 .youtube   { background: #bb1100; }
-.substack  { background: #E96412; }
+.substack  { background: #ff6719; }
 
 
 
@@ -763,6 +763,11 @@ body.dark-mode .flex-container2 {
   background-color: #111;
   color: #aaa;
 }
+
+body.light-mode .icon-bar a {
+  color: #333;
+}
+
 
 body.dark-mode .icon-bar a {
   background-color: #222;
