@@ -611,6 +611,7 @@ body.dark-mode #connect a {
   padding: 10px;
   color: white;
   font-size: 18px;
+  background-color: inherit; /* fallback */
   transition: all 0.3s ease;
 }
 
@@ -625,7 +626,14 @@ body.dark-mode #connect a {
 .youtube   { background: #bb1100; }
 .substack  { background: #ff6719; }
 
-
+.icon-bar a.instagram,
+.icon-bar a.facebook,
+.icon-bar a.twitter,
+.icon-bar a.linkedin,
+.icon-bar a.youtube,
+.icon-bar a.substack {
+  color: white;
+}
 
 /* ----------------------------------
    👣 FOOTER
