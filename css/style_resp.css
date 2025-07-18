@@ -618,7 +618,11 @@ body.dark-mode #connect a {
   background-color: #000;
 }
 
-
+.instagram { background: #bc2bac; }
+.facebook  { background: #3B5998; }
+.twitter   { background: #55ACEE; }
+.linkedin  { background: #007bb5; }
+.youtube   { background: #bb1100; }
 .substack  { background: #ff6719; }
 
 
