@@ -211,7 +211,7 @@
   <button class="accordion-toggle">📊 HT (Heltcopter): Interactive Health Data Prototype (2018)</button>
   <div class="accordion-content">
     <figure class="figure-block">
-      <img src="HT-AD-d3-dis-outcome.jpg" alt="HT interface: left-> Maha-distance-from-dispatch, right-> outcome">
+      <img src="HT-AD-d3-dis-outcome.png" alt="HT interface: left-> Maha-distance-from-dispatch, right-> outcome">
       <figcaption>Interactive health data navigation in HT (Heltcopter).</figcaption>
     </figure>
     <p>A pre-thesis visual reasoning tool testing intuitive exploration of dispatch distance, diagnosis, and outcomes. Initially built with Plotly.py, and then revised for D3.js, this live demo lets users place average lines and sense relationships dynamically.</p>
@@ -224,7 +224,7 @@
   <button class="accordion-toggle">🎮 Vincent Bird: Sumi-e Game Interface (Unity, 2018–2019)</button>
   <div class="accordion-content">
     <figure class="figure-block">
-      <img src="YOUR-VINCENT-BIRD-IMAGE-URL-HERE.jpg" alt="Vincent Bird game environment">
+      <img src="vincent-bird-map-startscene.png" alt="Vincent Bird game environment: left-> 1st level map, right-> start scene">
       <figcaption>Embodied gesture meets playful game design in Vincent Bird.</figcaption>
     </figure>
     <p>A Unity 3D experiment merging Ann’s hand-painted sumi-e brushwork with game design. Vincent Bird explores embodied interaction through visual gesture, inviting neurodivergent play and multisensory storytelling.</p>
@@ -328,6 +328,17 @@
       const x = document.getElementById("myTopnav");
       x.className = x.className === "topnav" ? "topnav responsive" : "topnav";
     }
+
+
+    document.querySelectorAll('.accordion-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('active');
+        const content = button.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+
   </script>
 
   <!-- Ko-fi Floating Chat -->
