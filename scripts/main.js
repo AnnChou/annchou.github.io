@@ -37,6 +37,26 @@ window.addEventListener('DOMContentLoaded', () => {
   setupAccordion();
 });
 
+/*  dark toggle button on floating icon bar */
+const toggleBtnAlt = document.getElementById('darkModeToggleIconBar');
+const iconSpanAlt = toggleBtnAlt?.querySelector('.toggle-icon');
+
+function applyDarkState(state) {
+  const isDark = state === 'enabled';
+  document.body.classList.toggle('dark-mode', isDark);
+  localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+
+  const iconSpan = document.querySelector('#darkModeToggle .toggle-icon');
+  if (iconSpan) iconSpan.textContent = isDark ? '☀️' : '🌙';
+  if (iconSpanAlt) iconSpanAlt.textContent = isDark ? '☀️' : '🌙';
+}
+
+toggleBtnAlt?.addEventListener('click', () => {
+  const current = document.body.classList.contains('dark-mode');
+  applyDarkState(current ? 'disabled' : 'enabled');
+});
+
+
 /* 📂 Accordion Expand/Collapse with Smooth Height */
 function setupAccordion() {
   document.querySelectorAll('.accordion-toggle').forEach(button => {
