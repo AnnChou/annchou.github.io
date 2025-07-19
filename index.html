@@ -13,7 +13,13 @@
   <meta property="og:url" content="https://annchou.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="css/style_resp.css" />
+  <!-- <link rel="stylesheet" href="css/style_resp.css" /> -->
+  <link rel="stylesheet" href="css/master.css" />
+  <script src="scripts/main.js"></script>
+  <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+  <script src="scripts/social-widgets.js"></script>
+
+  
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -39,7 +45,7 @@
       <a href="https://annreflection.square.site/">ArtShop 👜</a>
 
       <!-- 🌙 Dark mode toggle button -->
-      <button id="darkModeToggle" class="button-ghost" onclick="toggleDarkMode()">🌙</button>
+      <button id="darkModeToggle" aria-label="Toggle dark mode" class="button-ghost" onclick="toggleDarkMode()">🌙</button>
 
       <!-- Hamburger icon -->
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -314,50 +320,6 @@
       <div class="flex-item-right">© 2025 Ann K. Chou (annreflection) – All rights reserved</div>
     </div>
   </footer>
-
-  <!-- 🔁 Dark Mode Toggle Script -->
-  <script>
-    function toggleDarkMode() {
-      const body = document.body;
-      const toggleBtn = document.getElementById('darkModeToggle');
-      body.classList.toggle('dark-mode');
-      toggleBtn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    }
-
-    // Set icon on load
-    window.addEventListener('DOMContentLoaded', () => {
-      const toggleBtn = document.getElementById('darkModeToggle');
-      if (document.body.classList.contains('dark-mode')) {
-        toggleBtn.textContent = '☀️';
-      }
-    });
-
-    function myFunction() {
-      const x = document.getElementById("myTopnav");
-      x.className = x.className === "topnav" ? "topnav responsive" : "topnav";
-    }
-
-
-    document.querySelectorAll('.accordion-toggle').forEach(button => {
-      button.addEventListener('click', () => {
-        button.classList.toggle('active');
-        const content = button.nextElementSibling;
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-      });
-    });
-
-
-  </script>
-
-  <!-- Ko-fi Floating Chat -->
-  <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
-  <script>
-    kofiWidgetOverlay.draw('annreflection', {
-      'type': 'floating-chat',
-      'floating-chat.donateButton.text': 'Support me',
-      'floating-chat.donateButton.background-color': '#f45d22',
-      'floating-chat.donateButton.text-color': '#fff'
-    });
-  </script>
+  
 </body>
 </html>
