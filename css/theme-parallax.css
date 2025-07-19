@@ -1,0 +1,15 @@
+/* 🌁 theme-parallax.css */
+/* ----------------------------------
+🌁 Parallax Banner Animation (Desktop)
+---------------------------------- */
+@media screen and (min-width: 768px) {
+  .parallax-banner img {
+    will-change: transform;
+    transform: translateY(0);
+    transition: transform 0.2s ease-out;
+  }
+
+  .parallax-scrolled .parallax-banner img {
+    transform: translateY(-15px); /* gentle scroll effect */
+  }
+}
