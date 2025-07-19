@@ -1,22 +1,29 @@
 /* ======================================================
 🗺️ MAIN.JS FUNCTION MAP FOR INTERACTIVE BEHAVIOR
 ------------------------------------------------------
-toggleDarkMode()    → Enables/disables dark mode, saves preference
-applyDarkState()    → Helper for theme switching logic
-setupAccordion()    → Handles expand/collapse of accordion panels
-toggleMobileNav()   → Responsive menu dropdown
+applyDarkState()          → Enables/disables dark mode, updates both icons
+toggleDarkMode()          → Shared click handler for dark mode buttons
+applyAssistiveMode()      → Enables/disables high-contrast accessibility
+setupAccordion()          → Handles accordion expand/collapse
+toggleMobileNav()         → Responsive menu dropdown
+DOMContentLoaded listener → Restores dark + assistive state, loads accordions
 ======================================================= */
 
-/* 🌙 Dark Mode Toggle with OS Preference & Icon Flip */
-const toggleBtn = document.getElementById('darkModeToggle');
-const iconSpan = toggleBtn?.querySelector('.toggle-icon');
+/* 🌙 DARK MODE LOGIC */
 const DARK_CLASS = 'dark-mode';
+const toggleBtnTop = document.getElementById('darkModeToggle');
+const toggleBtnBar = document.getElementById('darkModeToggleIconBar');
 
 function applyDarkState(state) {
   const isDark = state === 'enabled';
   document.body.classList.toggle(DARK_CLASS, isDark);
   localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-  if (iconSpan) iconSpan.textContent = isDark ? '☀️' : '🌙';
+
+  const icon = isDark ? '☀️' : '🌙';
+  const iconTop = toggleBtnTop?.querySelector('.toggle-icon');
+  const iconBar = toggleBtnBar?.querySelector('.toggle-icon');
+  if (iconTop) iconTop.textContent = icon;
+  if (iconBar) iconBar.textContent = icon;
 }
 
 function toggleDarkMode() {
@@ -24,44 +31,28 @@ function toggleDarkMode() {
   applyDarkState(current ? 'disabled' : 'enabled');
 }
 
-toggleBtn?.addEventListener('click', toggleDarkMode);
+toggleBtnTop?.addEventListener('click', toggleDarkMode);
+toggleBtnBar?.addEventListener('click', toggleDarkMode);
 
-window.addEventListener('DOMContentLoaded', () => {
-  const saved = localStorage.getItem('darkMode');
-  if (saved) {
-    applyDarkState(saved);
-  } else {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    applyDarkState(prefersDark ? 'enabled' : 'disabled');
-  }
-  setupAccordion();
-});
+/* 🖍️ HIGH-CONTRAST ASSISTIVE MODE */
+const EFFECT_ASSISTIVE_CLASS = 'effect-assistive-mode';
+const assistiveToggleBtn = document.getElementById('assistiveToggle');
+const assistiveIcon = assistiveToggleBtn?.querySelector('.assistive-icon');
 
-/*  dark toggle button on floating icon bar */
-const toggleBtnAlt = document.getElementById('darkModeToggleIconBar');
-const iconSpanAlt = toggleBtnAlt?.querySelector('.toggle-icon');
-
-function applyDarkState(state) {
-  const isDark = state === 'enabled';
-  document.body.classList.toggle('dark-mode', isDark);
-  localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-
-  const iconSpan = document.querySelector('#darkModeToggle .toggle-icon');
-  if (iconSpan) iconSpan.textContent = isDark ? '☀️' : '🌙';
-  if (iconSpanAlt) iconSpanAlt.textContent = isDark ? '☀️' : '🌙';
+function applyAssistiveMode() {
+  const isActive = document.body.classList.toggle(EFFECT_ASSISTIVE_CLASS);
+  localStorage.setItem('effectAssistiveMode', isActive ? 'enabled' : 'disabled');
+  if (assistiveIcon) assistiveIcon.textContent = isActive ? '🔳' : '🖍️';
 }
 
-toggleBtnAlt?.addEventListener('click', () => {
-  const current = document.body.classList.contains('dark-mode');
-  applyDarkState(current ? 'disabled' : 'enabled');
-});
+assistiveToggleBtn?.addEventListener('click', applyAssistiveMode);
 
-
-/* 📂 Accordion Expand/Collapse with Smooth Height */
+/* 📂 ACCORDION TOGGLE */
 function setupAccordion() {
   document.querySelectorAll('.accordion-toggle').forEach(button => {
     const content = button.nextElementSibling;
     if (!content) return;
+
     content.style.maxHeight = '0px';
     content.style.overflow = 'hidden';
     content.style.transition = 'max-height 0.5s ease';
@@ -73,8 +64,22 @@ function setupAccordion() {
   });
 }
 
-/* 📱 Mobile Navigation Toggle */
+/* 📱 MOBILE NAVIGATION */
 function toggleMobileNav() {
   const nav = document.getElementById("myTopnav");
   nav.classList.toggle("responsive");
 }
+
+/* 🔁 INITIAL LOAD: Restore preferences + setup UI */
+window.addEventListener('DOMContentLoaded', () => {
+  const savedDark = localStorage.getItem('darkMode');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyDarkState(savedDark ?? (prefersDark ? 'enabled' : 'disabled'));
+
+  const savedAssistive = localStorage.getItem('effectAssistiveMode');
+  const assistiveActive = savedAssistive === 'enabled';
+  document.body.classList.toggle(EFFECT_ASSISTIVE_CLASS, assistiveActive);
+  if (assistiveIcon) assistiveIcon.textContent = assistiveActive ? '🔳' : '🖍️';
+
+  setupAccordion();
+});
