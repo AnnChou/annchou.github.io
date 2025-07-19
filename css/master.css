@@ -4,17 +4,22 @@
 ----------------------------------------------
 base.css           → Variables, typography, transitions
 layout.css         → Section sizing, headings, page grid
-components.css     → Buttons, figures, accordions, icon bar
-gallery.css        → Lightbox grid, filter buttons, hover
-dark-mode.css      → Theme overrides and visual adaptation
-responsive.css     → Mobile and tablet-specific styles
+typography.css     -> heading, paragraphs, title styles
+components.css     → Buttons, figures, accordions, icon bar, reusable UI blocks
+gallery.css        → Lightbox grid, scolling image bar, filter buttons, hover
+effects.css        -> glow effects, visual accents
+responsive.css     → Mobile and tablet-specific via media queries
+dark-mode.css      → Theme overrides when .darkmode is active and visual adaptation
 theme-parallax.css → Scrolling banners and animation
+master.css          -> css map and central import hub
 =============================================== */
 
 @import url('base.css');
 @import url('layout.css');
+@impoer url('typography.css');
 @import url('components.css');
 @import url('gallery.css');
-@import url('dark-mode.css');
+@import url('effects.css');
 @import url('responsive.css');
+@import url('dark-mode.css');
 @import url('theme-parallax.css');
