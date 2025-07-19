@@ -17,6 +17,39 @@
   box-shadow: 0 0 12px 2px rgba(76, 175, 80, 0.6);
 }
 
+/* -- dark mode + assistive toggle icon under icon bar --*/
+.floating-toggle-stack {
+  display: flex;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.floating-toggle-stack button {
+  background-color: #444;
+  color: #f6a21d;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.floating-toggle-stack button:hover span {
+  transform: scale(1.15);
+  opacity: 0.95;
+}
+
+.floating-toggle-stack .toggle-icon,
+.floating-toggle-stack .assistive-icon {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
 /* ===================================
 💫 assistive toggle
 =================================== */
