@@ -693,6 +693,30 @@ body.dark-mode #connect a {
   color: white;
 }
 
+.icon-bar button {
+  background-color: #444;
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.icon-bar button:hover .toggle-icon {
+  transform: rotate(20deg) scale(1.1);
+  opacity: 0.9;
+}
+
+.icon-bar .toggle-icon {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+
 /* ----------------------------------
    👣 FOOTER
 ---------------------------------- */
