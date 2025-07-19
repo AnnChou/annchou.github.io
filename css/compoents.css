@@ -1,0 +1,142 @@
+/* 🧩 compoents.css */
+/* project */
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: 1rem 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  position: relative;
+  min-height: 250px;
+  margin-top: 1rem;
+}
+
+.project h3 { font-size: 1.2rem; }
+.project p { font-size: 0.95rem; margin-bottom: 0.5rem; }
+
+.project-banner-note {
+  background-color: #f5f5f5;
+  color: var(--color-muted);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.6;
+  text-align: left;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--color-highlight);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* image and figure */
+figure, figcaption {
+  margin: 1.5rem 0;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+.project img {
+  max-height: 450px;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* button */
+.button,
+.cta,
+.button-ghost {
+  background-color: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--color-btn-hover);
+}
+
+.button-ghost {
+  background-color: transparent;
+  color: var(--color-highlight);
+  border: 2px solid var(--color-highlight);
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.button-ghost:hover {
+  background-color: #e8f5e9;
+  border-color: #388e3c;
+  color: #2e7d32;
+}
+
+/* Accordion Toggle */
+.accordion-toggle {
+  background-color: #eee;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  border: none;
+  border-radius: 6px;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.accordion-toggle::after {
+  content: '▼';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: var(--color-muted);
+  transition: transform 0.3s ease;
+}
+
+.accordion-toggle.active::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  background-color: #fafafa;
+  padding: 0 1rem;
+  border-left: 4px solid var(--color-highlight);
+  border-radius: 6px;
+}
+
+.accordion-toggle.active + .accordion-content {
+  max-height: 1000px;
+  padding: 1rem 1rem;
+}
