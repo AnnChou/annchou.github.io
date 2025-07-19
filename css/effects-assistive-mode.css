@@ -1,0 +1,60 @@
+/* ===================================
+💫 effects-assistive-mode :  
+
+1. glows for buttons
+
+2. assistive toggle
+🌼 Soft Neurodivergent-Friendly Mode – low-stimulation colors, muted contrast, flowing design
+🖍️ High-Contrast Assistive Mode – bold text, stark contrast, extra focus outlines
+=================================== */
+.glow {
+  box-shadow: 0 0 12px 2px rgba(246, 162, 29, 0.6);
+}
+.glow-ink {
+  box-shadow: 0 0 10px 1px rgba(50, 50, 50, 0.5);
+}
+.glow-green {
+  box-shadow: 0 0 12px 2px rgba(76, 175, 80, 0.6);
+}
+
+/* ===================================
+💫 assistive toggle
+=================================== */
+body.effect-assistive-mode {
+  background-color: #fff;
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+body.effect-assistive-mode h2,
+body.effect-assistive-mode h3,
+body.effect-assistive-mode a {
+  color: #000 !important;
+  font-weight: 800;
+}
+
+body.effect-assistive-mode .project,
+body.effect-assistive-mode section {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+
+body.effect-assistive-mode a:focus,
+body.effect-assistive-mode button:focus {
+  outline: 3px dashed #f6a21d;
+  outline-offset: 3px;
+}
+
+body.effect-assistive-mode .button,
+body.effect-assistive-mode .accordion-toggle {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid var(--color-accent);
+}
+
+body.effect-assistive-mode .figure-block img,
+body.effect-assistive-mode .scroll-container img {
+  box-shadow: 0 0 0 4px #000;
+}
