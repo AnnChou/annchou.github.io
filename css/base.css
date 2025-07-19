@@ -1,0 +1,20 @@
+/* 🎨 base.css */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #333333;
+  --color-muted: #666666;
+  --color-accent: #f6a21d;
+  --color-highlight: #4caf50;
+  --color-border: #eeeeee;
+  --color-btn-bg: #333333;
+  --color-btn-text: #ffffff;
+  --color-btn-hover: #000000;
+
+  --font-serif: 'Georgia', serif;
+  --font-sans: 'Helvetica Neue', sans-serif;
+}
+
+body, h1, h2, h3, p {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: var(--font-sans);
+}
