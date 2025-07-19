@@ -1,4 +1,6 @@
-/* 🎨 base.css */
+/* ===================================
+📦 BASE.CSS: Variables, fonts, global
+=================================== */
 :root {
   --color-bg: #ffffff;
   --color-text: #333333;
