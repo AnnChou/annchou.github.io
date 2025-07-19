@@ -1,4 +1,21 @@
-/* 🖼 gallery.css */
+/* ===================================
+🖼 GALLERY.CSS: Lightbox + scrolling image bar
+=================================== */
+/* scroll -container -- */
+.scroll-container {
+  background-color: #333;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.scroll-container img {
+  height: 300px;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+/* -- lightbox grid -- */
 .lightbox-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -21,6 +38,7 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
+/* -- filter buttons for lightbox --*/
 .filter-buttons {
   display: flex;
   flex-wrap: wrap;
