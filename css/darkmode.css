@@ -1,5 +1,5 @@
 /* 🌒 darkmode.css */
-body.dark-mode {
+/* body.dark-mode {
   background-color: #121212;
   color: var(--color-text);
 }
@@ -13,14 +13,135 @@ body.dark-mode h2, body.dark-mode h3 {
   color: #f6f6f6;
   border-bottom-color: var(--color-accent);
 }
+*/
 
 body.dark-mode .button {
   background-color: var(--color-accent);
   color: #fff;
 }
 
+/*
 body.dark-mode .project {
   background-color: #1e1e1e;
   color: #ddd;
   box-shadow: 0 2px 10px rgba(255,255,255,0.08);
+}
+*/
+
+/* =========
+   dark mode overrides
+   ========*/
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode section h2,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode .site-title {
+  color: #f6f6f6;
+  border-bottom-color: #f6a21d;
+}
+
+body.dark-mode #about,
+body.dark-mode #connect {
+  background-color: #1a1a1a;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode #about h2,
+body.dark-mode #connect h2 {
+  color: #f6f6f6;
+  border-bottom: 2px solid #f6a21d;
+}
+
+body.dark-mode #about a,
+body.dark-mode #connect a {
+  color: #f6a21d;
+}
+
+body.dark-mode .topnav {
+  background-color: #1e1e1e;
+}
+body.dark-mode .topnav a {
+  color: #ccc;
+}
+body.dark-mode .topnav a.active {
+  background-color: #8d4a3e;
+  color: white;
+}
+body.dark-mode .topnav a:hover {
+  background-color: #444;
+  color: white;
+}
+
+body.dark-mode .highlight-subtitle {
+  color: #f6d1b6;
+}
+
+body.dark-mode .scroll-container {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .project {
+  background-color: #1e1e1e;
+  color: #ddd;
+  box-shadow: 0 2px 10px rgba(255,255,255,0.08);
+}
+
+body.dark-mode .flex-container2,
+body.dark-mode footer {
+  background-color: #111;
+  color: #aaa;
+}
+
+body.dark-mode .icon-bar a {
+  background-color: #222;
+  color: #ddd;
+}
+body.dark-mode .icon-bar a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/*  =======
+    toggle animation
+    ======= */
+#darkModeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+#darkModeToggle .toggle-icon {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#darkModeToggle:hover .toggle-icon {
+  transform: rotate(20deg) scale(1.1);
+  opacity: 0.9;
+}
+
+/* =======
+  light mode fallback
+   ======= */
+
+body.light-mode .icon-bar a {
+  color: #333;
+}
+
+@media (prefers-color-scheme: light) {
+  .icon-bar a.instagram { background: #bc2bac; }
+  .icon-bar a.facebook  { background: #3B5998; }
+  .icon-bar a.twitter   { background: #55ACEE; }
+  .icon-bar a.linkedin  { background: #007bb5; }
+  .icon-bar a.youtube   { background: #bb1100; }
+  .icon-bar a.substack  { background: #ff6719; }
 }
