@@ -1,5 +1,7 @@
-/* 🧩 compoents.css */
-/* project */
+/* ===================================
+🧩 COMPONENTS.CSS: Project, Buttons, figures, accordions
+=================================== */
+/* ---  project --- */
 .project {
   display: flex;
   flex-direction: column;
@@ -32,17 +34,7 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* image and figure */
-figure, figcaption {
-  margin: 1.5rem 0;
-  text-align: center;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 0.9rem;
-  color: var(--color-muted);
-  line-height: 1.4;
-}
-
+/* -- project image and figures -- */
 .project img {
   max-height: 450px;
   object-fit: cover;
@@ -57,7 +49,38 @@ figure, figcaption {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* button */
+figure, figcaption {
+  margin: 1.5rem 0;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+.figure-block,
+.wide-figure,
+.rabbit-figure {
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.figure-block img,
+.wide-figure img {
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.wide-figure figcaption {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* -- buttons -- */
 .button,
 .cta,
 .button-ghost {
@@ -95,7 +118,7 @@ figure, figcaption {
   color: #2e7d32;
 }
 
-/* Accordion Toggle */
+/* -- Accordion Toggle -- */
 .accordion-toggle {
   background-color: #eee;
   color: var(--color-text);
