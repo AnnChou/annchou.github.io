@@ -18,13 +18,17 @@
 }
 
 /* -- dark mode + assistive toggle icon under icon bar --*/
-.floating-toggle-stack {
+/* 🔲 Floating accessibility toggles */
+.floating-toggle-stack,
+.top-toggle-stack {
   display: flex;
+  flex-direction: column;
   gap: 4px;
   margin-top: 10px;
 }
 
-.floating-toggle-stack button {
+.floating-toggle-stack button,
+.top-toggle-stack button {
   background-color: #444;
   color: #f6a21d;
   font-size: 18px;
@@ -34,18 +38,18 @@
   width: 100%;
   cursor: pointer;
   text-align: center;
-  display: block;
   border-radius: 4px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.floating-toggle-stack button:hover span {
+.floating-toggle-stack button:hover span,
+.top-toggle-stack button:hover span {
   transform: scale(1.15);
   opacity: 0.95;
 }
 
-.floating-toggle-stack .toggle-icon,
-.floating-toggle-stack .assistive-icon {
+.toggle-icon,
+.assistive-icon {
   display: inline-block;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
