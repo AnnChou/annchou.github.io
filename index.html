@@ -356,13 +356,6 @@
       toggleBtn.textContent = '🌙';
     }
   }
-  // Optional: set icon on load
-  window.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.getElementById('darkModeToggle');
-    if (document.body.classList.contains('dark-mode')) {
-      toggleBtn.textContent = '☀️';
-    }
-  });
 
   // Responsive nav toggle
   function myFunction() {
@@ -413,17 +406,19 @@ function toggleMobileNav() {
 
 /* 🔁 LOAD PREFERENCES & INIT UI */
 window.addEventListener('DOMContentLoaded', () => {
+  // Dark mode on load
   const savedDark = localStorage.getItem('darkMode');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  applyDarkState(savedDark ?? (prefersDark ? 'enabled' : 'disabled'));
+  if ((savedDark ?? (prefersDark ? 'enabled' : 'disabled')) === 'enabled') {
+    document.body.classList.add('dark-mode');
+    const toggleBtn = document.getElementById('darkModeToggle');
+    if (toggleBtn) toggleBtn.textContent = '☀️';
+  }
 
-  const savedAssistive = localStorage.getItem('effectAssistiveMode');
-  const assistiveActive = savedAssistive === 'enabled';
-  applyAssistiveState(assistiveActive ? 'enabled' : 'disabled');
-
+  // Accordion setup
   setupAccordion();
 });
-</script>
+
 
 <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
 <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
