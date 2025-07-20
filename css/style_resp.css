@@ -138,9 +138,52 @@ p {
   max-width: 800px;
 }
 
+
 /* ----------------------------------
-   🖱️ FIGURES
+   🖱️ Top nav dropdown
 ---------------------------------- */
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown button */
+.dropbtn {
+  color: inherit;
+  text-decoration: none;
+  padding: 14px 16px;
+  display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside dropdown */
+.dropdown-content a {
+  color: #333;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Optional: Hover effect on links */
+.dropdown-content a:hover {
+  background-color: #f2f2f2;
+}
+
 /* ----------------------------------
    🖱️ FIGURES – Shared and Scoped
 ---------------------------------- */
