@@ -11,19 +11,28 @@ DOMContentLoaded listener → Restores dark + assistive state, loads accordions
 
 /* 🌙 DARK MODE LOGIC */
 const DARK_CLASS = 'dark-mode';
-const toggleBtnTop = document.getElementById('darkModeToggle');
-const toggleBtnBar = document.getElementById('darkModeToggleIconBar');
+const ASSISTIVE_CLASS = 'effect-assistive-mode';
 
+// DARK MODE TOGGLES
+const darkBtnTop = document.getElementById('darkModeToggle');
+const darkBtnBar = document.getElementById('darkModeToggleIconBar');
+const darkIconTop = darkBtnTop?.querySelector('.toggle-icon');
+const darkIconBar = darkBtnBar?.querySelector('.toggle-icon');
+
+// ASSISTIVE MODE TOGGLES
+const assistBtnTop = document.getElementById('assistiveBtnTop');
+const assistBtnBar = document.getElementById('assistiveBtnBar');
+const assistIconTop = assistBtnTop?.querySelector('.assistive-icon');
+const assistIconBar = assistBtnBar?.querySelector('.assistive-icon');
+
+// 🔁 DARK MODE STATE HANDLER
 function applyDarkState(state) {
   const isDark = state === 'enabled';
   document.body.classList.toggle(DARK_CLASS, isDark);
   localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-
-  const icon = isDark ? '☀️' : '🌙';
-  const iconTop = toggleBtnTop?.querySelector('.toggle-icon');
-  const iconBar = toggleBtnBar?.querySelector('.toggle-icon');
-  if (iconTop) iconTop.textContent = icon;
-  if (iconBar) iconBar.textContent = icon;
+  const emoji = isDark ? '☀️' : '🌙';
+  if (darkIconTop) darkIconTop.textContent = emoji;
+  if (darkIconBar) darkIconBar.textContent = emoji;
 }
 
 function toggleDarkMode() {
@@ -31,21 +40,26 @@ function toggleDarkMode() {
   applyDarkState(current ? 'disabled' : 'enabled');
 }
 
-toggleBtnTop?.addEventListener('click', toggleDarkMode);
-toggleBtnBar?.addEventListener('click', toggleDarkMode);
+darkBtnTop?.addEventListener('click', toggleDarkMode);
+darkBtnBar?.addEventListener('click', toggleDarkMode);
 
-/* 🖍️ HIGH-CONTRAST ASSISTIVE MODE */
-const EFFECT_ASSISTIVE_CLASS = 'effect-assistive-mode';
-const assistiveToggleBtn = document.getElementById('assistiveToggle');
-const assistiveIcon = assistiveToggleBtn?.querySelector('.assistive-icon');
-
-function applyAssistiveMode() {
-  const isActive = document.body.classList.toggle(EFFECT_ASSISTIVE_CLASS);
-  localStorage.setItem('effectAssistiveMode', isActive ? 'enabled' : 'disabled');
-  if (assistiveIcon) assistiveIcon.textContent = isActive ? '🔳' : '🖍️';
+// 🖍️ ASSISTIVE CONTRAST HANDLER
+function applyAssistiveState(state) {
+  const isAssistive = state === 'enabled';
+  document.body.classList.toggle(ASSISTIVE_CLASS, isAssistive);
+  localStorage.setItem('effectAssistiveMode', isAssistive ? 'enabled' : 'disabled');
+  const emoji = isAssistive ? '🔳' : '🖍️';
+  if (assistIconTop) assistIconTop.textContent = emoji;
+  if (assistIconBar) assistIconBar.textContent = emoji;
 }
 
-assistiveToggleBtn?.addEventListener('click', applyAssistiveMode);
+function toggleAssistiveMode() {
+  const current = document.body.classList.contains(ASSISTIVE_CLASS);
+  applyAssistiveState(current ? 'disabled' : 'enabled');
+}
+
+assistBtnTop?.addEventListener('click', toggleAssistiveMode);
+assistBtnBar?.addEventListener('click', toggleAssistiveMode);
 
 /* 📂 ACCORDION TOGGLE */
 function setupAccordion() {
