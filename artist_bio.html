@@ -39,7 +39,7 @@
       <a class="active" href="artist-bio.html">Bio 🧬</a>
       <a href="Eco_illum.html">Eco-Illum 🌘</a>
       <a href="workshops.html">Workshops 🎨</a>
-      <a href="https://annreflection.square.site/">ArtShop 👜</a>
+      <a href="https://annreflection.square.site/">ArtShop and Tiny Arts 👜</a>
       <button id="darkModeToggle" class="button-ghost" onclick="toggleDarkMode()">🌙</button>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
@@ -55,6 +55,8 @@
     <a href="https://www.youtube.com/@annchou9171" class="youtube" aria-label="YouTube"><i class="fa fa-youtube"></i></a>
     <a href="https://www.flickr.com/photos/annchou/" class="twitter" aria-label="Flickr"><i class="fa fa-flickr"></i></a>
     <a href="https://annreflection.substack.com" class="substack"><i class="fa fa-stack-exchange"></i></a>
+     <!-- ✅ Optional second toggle at the bottom -->
+    <button id="darkModeToggleIconBar" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
   </div>
 
   <main class="main" style="padding: 2rem">
@@ -142,26 +144,76 @@
   </footer>
 
   <!-- ✅ Scripts for nav + dark mode -->
-  <script>
-    function toggleDarkMode() {
-      const body = document.body;
-      const toggleBtn = document.getElementById('darkModeToggle');
-      body.classList.toggle('dark-mode');
-      toggleBtn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    }
+ <script>
+  function handleDarkModeToggle() {
+    const isDark = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+    updateDarkModeIcons(isDark);
+  }
 
-    window.addEventListener('DOMContentLoaded', () => {
-      const toggleBtn = document.getElementById('darkModeToggle');
-      if (document.body.classList.contains('dark-mode')) {
-        toggleBtn.textContent = '☀️';
-      }
+  function updateDarkModeIcons(isDark) {
+    const icons = [
+      document.getElementById('darkModeToggle'),
+      document.getElementById('darkModeToggleIconBar')
+    ];
+    icons.forEach(btn => {
+      if (btn) btn.textContent = isDark ? '☀️' : '🌙';
     });
+  }
 
-    function myFunction() {
-      const x = document.getElementById("myTopnav");
-      x.className = x.className === "topnav" ? "topnav responsive" : "topnav";
+  function initializeDarkMode() {
+    const savedDark = localStorage.getItem('darkMode');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const shouldEnable = savedDark === 'enabled' || (!savedDark && prefersDark);
+
+    if (shouldEnable) document.body.classList.add('dark-mode');
+    updateDarkModeIcons(document.body.classList.contains('dark-mode'));
+
+    // Bind listeners to both toggles
+    const topToggle = document.getElementById('darkModeToggle');
+    const barToggle = document.getElementById('darkModeToggleIconBar');
+    if (topToggle) topToggle.addEventListener('click', handleDarkModeToggle);
+    if (barToggle) barToggle.addEventListener('click', handleDarkModeToggle);
+  }
+
+  function initializeAccordion() {
+    document.querySelectorAll('.accordion-toggle').forEach(button => {
+      const content = button.nextElementSibling;
+      if (!content) return;
+
+      const label = button.dataset.label || button.textContent.replace(/🔻|🔺/g, '').trim();
+      content.style.maxHeight = '0px';
+      content.style.overflow = 'hidden';
+      content.style.transition = 'max-height 0.5s ease';
+
+      button.textContent = `🔻 ${label}`;
+      button.setAttribute('aria-expanded', false);
+
+      button.addEventListener('click', () => {
+        const isOpen = button.classList.toggle('active');
+        content.style.maxHeight = isOpen ? content.scrollHeight + 'px' : '0px';
+        button.textContent = isOpen ? `🔺 ${label}` : `🔻 ${label}`;
+        button.setAttribute('aria-expanded', isOpen);
+      });
+    });
+  }
+
+  function initializeResponsiveNav() {
+    const navBtn = document.querySelector('.topnav .icon');
+    if (navBtn) {
+      navBtn.addEventListener('click', () => {
+        const nav = document.getElementById('myTopnav');
+        nav.classList.toggle('responsive');
+      });
     }
-  </script>
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    initializeDarkMode();
+    initializeAccordion();
+    initializeResponsiveNav();
+  });
+</script>
 
 </body>
 </html>
