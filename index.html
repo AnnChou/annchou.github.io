@@ -45,7 +45,14 @@
       <a href="https://annreflection.square.site/">ArtShop 👜</a>
 
       <!-- 🌙 Dark mode toggle button -->
-      <button id="darkModeToggle" aria-label="Toggle dark mode" class="button-ghost" onclick="toggleDarkMode()">🌙</button>
+     <div class="top-toggle-stack">
+        <button id="darkModeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <span class="toggle-icon">🌙</span>
+        </button>
+        <button id="assistiveBtnTop" aria-label="Toggle assistive contrast mode" title="Toggle assistive contrast mode">
+          <span class="assistive-icon">🖍️</span>
+        </button>
+      </div>
 
       <!-- Hamburger icon -->
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -61,18 +68,20 @@
   </div>
 
   <div class="icon-bar">
+    <!-- ... other social icons ... -->
     <a href="https://www.instagram.com/annreflection/" class="instagram"><i class="fa fa-instagram"></i></a>
     <a href="https://www.facebook.com/AnnReflectionArts/" class="facebook"><i class="fa fa-facebook"></i></a>
     <a href="https://linkedin.com/in/annkchou" class="linkedin"><i class="fa fa-linkedin"></i></a>
     <a href="http://www.youtube.com/@annchou9171" class="youtube"><i class="fa fa-youtube"></i></a>
     <a href="https://www.flickr.com/photos/annchou/" class="twitter"><i class="fa fa-flickr"></i></a>
     <a href="https://annreflection.substack.com" class="substack"><i class="fa fa-stack-exchange"></i></a>
-      <!-- 🌙 Floating Dark + Assistive Toggle -->
+    
+    <!-- 🌙 Second Dark Toggle + 🖍️ Assistive Button (stacked) -->
     <div class="floating-toggle-stack">
-      <button id="darkModeToggleIconBar" aria-label="Toggle dark mode">
+      <button id="darkModeToggleIconBar" aria-label="Toggle dark mode" title="Toggle dark mode">
         <span class="toggle-icon">🌙</span>
       </button>
-      <button id="assistiveToggle" aria-label="Toggle assistive contrast">
+      <button id="assistiveBtnBar" aria-label="Toggle assistive contrast mode" title="Toggle assistive contrast mode">
         <span class="assistive-icon">🖍️</span>
       </button>
     </div>
