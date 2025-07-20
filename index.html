@@ -14,11 +14,11 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="css/style_resp.css" />
-  <link rel="stylesheet" href="css/effects-assistive-mode.css" />
-  <link rel="stylesheet" href="css/dark.css" />
- <!-- <link rel="stylesheet" href="css/master.css" />-->
+  <!--  <link rel="stylesheet" href="css/effects-assistive-mode.css" 
+  <link rel="stylesheet" href="css/dark.css" /> -->
+ <!-- <link rel="stylesheet" href="css/master.css" />
   <script src="scripts/main.js"></script>
-  <script src="scripts/social-widgets.js"></script>
+  <script src="scripts/social-widgets.js"></script> -->
 
   
 </head>
@@ -45,7 +45,7 @@
       <a href="workshops.html">Workshops 🎨</a>
       <a href="https://annreflection.square.site/">ArtShop 👜</a>
 
-      <!-- 🌙 Dark mode toggle button -->
+      <!-- 🌙 Dark mode toggle button problem
      <div class="top-toggle-stack">
         <button id="darkModeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
           <span class="toggle-icon">🌙</span>
@@ -53,8 +53,10 @@
         <button id="assistiveBtnTop" aria-label="Toggle assistive contrast mode" title="Toggle assistive contrast mode">
           <span class="assistive-icon">🖍️</span>
         </button>
-      </div>
+      </div>  -->
 
+    <!-- Dark mode toggle button -->
+    <button id="darkModeToggle" class="button-ghost" onclick="toggleDarkMode()">🌙</button>
       <!-- Hamburger icon -->
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
@@ -77,7 +79,7 @@
     <a href="https://www.flickr.com/photos/annchou/" class="twitter"><i class="fa fa-flickr"></i></a>
     <a href="https://annreflection.substack.com" class="substack"><i class="fa fa-stack-exchange"></i></a>
     
-    <!-- 🌙 Second Dark Toggle + 🖍️ Assistive Button (stacked) -->
+    <!-- 🌙 Second Dark Toggle + 🖍️ Assistive Button (stacked) problem
     <div class="floating-toggle-stack">
       <button id="darkModeToggleIconBar" aria-label="Toggle dark mode" title="Toggle dark mode">
         <span class="toggle-icon">🌙</span>
@@ -85,7 +87,7 @@
       <button id="assistiveBtnBar" aria-label="Toggle assistive contrast mode" title="Toggle assistive contrast mode">
         <span class="assistive-icon">🖍️</span>
       </button>
-    </div>
+    </div>  -->
 
   </div>
 
@@ -340,7 +342,49 @@
       <div class="flex-item-right">© 2025 Ann K. Chou (annreflection) – All rights reserved</div>
     </div>
   </footer>
+        
+  <script>
+  function toggleDarkMode() {
+    const body = document.body;
+    const toggleBtn = document.getElementById('darkModeToggle');
+    body.classList.toggle('dark-mode');
+
+    // Update icon
+    if (body.classList.contains('dark-mode')) {
+      toggleBtn.textContent = '☀️';
+    } else {
+      toggleBtn.textContent = '🌙';
+    }
+  }
+  // Optional: set icon on load
+  window.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('darkModeToggle');
+    if (document.body.classList.contains('dark-mode')) {
+      toggleBtn.textContent = '☀️';
+    }
+  });
+
+  // Responsive nav toggle
+  function myFunction() {
+    const nav = document.getElementById("myTopnav");
+    nav.classList.toggle("responsive");
+  }  
+    
+  // Load saved mode
+  if (localStorage.getItem('mode') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+
+  // Toggle and save mode
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('mode', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+  }
+</script>
+
+<button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+<script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
   
 </body>
-    <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+
 </html>
