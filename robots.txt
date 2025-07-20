@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://annchou.github.io/sitemap.xml
