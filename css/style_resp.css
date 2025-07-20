@@ -774,7 +774,29 @@ body.dark-mode figcaption {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* --------
+   shop link
+      ------*/
 
+.shop-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.shop-links li {
+  margin-bottom: 0.5rem;
+}
+
+.shop-links a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+body.dark-mode .shop-links a {
+  color: #ffdf6b;
+}
 
 /* ----------------------------------
    👣 FOOTER
