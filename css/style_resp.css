@@ -453,6 +453,11 @@ body.dark-mode #connect a {
   color: #f6a21d;
 }
 
+body.dark-mode figcaption {
+  color: #f0f0f0;
+  font-weight: 500;
+}
+
 /* ----------------------------------
    🧱 PROJECT GRID
 ---------------------------------- */
