@@ -918,6 +918,19 @@ body.dark-mode .topnav a:hover {
   color: white;
 }
 
+body.dark-mode .dropdown-content {
+  background-color: #222; /* dark background */
+  box-shadow: 0px 8px 16px rgba(255,255,255,0.1);
+}
+
+body.dark-mode .dropdown-content a {
+  color: #fff; /* high contrast links */
+}
+
+body.dark-mode .dropdown-content a:hover {
+  background-color: #444; /* subtle hover highlight */
+}
+
 body.dark-mode .highlight-subtitle {
   color: #f6d1b6;
 }
@@ -950,7 +963,6 @@ body.dark-mode .flex-container2 {
 }
 
 
-
 body.dark-mode .icon-bar a {
   background-color: #222;
   color: #ddd;
@@ -959,6 +971,15 @@ body.dark-mode .icon-bar a {
 body.dark-mode .icon-bar a:hover {
   background-color: #000;
   color: #fff;
+}
+
+body.dark-mode a {
+  color: #ffdf6b; /* warm yellow for readability */
+  text-decoration: underline;
+}
+
+body.dark-mode a:hover {
+  color: #ffd000;
 }
 
 /* -----------------------------
