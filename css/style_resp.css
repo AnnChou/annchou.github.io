@@ -15,6 +15,15 @@ body {
   color: #333;
 }
 
+h1, h2, h3 {
+  text-align: left;
+}
+
+.heading-center {
+  text-align: center;
+}
+
+
 /* ----------------------------------
    🌐 NAVIGATION BAR
 ---------------------------------- */
