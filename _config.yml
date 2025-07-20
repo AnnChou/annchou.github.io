@@ -1,0 +1,31 @@
+title: "Ann K. Chou – Multi-sensory Artist, Access Designer"
+description: "Lanterns, sumi-e, and access-centered performance connecting art, care, and community."
+url: "https://annchou.github.io" # your GitHub Pages URL or custom domain
+author: "Ann K. Chou"
+lang: "en"
+timezone: "America/Vancouver"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# SEO social metadata
+logo: /rss/AnnReflectionBannerforLetter_clear.png
+twitter:
+  username: annreflection
+  card: summary_large_image
+social:
+  name: "AnnReflection"
+  links:
+    - https://instagram.com/annreflection
+    - https://linkedin.com/in/annkchou
+    - https://annreflection.substack.com
+
+# Sitemap settings
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      sitemap: true
+      image: /rss/AnnReflectionBannerforLetter_clear.png
