@@ -347,25 +347,38 @@
   </footer>
         
 <script>
-  function toggleDarkMode() {
-    const body = document.body;
-    const toggleBtn = document.getElementById('darkModeToggle');
-    body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
-
-    // Update icon
-    if (toggleBtn) {
-      toggleBtn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    }
-
-    // Update icon bar toggle if it exists
-    const toggleBtnIconBar = document.getElementById('darkModeToggleIconBar');
-    if (toggleBtnIconBar) {
-      toggleBtnIconBar.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    }
+  function handleDarkModeToggle() {
+    const isDark = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+    updateDarkModeIcons(isDark);
   }
 
-  function setupAccordion() {
+  function updateDarkModeIcons(isDark) {
+    const icons = [
+      document.getElementById('darkModeToggle'),
+      document.getElementById('darkModeToggleIconBar')
+    ];
+    icons.forEach(btn => {
+      if (btn) btn.textContent = isDark ? '☀️' : '🌙';
+    });
+  }
+
+  function initializeDarkMode() {
+    const savedDark = localStorage.getItem('darkMode');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const shouldEnable = savedDark === 'enabled' || (!savedDark && prefersDark);
+
+    if (shouldEnable) document.body.classList.add('dark-mode');
+    updateDarkModeIcons(document.body.classList.contains('dark-mode'));
+
+    // Bind listeners to both toggles
+    const topToggle = document.getElementById('darkModeToggle');
+    const barToggle = document.getElementById('darkModeToggleIconBar');
+    if (topToggle) topToggle.addEventListener('click', handleDarkModeToggle);
+    if (barToggle) barToggle.addEventListener('click', handleDarkModeToggle);
+  }
+
+  function initializeAccordion() {
     document.querySelectorAll('.accordion-toggle').forEach(button => {
       const content = button.nextElementSibling;
       if (!content) return;
@@ -387,32 +400,23 @@
     });
   }
 
-  function myFunction() {
-    const nav = document.getElementById("myTopnav");
-    nav.classList.toggle("responsive");
+  function initializeResponsiveNav() {
+    const navBtn = document.querySelector('.topnav .icon');
+    if (navBtn) {
+      navBtn.addEventListener('click', () => {
+        const nav = document.getElementById('myTopnav');
+        nav.classList.toggle('responsive');
+      });
+    }
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    // Restore dark mode preference
-    const savedDark = localStorage.getItem('darkMode');
-    if (savedDark === 'enabled') {
-      document.body.classList.add('dark-mode');
-    }
-
-    // Update icon state
-    const toggleBtn = document.getElementById('darkModeToggle');
-    if (toggleBtn) {
-      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    }
-
-    const toggleBtnIconBar = document.getElementById('darkModeToggleIconBar');
-    if (toggleBtnIconBar) {
-      toggleBtnIconBar.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    }
-
-    setupAccordion();
+    initializeDarkMode();
+    initializeAccordion();
+    initializeResponsiveNav();
   });
 </script>
+
 
 
 <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
