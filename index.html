@@ -78,6 +78,9 @@
     <a href="http://www.youtube.com/@annchou9171" class="youtube"><i class="fa fa-youtube"></i></a>
     <a href="https://www.flickr.com/photos/annchou/" class="twitter"><i class="fa fa-flickr"></i></a>
     <a href="https://annreflection.substack.com" class="substack"><i class="fa fa-stack-exchange"></i></a>
+
+     <!-- ✅ Optional second toggle at the bottom -->
+    <button id="darkModeToggleIconBar" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
     
     <!-- 🌙 Second Dark Toggle + 🖍️ Assistive Button (stacked) problem
     <div class="floating-toggle-stack">
@@ -343,81 +346,73 @@
     </div>
   </footer>
         
-  <script>
+<script>
   function toggleDarkMode() {
     const body = document.body;
     const toggleBtn = document.getElementById('darkModeToggle');
     body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
 
     // Update icon
-    if (body.classList.contains('dark-mode')) {
-      toggleBtn.textContent = '☀️';
-    } else {
-      toggleBtn.textContent = '🌙';
+    if (toggleBtn) {
+      toggleBtn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    }
+
+    // Update icon bar toggle if it exists
+    const toggleBtnIconBar = document.getElementById('darkModeToggleIconBar');
+    if (toggleBtnIconBar) {
+      toggleBtnIconBar.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
     }
   }
 
-  // Responsive nav toggle
+  function setupAccordion() {
+    document.querySelectorAll('.accordion-toggle').forEach(button => {
+      const content = button.nextElementSibling;
+      if (!content) return;
+
+      const label = button.dataset.label || button.textContent.replace(/🔻|🔺/g, '').trim();
+      content.style.maxHeight = '0px';
+      content.style.overflow = 'hidden';
+      content.style.transition = 'max-height 0.5s ease';
+
+      button.textContent = `🔻 ${label}`;
+      button.setAttribute('aria-expanded', false);
+
+      button.addEventListener('click', () => {
+        const isOpen = button.classList.toggle('active');
+        content.style.maxHeight = isOpen ? content.scrollHeight + 'px' : '0px';
+        button.textContent = isOpen ? `🔺 ${label}` : `🔻 ${label}`;
+        button.setAttribute('aria-expanded', isOpen);
+      });
+    });
+  }
+
   function myFunction() {
     const nav = document.getElementById("myTopnav");
     nav.classList.toggle("responsive");
-  }  
-    
-  // Load saved mode
-  if (localStorage.getItem('mode') === 'dark') {
-    document.body.classList.add('dark-mode');
   }
 
-  // Toggle and save mode
-  function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('mode', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-  }
+  window.addEventListener('DOMContentLoaded', () => {
+    // Restore dark mode preference
+    const savedDark = localStorage.getItem('darkMode');
+    if (savedDark === 'enabled') {
+      document.body.classList.add('dark-mode');
+    }
 
-/* 📂 ACCORDION + EMOJI TOGGLE */
-function setupAccordion() {
-  document.querySelectorAll('.accordion-toggle').forEach(button => {
-    const content = button.nextElementSibling;
-    if (!content) return;
-
-    content.style.maxHeight = '0px';
-    content.style.overflow = 'hidden';
-    content.style.transition = 'max-height 0.5s ease';
-
-    const label = button.dataset.label || '';
-
-    button.textContent = `🔻 ${label}`;
-    button.setAttribute('aria-expanded', false);
-
-    button.addEventListener('click', () => {
-      const isOpen = button.classList.toggle('active');
-      content.style.maxHeight = isOpen ? content.scrollHeight + 'px' : '0px';
-      button.textContent = isOpen ? `🔺 ${label}` : `🔻 ${label}`;
-      button.setAttribute('aria-expanded', isOpen);
-    });
-  });
-}
-
-/* 📱 MOBILE NAVIGATION */
-function toggleMobileNav() {
-  const nav = document.getElementById("myTopnav");
-  nav.classList.toggle("responsive");
-}
-
-/* 🔁 LOAD PREFERENCES & INIT UI */
-window.addEventListener('DOMContentLoaded', () => {
-  // Dark mode on load
-  const savedDark = localStorage.getItem('darkMode');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  if ((savedDark ?? (prefersDark ? 'enabled' : 'disabled')) === 'enabled') {
-    document.body.classList.add('dark-mode');
+    // Update icon state
     const toggleBtn = document.getElementById('darkModeToggle');
-    if (toggleBtn) toggleBtn.textContent = '☀️';
-  }
+    if (toggleBtn) {
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    }
 
-  // Accordion setup
-  setupAccordion();
-});
+    const toggleBtnIconBar = document.getElementById('darkModeToggleIconBar');
+    if (toggleBtnIconBar) {
+      toggleBtnIconBar.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    }
+
+    setupAccordion();
+  });
+</script>
 
 
 <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
