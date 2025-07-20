@@ -1,0 +1,7 @@
+/* dark.css */
+body.dark-mode .project-banner-note {
+  background-color: #1e1e1e;
+  color: #ddd;
+  border-left-color: var(--color-accent);
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.05);
+}
