@@ -93,7 +93,9 @@ window.addEventListener('DOMContentLoaded', () => {
   const savedAssistive = localStorage.getItem('effectAssistiveMode');
   const assistiveActive = savedAssistive === 'enabled';
   document.body.classList.toggle(EFFECT_ASSISTIVE_CLASS, assistiveActive);
-  if (assistiveIcon) assistiveIcon.textContent = assistiveActive ? '🔳' : '🖍️';
+  if (assistIconTop) assistIconTop.textContent = assistiveActive ? '🔳' : '🖍️';
+  if (assistIconBar) assistIconBar.textContent = assistiveActive ? '🔳' : '🖍️';
+
 
   setupAccordion();
 });
