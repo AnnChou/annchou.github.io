@@ -138,6 +138,24 @@ p {
   max-width: 800px;
 }
 
+.hero-text {
+  font-size: 1.5rem;       /* bigger for hero */
+  line-height: 1.4;        /* comfortable spacing */
+  max-width: 700px;        /* readable width */
+  margin: 0 auto 2rem;
+  text-align: center;
+  font-weight: 500;
+  color: #222;
+}
+.hero-text strong {
+  color: #6a4f4b; /* highlight keywords */
+}
+.hero-text em {
+  font-style: italic;
+  color: #9c5e4a;
+}
+
+
 
 /* ----------------------------------
    🖱️ Top nav dropdown
@@ -484,6 +502,24 @@ section,
 h1, h2, h3, p {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Hero text dark mode */
+body.dark-mode .hero-text {
+  color: #f0f0f0;           /* light text for dark bg */
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+body.dark-mode .hero-text strong {
+  color: #ffd166;            /* warm accent for keywords */
+}
+body.dark-mode .hero-text em {
+  color: #06d6a0;            /* secondary accent */
+  font-style: italic;
+}
+
 
 /* 🌙 Dark mode overrides for light-background sections */
 body.dark-mode #about {
@@ -1024,3 +1060,4 @@ body.light-mode .icon-bar a {
   .icon-bar a.youtube   { background: #bb1100; }
   .icon-bar a.substack  { background: #ff6719; }
 }
+
