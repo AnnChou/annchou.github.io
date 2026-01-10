@@ -687,6 +687,7 @@ body.dark-mode figcaption {
   border-radius: 6px;
   display: none;
   margin-bottom: 1.5rem;
+  margin-top: 1rem;
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 
@@ -694,6 +695,48 @@ body.dark-mode figcaption {
   display: block;
 }
 
+body.dark-mode .accordion-toggle {
+  background-color: #1e1e1e;   /* dark header */
+  color: #f0f0f0;              /* light text */
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  margin-top: 1rem;            /* add spacing from previous figcaption */
+  margin-bottom: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .accordion-toggle:hover {
+  background-color: #333;      /* hover for dark mode */
+}
+
+body.dark-mode .accordion-content {
+  padding: 1rem;
+  background-color: #121212;       /* dark bg */
+  color: #f0f0f0;                  /* light text */
+  border-left: 4px solid #ffd166;  /* warm accent for dark mode */
+  border-radius: 0 0 6px 6px;
+  display: none;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);  /* subtle shadow on dark */
+  clear: both;                     /* prevent overlap with floats above */
+}
+
+body.dark-mode .accordion-content figure {
+  margin: 1rem 0;
+}
+
+body.dark-mode .accordion-content figcaption {
+  font-size: 0.9rem;
+  color: #ccc;                     /* softer caption for dark bg */
+  text-align: center;
+}
 
 /* ----------------------------------
    📱 Lightbox-gallery
@@ -1060,4 +1103,5 @@ body.light-mode .icon-bar a {
   .icon-bar a.youtube   { background: #bb1100; }
   .icon-bar a.substack  { background: #ff6719; }
 }
+
 
