@@ -123,7 +123,16 @@ p {
 
 .topnav a.active { background-color: #C66A53; }
 
-.topnav .button-ghost { display: none;  }
+/* .topnav .button-ghost { display: none;  }*/
+/* Ensure the button is visible by default on Desktop */
+.topnav .button-ghost {
+  display: inline-flex !important; 
+  margin: 0 10px;
+  height: 36px; /* Slightly smaller for the nav bar */
+  padding: 0 15px;
+  font-size: 0.9rem;
+  align-self: center;
+}
 
 
 
@@ -678,6 +687,7 @@ body.dark-mode .support-item:hover {
 @media screen and (max-width: 768px) {
   section { padding: 3rem 5%; }
 
+  .topnav .button-ghost { display: none !important; 
   .project-grid {
     grid-template-columns: 1fr; /* Stacks to 1 column on tablets/phones */
   }
