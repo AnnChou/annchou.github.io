@@ -431,6 +431,22 @@ figcaption {
 }
 
 /*----------
+Layout tweak for eco_illum
+-----------*/
+/* --- Banner Image Fix for Eco_illum --- */
+.banner-wrapper {
+    width: 100%;
+    background-color: inherit;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.banner-wrapper img {
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 8px;
+}
+/*----------
 Layout tweak for practicse/bio
 -----------*/
 
@@ -1505,6 +1521,7 @@ body.light-mode .icon-bar a {
     transform: translateY(-15px); /* scroll upward subtly */
   }
 }
+
 
 
 
