@@ -125,7 +125,7 @@ p {
 .dropdown:hover .dropdown-content { display: block; }
 
 /* ----------------------------------
-   🖼️ FIGURES, BIO-FIGURE WRAPPER, IMAGE BLOCKS & GALLERIES (2x2 Grid)
+   🖼️ FIGURES, PARALLAX, BIO-FIGURE WRAPPER, IMAGE BLOCKS & GALLERIES (2x2 Grid)
 ---------------------------------- */
 figure { margin: 1.5rem 0; }
 
@@ -219,7 +219,25 @@ margin: 0 auto;
   color: white;
 }
 
+.parallax-banner {
+  position: relative;
+  overflow: hidden;
+  margin: 2rem 0;
+  max-width: 1000px;
+}
 
+.parallax-banner img {
+  width: 100%;
+  height: auto;
+  will-change: transform;
+  transform: translateY(0);
+  transition: transform 0.2s ease-out;
+}
+
+/* JavaScript trigger class */
+.parallax-scrolled .parallax-banner img {
+  transform: translateY(-15px);
+}
 
 /* ----------------------------------
    🧱 CONTAINERS & SCROLL, BOXES, PROJECTS, GRID & SUBSTACK
@@ -464,6 +482,16 @@ body.dark-mode .button-ghost:hover {
   
   .figure-block, .bio-figure {
     padding: 0 10px;
+  }
+ /* ✅ Parallax Scroll Effect (desktop only) */
+ .parallax-banner img {
+    will-change: transform;
+    transform: translateY(0);
+    transition: transform 0.2s ease-out;
+  }
+
+  .parallax-scrolled .parallax-banner img {
+    transform: translateY(-15px); /* scroll upward subtly */
   }
 }
 
