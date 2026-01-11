@@ -1287,7 +1287,7 @@ body.dark-mode {
 /* --- Target Non-Responsive Text in Dark Mode --- */
 body.dark-mode .pillar-header,
 body.dark-mode .site-title,
-body.dark-mode .highlight-subtitle,
+body.dark-mode .highlight-subtitle, .icon-bar,
 body.dark-mode h1, 
 body.dark-mode h2, 
 body.dark-mode p,
@@ -1312,7 +1312,7 @@ body.dark-mode .highlight-subtitle {
 }
 
 
-body.dark-mode .topnav {
+body.dark-mode .topnav, .icon-bar {
   background-color: #1e1e1e;
 }
 
@@ -1528,6 +1528,7 @@ body.light-mode .icon-bar a {
     transform: translateY(-15px); /* scroll upward subtly */
   }
 }
+
 
 
 
