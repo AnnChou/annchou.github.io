@@ -69,7 +69,13 @@ h3 { font-size: 1.5rem; margin-bottom: 0.75rem; color: #444; }
   color: #333;
 }
 
-p { margin-bottom: 1rem; max-width: 800px; }
+/* Global Paragraph Left-Alignment */
+p { 
+  margin-bottom: 1rem; 
+  max-width: 800px; 
+  text-align: left !important; /* Forces left alignment for all descriptions */
+  line-height: 1.6;
+}
 
 .hero-text {
   font-size: 1.5rem;
