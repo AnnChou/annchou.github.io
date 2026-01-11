@@ -399,6 +399,17 @@ body.dark-mode .icon-bar a {
   border: 1px solid #333;
 }
 
+/* Specific Dark Mode Button Override (Darker Green) */
+body.dark-mode .button-ghost {
+  background-color: #1b3d21 !important; /* Dark Forest Green */
+  color: #81c784 !important;            /* Softer Light Green text */
+  border-color: #2e7d32 !important;     /* Deep Green Border */
+}
+
+/* Darker Green Glow for Dark Mode */
+body.dark-mode .glow-green {
+  box-shadow: 0 0 15px 3px rgba(27, 61, 33, 0.8) !important; /* Deeper Green Glow */
+}
 /* ----------------------------------
    📱 RESPONSIVE MEDIA QUERIES
 ---------------------------------- */
