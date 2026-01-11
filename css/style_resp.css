@@ -532,6 +532,56 @@ body.dark-mode .substack-box {
 body.dark-mode .substack-box a {
     color: #ff85a2;
 }
+
+/*---
+tweat for workshop page
+---*/
+/* Featured Event Card */
+.featured-event {
+    background: #fffdf5;
+    border: 2px solid #e67e22;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0 4rem;
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.1);
+}
+
+.dark-mode .featured-event {
+    background: #2c2520;
+    border-color: #d35400;
+}
+
+.event-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+/* Section Pillars */
+.workshop-section {
+    margin-bottom: 5rem;
+}
+
+.workshop-section h2 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Clean Project Cards */
+.project-card {
+    background: var(--card-bg, #fff);
+    border: 1px solid #eee;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
 /* ----------------------------------
    📱 General Section Layout
 ---------------------------------- */
@@ -1314,6 +1364,7 @@ body.light-mode .icon-bar a {
   .icon-bar a.youtube   { background: #bb1100; }
   .icon-bar a.substack  { background: #ff6719; }
 }
+
 
 
 
