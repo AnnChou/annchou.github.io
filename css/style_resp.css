@@ -7,6 +7,13 @@
   box-sizing: border-box;
 }
 
+/* --- 1. Fix the "White Border" and Background globally --- */
+/* This ensures the entire browser window background turns dark */
+html, body {
+    background-color: #ffffff; /* Default light */
+    transition: background-color 0.3s ease;
+}
+
 /* --- 3. Remove Margins & Spread Content to Edge --- */
 .main {
     max-width: 100% !important; /* Removes the 900px limit */
@@ -16,9 +23,12 @@
 }
 
 /* Add padding inside sections so text doesn't touch the screen edge */
+/* Internal sections now handle their own side-spacing */
 section {
-    padding-left: 5%;
-    padding-right: 5%;
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 5%; /* 5% padding keeps text from touching the glass */
+    margin: 0 auto;
 }
 
 /* --- 4. Fix Footer Width & Color --- */
@@ -1246,6 +1256,7 @@ body.dark-mode {
     color: #e0e0e0;
 }
 
+
 /* --- 2. Fix the Title/Subtitle not responding to Dark Mode --- */
 body.dark-mode .site-title, 
 body.dark-mode .highlight-subtitle,
@@ -1254,6 +1265,11 @@ body.dark-mode h2 {
     color: #ffffff !important;
 }
 
+
+body.dark-mode h3,
+{
+  color: #f2f2f2;
+}
 
 body.dark-mode .topnav {
   background-color: #1e1e1e;
@@ -1296,11 +1312,7 @@ body.dark-mode .highlight-subtitle {
   color: #f6d1b6;
 }
 
-body.dark-mode h2, 
-body.dark-mode h3,
-body.dark-mode .site-title {
-  color: #f2f2f2;
-}
+
 
 body.dark-mode section h2 {
   border-bottom: 3px solid #f6a21d;
@@ -1315,11 +1327,11 @@ body.dark-mode .scroll-container {
 
 /* Footer Dark Mode specific */
 body.dark-mode footer {
-    background-color: #1a1a1a; /* Slightly darker for dark mode */
+    background-color: #1a1a1a !important; /* Slightly darker for dark mode */
     border-top: 1px solid #333; /* Removes white border look */
 }
 
-body.dark-mode footer,
+
 body.dark-mode .flex-container2 {
   background-color: #111;
   color: #aaa;
@@ -1478,6 +1490,7 @@ body.light-mode .icon-bar a {
     transform: translateY(-15px); /* scroll upward subtly */
   }
 }
+
 
 
 
