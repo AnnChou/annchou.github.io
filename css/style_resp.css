@@ -1214,6 +1214,7 @@ body.dark-mode .evidence-grid .gallery-item {
   display: block;
   width: 100%;
   transition: transform 0.3s ease;
+}
 
 
 /* Specific button icon animation */
@@ -1528,6 +1529,7 @@ body.light-mode .icon-bar a {
     transform: translateY(-15px); /* scroll upward subtly */
   }
 }
+
 
 
 
