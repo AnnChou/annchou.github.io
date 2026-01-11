@@ -399,6 +399,13 @@ body.dark-mode .icon-bar a {
   border: 1px solid #333;
 }
 
+body.dark-mode .icon-bar a:hover {
+  background-color: #000000 !important; /* True black background */
+  color: #ffffff !important;            /* Pure white icons */
+  transform: translateX(-8px);
+  border-color: #4caf50 !important;    /* Green accent border on hover */
+}
+
 /* Specific Dark Mode Button Override (Darker Green) */
 body.dark-mode .button-ghost {
   background-color: #222 !important; /* Dark Forest Green #1b3d21 */
@@ -409,6 +416,12 @@ body.dark-mode .button-ghost {
 /* Darker Green Glow for Dark Mode */
 body.dark-mode .glow-green {
   box-shadow: 0 0 15px 3px rgba(27, 61, 33, 0.8) !important; /* Deeper Green Glow */
+}
+
+body.dark-mode .button-ghost:hover {
+  background-color: #2e7d32 !important; /* Brighter forest green */
+  color: #ffffff !important;           /* High contrast text */
+  transform: scale(1.05);
 }
 /* ----------------------------------
    📱 RESPONSIVE MEDIA QUERIES
