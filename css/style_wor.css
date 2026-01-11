@@ -355,9 +355,9 @@ body.dark-mode .filter-btn {
 
 /* Text Responsiveness - Fixing Eco-Illum & Practices titles , Philosophy, Site Titles, etc*/
 body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, 
-body.dark-mode p, 
+
 body.dark-mode .hero-text, 
-body.dark-mode li,
+
 body.dark-mode .site-title, 
 body.dark-mode .pillar-header,
 body.dark-mode .highlight-subtitle {
@@ -366,9 +366,14 @@ body.dark-mode .highlight-subtitle {
 
 body.dark-mode .highlight-subtitle { color: #f6d1b6 !important; }
 
+/* High Contrast Text Fix for Eco-materials paragraphs */
+body.dark-mode p, body.dark-mode li {
+  color: #f0f0f0 !important; /* Brighter for dark backgrounds */
+}
+
 body.dark-mode figcaption { color: #f0f0f0 !important; }
 
-/* Theo Gardner Video Credit Inline Override */
+/* Gardner Video Credit Inline Override */
 body.dark-mode .dark-mode-text {
   background-color: #1a1a1a !important;
   color: #bbbbbb !important;
