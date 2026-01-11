@@ -469,6 +469,36 @@ body.dark-mode .button-ghost:hover {
   color: #ffffff !important;           /* High contrast text */
   transform: scale(1.05);
 }
+
+/* --- ACCORDION DARK MODE (NEW) --- */
+body.dark-mode .accordion-toggle {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  font-weight: 600;
+  border-radius: 6px;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+body.dark-mode .accordion-toggle:hover { background-color: #333; }
+
+body.dark-mode .accordion-content {
+  padding: 1rem;
+  background-color: #121212;
+  color: #f0f0f0;
+  border-left: 4px solid #ffd166;
+  border-radius: 0 0 6px 6px;
+  display: none;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  clear: both;
+}
+body.dark-mode .accordion-content figcaption { color: #ccc; text-align: center; }
+   
 /* ----------------------------------
    📱 RESPONSIVE MEDIA QUERIES
 ---------------------------------- */
