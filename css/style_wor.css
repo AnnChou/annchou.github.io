@@ -330,6 +330,30 @@ margin: 0 auto;
   transition: all 0.3s ease;
 }
 
+/* project grid is on index.html */
+/* -----
+   🧱 PROJECT GRID (2 Columns Desktop)
+---- */
+.project-grid {
+  display: grid;
+  /* Creates exactly 2 equal columns on large screens */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* Ensure the cards inside look consistent */
+.project-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
 /* evidence-grid , support-grid, substack-box on practice.html */
 .evidence-grid {
   display: grid;,
@@ -630,6 +654,13 @@ body.dark-mode .accordion-content {
 }
 body.dark-mode .accordion-content figcaption { color: #ccc; text-align: center; }
 
+/* 🌓 Dark Mode Sync for Projects */
+body.dark-mode .project-card {
+  background-color: #1a1a1a !important;
+  border-color: #333 !important;
+  color: #ffffff !important;
+}
+
 /* 🌓 Dark Mode Sync for Support Items */
 body.dark-mode .support-item {
     background-color: #1a1a1a !important;
@@ -646,6 +677,10 @@ body.dark-mode .support-item:hover {
 ---------------------------------- */
 @media screen and (max-width: 768px) {
   section { padding: 3rem 5%; }
+
+  .project-grid {
+    grid-template-columns: 1fr; /* Stacks to 1 column on tablets/phones */
+  }
    
   .evidence-grid, .lightbox-gallery {
     grid-template-columns: 1fr; /* Stacks 2x2 to 1 column */
