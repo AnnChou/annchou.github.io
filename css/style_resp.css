@@ -1142,14 +1142,14 @@ body.dark-mode .evidence-grid .gallery-item {
 .icon-bar a:hover {
   background-color: #000;
 }
-
+/*
 .instagram { background: #bc2bac; }
 .facebook  { background: #3B5998; }
 .twitter   { background: #55ACEE; }
 .linkedin  { background: #007bb5; }
 .youtube   { background: #bb1100; }
 .substack  { background: #ff6719; }
-
+*/
 .icon-bar a.instagram,
 .icon-bar a.facebook,
 .icon-bar a.twitter,
@@ -1450,6 +1450,7 @@ body.light-mode .icon-bar a {
   .icon-bar a.youtube   { background: #bb1100; }
   .icon-bar a.substack  { background: #ff6719; }
 }
+
 
 
 
