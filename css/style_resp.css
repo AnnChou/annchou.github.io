@@ -202,6 +202,8 @@ p {
   background-color: #f2f2f2;
 }
 
+
+
 /* ----------------------------------
    🖱️ FIGURES – Shared and Scoped
 ---------------------------------- */
@@ -398,6 +400,60 @@ figcaption {
   margin-right: 10px;
   border-radius: 8px;
 }
+
+/*----------
+Layout tweak for practicse/bio
+-----------*/
+
+/* Pillar Headings */
+.pillar-header {
+    text-align: center;
+    margin: 4rem 0 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #ccc;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color, #333);
+}
+
+/* Methodologies Grid */
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.method-card {
+    background: rgba(0,0,0,0.03);
+    padding: 1.5rem;
+    border-left: 4px solid #666;
+    border-radius: 4px;
+}
+
+.dark-mode .method-card {
+    background: rgba(255,255,255,0.05);
+}
+
+/* Exhibition Items */
+.exhibit-item {
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 1px solid #ddd;
+}
+
+.easy-read-box {
+    background: #fdfdfd;
+    padding: 2rem;
+    border: 1px dashed #ccc;
+    margin: 2rem 0;
+}
+
+.dark-mode .easy-read-box {
+    background: #1a1a1a;
+    border-color: #444;
+}
+
 
 /* ----------------------------------
    📱 General Section Layout
@@ -1103,5 +1159,6 @@ body.light-mode .icon-bar a {
   .icon-bar a.youtube   { background: #bb1100; }
   .icon-bar a.substack  { background: #ff6719; }
 }
+
 
 
