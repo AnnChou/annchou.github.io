@@ -98,7 +98,7 @@ h1 {
 .highlight-subtitle {
   font-style: italic;
   font-family: 'Georgia', serif;
-  font-size: 1.8rem /* Slightly larger */
+  font-size: 1.8rem; /* Slightly larger */
   font-weight: 800;   /* Bolder than body text */
   color: #C66A53;      /* Accent color to match your palette */
   margin-bottom: 2rem;
@@ -292,7 +292,7 @@ figcaption {
   border: none;
   border-radius: 8px;
   text-transform: uppercase;
-  text-decoration: none; .
+  text-decoration: none; 
   cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   display: inline-block;
@@ -736,7 +736,7 @@ body.dark-mode figcaption {
 .project-grid, .method-grid {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* was 250px */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* was 250px */
   margin-top: 1rem;
   margin-bottom: 3rem;
   overflow: hidden;
@@ -861,9 +861,11 @@ body.dark-mode figcaption {
 .project .button,
 .project .button-ghost,
 .project .cta {
-  display: inline-block;
-  margin-top: 1rem; /* Adjust as needed */
+   display: inline-flex;
+  /*display: inline-block;*/
+  margin-top: auto; /* Adjust as needed */
   position: static; /* Ensure they stay in normal flow */
+  align-self: flex-start; /* Prevents the button from stretching to full width */
   clear: both;
 }
 
@@ -1234,18 +1236,23 @@ body.dark-mode .shop-links a {
    👣 Media query
 ---------------------------------- */
 @media screen and (max-width: 480px) {
+  section {
+    padding: 1.5rem 1rem; /* Reduced from 4rem */
+  }
   .project-grid {
     grid-template-columns: 1fr; /* stack tiles vertically */
+    gap: 1rem; /* Tighter spacing between cards */
     padding: 0 1rem; /* light side padding */
   }
 
   .project {
     padding: 0.5rem;
+    margin-top: 0;
     min-height: unset;
   }
 
   .project img, .project-card img {
-    max-height: 250px; /* tighter image layout for mobile */
+    max-height: 200px; /* tighter image layout for mobile */
   }
 
   .project h3 {
@@ -1385,11 +1392,34 @@ body.dark-mode .flex-container2 {
   color: #aaa;
 }
 
-
+/*
 body.dark-mode .icon-bar a {
   background-color: #222;
   color: #ddd;
 }
+*/
+
+/* --- 🌙 DARK MODE ICON BAR FIX --- */
+/* Fixes the "white on white" issue by forcing brand colors */
+body.dark-mode .icon-bar a {
+  color: #ffffff !important; 
+  opacity: 1;
+}
+
+/* Re-stating brand colors to override any inheritance */
+/*
+body.dark-mode .icon-bar a.instagram { background: #bc2bac; }
+body.dark-mode .icon-bar a.facebook  { background: #3B5998; }
+body.dark-mode .icon-bar a.twitter   { background: #55ACEE; }
+body.dark-mode .icon-bar a.linkedin  { background: #007bb5; }
+body.dark-mode .icon-bar a.youtube   { background: #bb1100; }
+body.dark-mode .icon-bar a.substack  { background: #ff6719; }
+*/
+/* If you have a general background on the bar itself */
+body.dark-mode .icon-bar {
+  background: transparent; 
+}
+
 
 body.dark-mode .icon-bar a:hover {
   background-color: #000;
@@ -1420,6 +1450,7 @@ body.light-mode .icon-bar a {
   .icon-bar a.youtube   { background: #bb1100; }
   .icon-bar a.substack  { background: #ff6719; }
 }
+
 
 
 
