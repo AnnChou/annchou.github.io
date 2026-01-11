@@ -1129,60 +1129,29 @@ body.dark-mode .evidence-grid .gallery-item {
   z-index: 1000;
 }
 
-/* Light Mode Defaults (Light Grey Background, Black Text) */
-.icon-bar a, 
-.icon-bar button {
-  background-color: #e0e0e0; /* light grey */
-  color: #000000 !important; /* black text/icons */
-  display: block;
-  text-align: center;
-  padding: 10px;
-  font-size: 18px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 44px; /* Ensure consistent width */
-}
-
-/*
 .icon-bar a {
   display: block;
   text-align: center;
   padding: 10px;
   color: white;
   font-size: 18px;
-  background-color: inherit; /* fallback 
+  background-color: inherit; /* fallback */
+  background-color: #ddd;
+  color: #222;
   transition: all 0.3s ease;
 }
-.icon-bar button {
-  background-color: #ffffff;
-  color: #333333;     
-  color: white;
-  border: none;
-  font-size: 18px;
-  padding: 10px;
-  cursor: pointer;
-  display: block;
-  width: 100%;
-  transition: transform 0.3s ease;
-}*/
-/*
+
 .icon-bar a:hover {
-  background-color: #000;
-}*/
-.icon-bar a:hover, 
-.icon-bar button:hover {
-  background-color: #d0d0d0;
+  background-color: #fff;
+  color: #fff;
 }
-/*
+
 .instagram { background: #bc2bac; }
 .facebook  { background: #3B5998; }
 .twitter   { background: #55ACEE; }
 .linkedin  { background: #007bb5; }
 .youtube   { background: #bb1100; }
 .substack  { background: #ff6719; }
-*/
 
 .icon-bar a.instagram,
 .icon-bar a.facebook,
@@ -1193,21 +1162,17 @@ body.dark-mode .evidence-grid .gallery-item {
   color: white;
 }
 
+.icon-bar button {
+  background-color: #444;
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  transition: transform 0.3s ease;
 
-
-.icon-bar button:hover .toggle-icon {
-  transform: rotate(20deg) scale(1.1);
-  opacity: 0.9;
-}
-
-.icon-bar .toggle-icon {
-  display: inline-block;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-/* Ko-fi floating button (iframe/container based) */
-body:not(.dark-mode) .floatingchat-container {
-  filter: none; /* ensures normal light styling */
-}
 
 /* Specific button icon animation */
 .icon-bar .toggle-icon {
@@ -1425,33 +1390,16 @@ body.dark-mode .flex-container2 {
   color: #aaa;
 }
 
-/*
 body.dark-mode .icon-bar a {
   background-color: #222;
   color: #ddd;
 }
-*/
 
-/* Dark Mode Overrides (Dark Grey Background, White Text) */
-body.dark-mode .icon-bar a,
-body.dark-mode .icon-bar button {
-  background-color: #333333; /* dark grey */
-  color: #ffffff !important; /* white text/icons */
+body.dark-mode .icon-bar a:hover {
+  background-color: #000;
+  color: #fff;
 }
 
-body.dark-mode .icon-bar a:hover,
-body.dark-mode .icon-bar button:hover {
-  background-color: #444444;
-}
-
-body.dark-mode a {
-  color: #ffdf6b; /* warm yellow for readability */
-  text-decoration: underline;
-}
-
-body.dark-mode a:hover {
-  color: #ffd000;
-}
 
 /* -----------------------------
    🌓 Light mode force
@@ -1468,6 +1416,7 @@ body.light-mode .icon-bar a {
   .icon-bar a.youtube   { background: #bb1100; }
   .icon-bar a.substack  { background: #ff6719; }
 }
+
 
 
 
