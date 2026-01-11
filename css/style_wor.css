@@ -680,7 +680,23 @@ body.dark-mode .support-item {
 body.dark-mode .support-item:hover {
     background-color: #222 !important;
 }
-   
+
+/* Dark Mode Override for high visibility */
+body.dark-mode .support-item a,
+body.dark-mode .support-item strong,
+body.dark-mode .support-item p {
+  color: #f0f0f0 !important; /* High contrast white for text */
+}
+
+body.dark-mode .support-item a {
+  color: #f6a21d !important; /* Bright Gold for the actual clickable links */
+  text-decoration-color: #f6a21d;
+}
+
+body.dark-mode .support-item a:hover {
+  color: #ffffff !important;
+  text-decoration: underline double;
+}
 /* ----------------------------------
    📱 RESPONSIVE MEDIA QUERIES
 ---------------------------------- */
