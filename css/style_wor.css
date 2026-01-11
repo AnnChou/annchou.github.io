@@ -315,13 +315,24 @@ support-grid {
 .icon-bar a {
   display: block;
   text-align: center;
-  padding: 10px;
-  font-size: 18px;
+  padding: 7px;
+  font-size: 14px;
   background-color: inherit; /* fallback */
   background-color: #ddd;
   color: #222;
+  box-sizing: border-box;
   transition: all 0.3s ease;
 }
+
+/* 
+.icon-bar a.instagram,
+.icon-bar a.facebook,
+.icon-bar a.twitter,
+.icon-bar a.linkedin,
+.icon-bar a.youtube,
+.icon-bar a.substack {
+  color: white;
+}*/
 
 .icon-bar .toggle-icon {
   display: inline-block;
@@ -413,7 +424,7 @@ body.dark-mode .icon-bar a {
 body.dark-mode .icon-bar a:hover {
   background-color: #000000 !important; /* True black background */
   color: #ffffff !important;            /* Pure white icons */
-  transform: translateX(-8px);
+  transform: translateX(-1px);
   border-color: #4caf50 !important;    /* Green accent border on hover */
 }
 
