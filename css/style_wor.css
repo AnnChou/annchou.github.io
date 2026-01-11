@@ -401,7 +401,7 @@ body.dark-mode .icon-bar a {
 
 /* Specific Dark Mode Button Override (Darker Green) */
 body.dark-mode .button-ghost {
-  background-color: #1b3d21 !important; /* Dark Forest Green */
+  background-color: #222 !important; /* Dark Forest Green #1b3d21 */
   color: #81c784 !important;            /* Softer Light Green text */
   border-color: #2e7d32 !important;     /* Deep Green Border */
 }
