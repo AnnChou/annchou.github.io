@@ -1174,12 +1174,14 @@ body.dark-mode .evidence-grid .gallery-item {
 .icon-bar a {
   display: block;
   text-align: center;
-  padding: 10px;
+  padding: 7px;
   color: white;
-  font-size: 18px;
+  font-size: 14px;
+  width: 40px; /* Add this line to force a specific narrow width */
   background-color: inherit; /* fallback */
   background-color: #ddd;
   color: #222;
+  box-sizing: border-box;
   transition: all 0.3s ease;
 }
 
@@ -1529,6 +1531,7 @@ body.light-mode .icon-bar a {
     transform: translateY(-15px); /* scroll upward subtly */
   }
 }
+
 
 
 
