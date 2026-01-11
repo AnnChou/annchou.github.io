@@ -417,6 +417,25 @@ footer, .flex-container2 {
 }
 
 /* ----------------------------------
+   ☕ Ko-fi Widget Positioning & Layering
+---------------------------------- */
+#kofi-widget-overlay {
+  z-index: 999 !important; /* One layer below your icon-bar (1000) */
+  bottom: 20px !important;
+  right: 70px !important;  /* Moves it left of the narrow icon-bar */
+  transition: all 0.3s ease;
+}
+
+/* Adjust Ko-fi for mobile so it doesn't crowd the screen */
+@media screen and (max-width: 480px) {
+  #kofi-widget-overlay {
+    right: auto !important;
+    left: 20px !important; /* Move to the opposite side on small phones */
+    bottom: 15px !important;
+  }
+}
+
+/* ----------------------------------
    🌓 ULTIMATE DARK MODE OVERRIDES
 ---------------------------------- */
 body.dark-mode, html.dark-mode {
