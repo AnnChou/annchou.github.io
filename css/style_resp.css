@@ -35,13 +35,21 @@ h1, h2, h3 { text-align: left; }
   font-size: 17px;
 }
 
-.topnav a:hover { background-color: #ddd; color: black; }
-.topnav a.active { background-color: #C66A53; color: white; }
-.topnav .icon { display: none; }
+.topnav a:hover { 
+   background-color: #ddd; color: black; }
+.topnav a.active { 
+   background-color: #C66A53; color: white; }
+.topnav .icon { 
+   display: none; }
 
 /* Dropdown styling */
-.dropdown { position: relative; display: inline-block; }
-.dropbtn { color: inherit; text-decoration: none; padding: 14px 16px; display: inline-block; }
+/* Dropdown container */
+.dropdown { 
+   position: relative; display: inline-block; }
+/* Dropdown button */
+.dropbtn { 
+   color: inherit; text-decoration: none; padding: 14px 16px; display: inline-block; }
+/* Dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -50,24 +58,39 @@ h1, h2, h3 { text-align: left; }
   box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 10;
 }
-.dropdown-content a { color: #333; padding: 10px 16px; display: block; text-decoration: none; }
+/* Links inside dropdown */
+.dropdown-content a { 
+   color: #333; padding: 10px 16px; display: block; text-decoration: none; }
+/* Show dropdown on hover */
 .dropdown:hover .dropdown-content { display: block; }
+/* Optional: Hover effect on links */
+.dropdown-content a:hover { background-color: #f2f2f2; }
+
 
 /* ==========================================================
    3. 🎨 TYPOGRAPHY & HERO
    ========================================================== */
-.site-title, h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 10px; }
-h2 { font-size: 2rem; font-weight: 600; border-bottom: 3px solid #f6a21d; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
-h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem; color: #444; }
+/* Headings */
+.site-title, h1 { 
+   font-size: 2.5rem; /* ~40px */
+   font-weight: bold; margin-bottom: 10px; }
+h2 { 
+   font-size: 2rem; /* ~32px */
+   font-weight: 600; border-bottom: 3px solid #f6a21d; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+h3 { 
+   font-size: 1.5rem; /* ~24px */
+   font-weight: 600; margin-bottom: 0.75rem; color: #444; }
 
+/*  Subtitle and highlight-subtitle class for intro text */
 .highlight-subtitle {
   font-style: italic;
   font-family: 'Georgia', serif;
   font-size: 1.8rem;
-  font-weight: 800;
-  color: #C66A53;
+  font-weight: 800;   /* Bolder than body text */
+  color: #C66A53;      /* Accent color */
   margin-bottom: 2rem;
   padding-left: 1rem;
+  /* text-align: left;*/
 }
 
 .highlight-subtitle::before {
@@ -76,25 +99,59 @@ h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem; color: #444; }
   font-size: 1.2rem;
 }
 
-.subtitle { font-size: 1.2rem; margin-bottom: 1rem; max-width: 800px; }
+.subtitle { 
+   font-size: 1.2rem;  /* 18px */
+   margin-bottom: 1rem; max-width: 800px; }
+
 p { font-size: 1rem; margin-bottom: 1rem; max-width: 800px; }
 
 .hero-text {
   font-size: 1.5rem;
-  line-height: 1.4;
-  max-width: 700px;
+  line-height: 1.4;   /* comfortable spacing */
+  max-width: 700px;   /* readable width */
   margin: 0 auto 2rem;
   text-align: center;
   font-weight: 500;
   color: #222;
 }
-.hero-text strong { color: #6a4f4b; }
-.hero-text em { font-style: italic; color: #9c5e4a; }
+.hero-text strong { 
+   color: #6a4f4b; }  /* highlight keywords */
+.hero-text em { 
+   font-style: italic; color: #9c5e4a; }
 
 /* ==========================================================
-   4. 🧱 PROJECT CARDS & GRIDS
+   4. 🧱 SECTIONs, PROJECT CARDS & GRIDS
    ========================================================== */
-section { padding: 4rem 2rem; margin: 0 auto; max-width: 1400px; }
+section { 
+   padding: 4rem 2rem; margin: 0 auto; max-width: 1400px; }
+
+/* Section titles */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #f6a21d;
+  display: block; /* inline-block; */
+  padding-bottom: 0.5rem;
+  color: #333;
+  text-align: left; 
+}
+
+/*
+.project-banner-note {
+  background-color: #f5f5f5; /* soft neutral background 
+  color: #444;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #4caf50; /* a touch of green to echo your access design theme 
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+*/
 
 .project-grid, .method-grid {
   display: grid;
@@ -102,12 +159,16 @@ section { padding: 4rem 2rem; margin: 0 auto; max-width: 1400px; }
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-top: 1rem;
   margin-bottom: 3rem;
+/* overflow: hidden; */
 }
 
 .project, .project-card, .method-card {
   display: flex;
   flex-direction: column;
-  background: white;
+  background: rgba(0,0,0,0.03);
+  /* background: white; 
+   border-left: 4px solid #666;
+   */
   padding: 1.5rem;
   border-radius: 10px;
   border: 1px solid #eee;
@@ -119,7 +180,7 @@ section { padding: 4rem 2rem; margin: 0 auto; max-width: 1400px; }
 
 .project:hover, .project-card:hover, .method-card:hover { transform: translateY(-5px); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
 
-.project img, .project-card img {
+.project img, .project-card img, .project figure {
   width: 100%;
   height: 250px;
   object-fit: cover;
@@ -129,19 +190,64 @@ section { padding: 4rem 2rem; margin: 0 auto; max-width: 1400px; }
 
 .project p { flex-grow: 1; margin-bottom: 1rem; }
 
+/*
+.project figcaption {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.project h3, .project-card h3 {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.project p, .project-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Pushes buttons to bottom 
+}
+
+.project p:last-of-type {
+  margin-bottom: 0.5rem;
+}
+
+.project a.cta,
+.project a.button,
+.project a.button-ghost {
+  display: inline-block;   /* breathing room from the text above 
+  margin-top: 1rem;
+}
+*/
+
 /* FIX: Forces buttons to the bottom so they never overlap captions */
 .project .button, .project .cta, .project .button-ghost {
   margin-top: auto; 
   align-self: flex-start;
 }
 
+/*
+.project .button,
+.project .button-ghost,
+.project .cta {
+   display: inline-flex;
+  /*display: inline-block;
+  margin-top: auto; /* Adjust as needed 
+  position: static; /* Ensure they stay in normal flow 
+  align-self: flex-start; /* Prevents the button from stretching to full width 
+  clear: both;
+}
+*/
+
 /* ==========================================================
    5. 🖱️ BUTTONS & GLOWS
    ========================================================== */
 .cta, .button, .button-ghost {
   height: 48px;
-  padding: 0 24px;
+  padding: 0 24px;  /* horizontal padding only */
   display: inline-flex;
+   /* line-height: 48px; /* vertically center single-line text */
+/* display: inline-block; */
   align-items: center;
   justify-content: center;
   border-radius: 8px;
@@ -149,24 +255,155 @@ section { padding: 4rem 2rem; margin: 0 auto; max-width: 1400px; }
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
+   /* 
+  vertical-align: middle;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  white-space: nowrap;
+  box-sizing: border-box;
+   */
 }
 
 .cta { background-color: #f6a21d; color: #fff; text-transform: uppercase; }
-.button { background-color: #333; color: white; }
-.button-ghost { color: #4caf50; border: 2px solid #4caf50; }
+.cta:hover {
+  background-color: #e48c03;
+}
+
+.button { 
+   background-color: #333; 
+   color: white; 
+   /*
+   border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 4px 6px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+   */
+}
+ .button:hover {
+  background-color: #000000;
+} 
+
+.button-ghost { 
+   color: #4caf50; 
+   border: 2px solid #4caf50; 
+/*  
+  background-color: transparent;
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+   */
+}
+
+.button-ghost:hover {
+  background-color: #e8f5e9;
+  border-color: #388e3c;
+  color: #2e7d32;
+}
+
+
+.button-group {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* glow effects on buttons */
 
 .glow { box-shadow: 0 0 12px 2px rgba(246, 162, 29, 0.6); }
 .glow-ink { box-shadow: 0 0 10px 1px rgba(50, 50, 50, 0.5); }
 .glow-green { box-shadow: 0 0 12px 2px rgba(76, 175, 80, 0.6); }
 
+/* Ensure glow effects don't shift layout */
+.glow,
+.glow-ink,
+.glow-green {
+  box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.2);
+}
+
 /* ==========================================================
    6. 📸 FIGURES, GALLERIES & SCROLLING
    ========================================================== */
-figcaption { font-family: 'Georgia', serif; font-style: italic; font-size: 0.9rem; color: #666; text-align: center; margin: 0.5rem 0 1rem; }
+/* 🌐 Default figure spacing */
+/*figure {
+  margin: 1.5rem 0;
+}*/
+/* 🔤 Base caption style for all figures */
+figcaption { 
+   font-family: 'Georgia', serif; 
+   font-style: italic; 
+   font-size: 0.9rem; 
+   color: #666; 
+   text-align: center; 
+   margin: 0.5rem 0 1rem; 
+   /*
+   line-height: 1.4;
+   padding: 0 1rem;
+   */
+}
 
-.wide-figure { grid-column: 1 / -1; margin-top: 2rem; text-align: center; }
-.wide-figure img { max-width: 100%; height: auto; border-radius: 10px; }
+/*
+.figure-block img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain; /* Ideal for informational banners */
+/*
+  border-radius: 8px;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.3); /* inner shadow */
+/*
+}
+*/
 
+
+/* 🐇 Optional alignment overrides */
+/*
+.rabbit-figure {
+  text-align: left;
+}
+
+.bio-figure {
+  text-align: center;
+}
+*/
+
+/* wide figure */
+
+.wide-figure { 
+   grid-column: 1 / -1; /* spans full width in grid */
+   margin-top: 2rem; 
+   text-align: center; }
+
+.wide-figure img { 
+   max-width: 100%; 
+   height: auto; 
+   border-radius: 10px; 
+   /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.wide-figure figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* scrolling image bar - currently on index.html */
 .scroll-container { background-color: #333; overflow-x: auto; white-space: nowrap; padding: 10px; }
 .scroll-container img { height: 300px; margin-right: 10px; border-radius: 8px; }
 
@@ -181,20 +418,128 @@ figcaption { font-family: 'Georgia', serif; font-style: italic; font-size: 0.9re
 .gallery-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: transform 0.3s; cursor: zoom-in; }
 .gallery-item:hover img { transform: scale(1.04); }
 
+/* Exhibition Items */
+.exhibit-item {
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 1px solid #ddd;
+}
+
+/* ✅ Parallax Banner Container */
+/*
+.parallax-banner {
+  position: relative;
+  overflow: hidden;
+  margin: 2rem 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+*/
+
 /* ==========================================================
    7. 🏛️ SPECIALIZED COMPONENTS (Practices/Bio/Workshops)
    ========================================================== */
-.pillar-header { text-align: center; margin: 4rem 0 2rem; padding-bottom: 1rem; border-bottom: 2px solid #ccc; text-transform: uppercase; letter-spacing: 2px; }
+/* CTA Section General Layout */
+.cta-container {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 3px double #ddd;
+    color: var(--text-color, #333);
+}
 
-.collab-card { background: #f4f4f4; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; border: 1px solid #eee; }
+/* === on index.html === */
+/* Dual Track section */
+#dual-track {
+  /* background-color: #f5f5f5; */
+}
 
-.support-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-.support-item { padding: 1.5rem; border: 1px solid #ddd; border-radius: 8px; text-align: center; text-decoration: none; color: inherit; display: block; }
+/* AI Portfolio section */
+#ai-portfolio {
+  /* background-color: #e8f0fe; */
+}
+/*
+.support {
+  text-align: left;
+}*/
 
-.featured-event { background: #fffdf5; border: 2px solid #e67e22; border-radius: 12px; padding: 2rem; margin: 2rem 0 4rem; }
-.event-details { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem; font-weight: bold; }
+/* ==== on practice.html ===== */
+.pillar-header { 
+   text-align: center; margin: 4rem 0 2rem; padding-bottom: 1rem; 
+   border-bottom: 2px solid #ccc; text-transform: uppercase; letter-spacing: 2px; }
 
+.collab-card { 
+   background: #f4f4f4; padding: 2rem; border-radius: 12px; 
+   margin-bottom: 2rem; border: 1px solid #eee; }
+
+/* Support Grid & Items */
+.support-grid { 
+   display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+   gap: 1.5rem; margin: 2rem 0; }
+.support-item { 
+   padding: 1.5rem; border: 1px solid #ddd; border-radius: 8px; text-align: center;
+   text-decoration: none; color: inherit; display: block; }
+.support-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(0,0,0,0.05);
+}
+.easy-read-box {
+    background: #fdfdfd;
+    padding: 2rem;
+    border: 1px dashed #ccc;
+    margin: 2rem 0;
+}
+
+/*
+#about {
+  /* background-color: #fff8f0;*/
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+/* Connect section */
+/*
+#connect {
+  background-color: #f0f8ff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+#about #connect {
+  margin-top: 2rem;
+}
+#triple-identity {
+  margin: 2rem auto;
+  max-width: 960px;
+  padding: 0 1rem;
+}
+*/
+
+/* Substack Box */
 .substack-box { text-align: center; background: #fffafa; padding: 2rem; border: 1px solid #ffe4e1; border-radius: 8px; }
+.substack-box a {
+    color: #d63384; /* A distinct color for the newsletter link */
+}
+
+/* ===== on workshop.html ======*/
+/* Featured Event Card */
+.featured-event { 
+   background: #fffdf5; border: 2px solid #e67e22; border-radius: 12px;
+   padding: 2rem; margin: 2rem 0 4rem; }
+.event-details { 
+   display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem; font-weight: bold; }
+/* Section Pillars */
+.workshop-section {
+    margin-bottom: 5rem;
+}
+
+.workshop-section h2 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+
 
 /* ==========================================================
    8. 📱 SOCIAL ICON BAR & FOOTER
@@ -217,14 +562,99 @@ figcaption { font-family: 'Georgia', serif; font-style: italic; font-size: 0.9re
    9. 🌓 DARK MODE OVERRIDES
    ========================================================== */
 body.dark-mode { background-color: #121212; color: #e0e0e0; }
-body.dark-mode section { background-color: #1a1a1a; }
-body.dark-mode h2, body.dark-mode h3 { color: #f2f2f2; }
+
+body.dark-mode section {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+/* body.dark-mode h2, body.dark-mode h3 { color: #f2f2f2; } */
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #f6f6f6;
+  border-bottom: 2px solid #f6a21d;
+}
 body.dark-mode .project, body.dark-mode .project-card { background-color: #1e1e1e; border-color: #333; color: #ddd; }
-body.dark-mode .collab-card { background: #2a2a2a; border-color: #444; }
+
+body.dark-mode .collab-card { background: #2a2a2a; color: #f0f0f0; border-color: #444; }
+
+body.dark-mode .method-card {
+    background: rgba(255,255,255,0.05);
+}
+
+body.dark-mode figcaption {
+  color: #f0f0f0;
+  font-weight: 500;
+}
+
+/* Hero text dark mode */
+body.dark-mode .hero-text {
+  color: #f0f0f0;           /* light text for dark bg */
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+body.dark-mode .hero-text strong {
+  color: #ffd166;            /* warm accent for keywords */
+}
+body.dark-mode .hero-text em {
+  color: #06d6a0;            /* secondary accent */
+  font-style: italic;
+}
+
+body.dark-mode .easy-read-box {
+    background: #1a1a1a;
+    border-color: #444;
+}
+
+body.dark-mode .support-item {
+    border-color: #444;
+}
+
+body.dark-mode .support-item:hover {
+    background-color: rgba(255,255,255,0.05);
+}
+
+body.dark-mode .substack-box {
+    background: #1e1a1a;
+    border-color: #4a3a3a;
+    color: #f0f0f0;
+}
+body.dark-mode .substack-box a {
+    color: #ff85a2;
+}
 body.dark-mode .featured-event { background: #2c2520; border-color: #d35400; }
 body.dark-mode a { color: #ffdf6b; }
 body.dark-mode .scroll-container { background-color: #1a1a1a; }
 body.dark-mode figcaption { color: #f0f0f0; }
+
+body.dark-mode #about {
+  background-color: #1a1a1a;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  color: #e0e0e0;
+}
+/*
+body.dark-mode #connect {
+  background-color: #121212;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  color: #e0e0e0;
+}
+body.dark-mode #about h2,
+body.dark-mode #connect h2 {
+  color: #f6f6f6;
+  border-bottom: 2px solid #f6a21d;
+}
+
+body.dark-mode #about a,
+body.dark-mode #connect a {
+  color: #f6a21d;
+}
+*/
+
+
 
 /* ==========================================================
    10. 📱 RESPONSIVE DENSITY
