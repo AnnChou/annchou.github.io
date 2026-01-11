@@ -914,6 +914,40 @@ body.dark-mode .gallery-item:hover {
     box-shadow: 0 5px 15px rgba(255,255,255,0.1);
 }
 
+/* Evidence Grid Logic */
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 on larger screens */
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.evidence-grid .gallery-item {
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--card-bg, #fff);
+}
+
+.evidence-grid .gallery-item img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover; /* Prevents image distortion */
+    display: block;
+}
+
+/* Dark Mode Support */
+body.dark-mode .evidence-grid .gallery-item {
+    border-color: #444;
+}
+
+/* Responsive Breakpoint */
+@media (max-width: 480px) {
+    .evidence-grid {
+        grid-template-columns: 1fr; /* Stacks 1x4 on mobile */
+    }
+}
 /* ----------------------------------
    📱 Lightbox-gallery
 ---------------------------------- */
@@ -1280,6 +1314,7 @@ body.light-mode .icon-bar a {
   .icon-bar a.youtube   { background: #bb1100; }
   .icon-bar a.substack  { background: #ff6719; }
 }
+
 
 
 
