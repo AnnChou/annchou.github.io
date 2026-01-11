@@ -36,7 +36,7 @@ section {
 }
 
 /* ----------------------------------
-   🎨 TYPOGRAPHY & BRANDING
+   🎨 TYPOGRAPHY & BRANDING & HERO-TEXT
 ---------------------------------- */
 .site-title, h1 {
   font-size: 2.5rem;
@@ -69,9 +69,103 @@ h3 { font-size: 1.5rem; margin-bottom: 0.75rem; color: #444; }
   color: #333;
 }
 
+p { margin-bottom: 1rem; max-width: 800px; }
+
+.hero-text {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  font-weight: 500;
+  color: #222;
+}
+
 /* ----------------------------------
-   🖼️ FIGURES & GALLERIES (2x2 Grid)
+   🌐 NAVIGATION & DROPDOWN (UI Element Group 1)
 ---------------------------------- */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav a.active { background-color: #C66A53; }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content { display: block; }
+
+/* ----------------------------------
+   🖼️ FIGURES, IMAGE BLOCKS & GALLERIES (2x2 Grid)
+---------------------------------- */
+figure { margin: 1.5rem 0; }
+
+figcaption {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+.figure-block, .bio-block {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 800px;
+}
+
+.figure-block img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.3);
+}
+
+/* --- Fixed .wide-figure Class --- */
+.wide-figure {
+    grid-column: 1 / -1; 
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 100%;
+}
+
+.wide-figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+    /* Added handling for the Feminist Dragon Boats inline background */
+    background-color: #f0f0f0; 
+}
+
+.rabbit-figure { text-align: left; }
+
+.banner-wrapper {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
 /* Restored 2x2 grid for Evidence/Gallery sections */
 .evidence-grid, .lightbox-gallery {
     display: grid;
@@ -109,28 +203,20 @@ h3 { font-size: 1.5rem; margin-bottom: 0.75rem; color: #444; }
   color: white;
 }
 
-/* --- Fixed .wide-figure Class --- */
-.wide-figure {
-    grid-column: 1 / -1; 
-    margin: 2rem auto;
-    text-align: center;
-    max-width: 100%;
-}
 
-.wide-figure img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    display: block;
-    margin: 0 auto;
-    /* Added handling for the Feminist Dragon Boats inline background */
-    background-color: #f0f0f0; 
-}
 
 /* ----------------------------------
-   🧱 BOXES, PROJECTS & SUBSTACK
+   🧱 CONTAINERS & SCROLL, BOXES, PROJECTS, GRID & SUBSTACK
 ---------------------------------- */
+.scroll-container {
+  background-color: #333;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.scroll-container img { height: 300px; margin-right: 10px; border-radius: 8px; }
+
 /* Unified Card logic for all toggleable containers */
 .project, .project-card, .method-card, .easy-read-box, .collab-card, .support-item, .substack-box {
   background: white;
@@ -142,19 +228,44 @@ h3 { font-size: 1.5rem; margin-bottom: 0.75rem; color: #444; }
   transition: all 0.3s ease;
 }
 
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
 .substack-box {
   background: #fffafa;
   border-color: #ffe4e1;
   text-align: center;
 }
 
+/* ----------------------------------
+   UI Elements Group 2 (BUTTONS & GLOWS)
+---------------------------------- */
+.cta, .button, .button-ghost {
+  height: 48px;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cta { background-color: #f6a21d; color: #fff; }
+.button { background-color: #333; color: #fff; }
+.button-ghost { border: 2px solid #4caf50; color: #4caf50; }
+
+.glow { box-shadow: 0 0 12px 2px rgba(246, 162, 29, 0.6); }
+.glow-ink { box-shadow: 0 0 10px 1px rgba(50, 50, 50, 0.5); }
+.glow-green { box-shadow: 0 0 12px 2px rgba(76, 175, 80, 0.6); }
+
 
 /* ----------------------------------
-   🌐 UI ELEMENTS (Nav, Icons, Footer)
+   🌐 UI ELEMENTS Group 3 (Icons, Footer)
 ---------------------------------- */
-.topnav { background-color: #333; overflow: hidden; }
-.topnav a { float: left; color: #f2f2f2; padding: 14px 16px; text-decoration: none; }
-.topnav a.active { background-color: #C66A53; }
 
 .icon-bar {
   position: fixed;
@@ -227,7 +338,9 @@ body.dark-mode .filter-btn {
 
 /* Text Responsiveness - Fixing Eco-Illum & Practices titles , Philosophy, Site Titles, etc*/
 body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, 
-body.dark-mode p, body.dark-mode li,
+body.dark-mode p, 
+body.dark-mode .hero-text, 
+body.dark-mode li,
 body.dark-mode .site-title, 
 body.dark-mode .pillar-header,
 body.dark-mode .highlight-subtitle {
@@ -235,6 +348,8 @@ body.dark-mode .highlight-subtitle {
 }
 
 body.dark-mode .highlight-subtitle { color: #f6d1b6 !important; }
+
+body.dark-mode figcaption { color: #f0f0f0 !important; }
 
 /* Theo Gardner Video Credit Inline Override */
 body.dark-mode .dark-mode-text {
@@ -244,7 +359,7 @@ body.dark-mode .dark-mode-text {
 }
 
 /* UI Elements Darkening */
-body.dark-mode .topnav, body.dark-mode footer, body.dark-mode .flex-container2 {
+body.dark-mode .topnav, body.dark-mode .dropdown-content, body.dark-mode footer, body.dark-mode .flex-container2 {
   background-color: #111 !important;
   color: #ddd !important;
   border: 1px solid #333;
