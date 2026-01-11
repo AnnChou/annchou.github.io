@@ -1296,9 +1296,14 @@ body.dark-mode li {
 }
 
 
-body.dark-mode h3,
+body.dark-mode h3
 {
   color: #f2f2f2;
+}
+/* Ensure the Philosophy/Evidence headers on Practices.html turn white */
+body.dark-mode .pillar-header {
+    border-bottom: 2px solid #f6a21d !important;
+    color: #ffffff !important;
 }
 
 /* Special Case: Highlight Subtitle Accent */
@@ -1521,6 +1526,7 @@ body.light-mode .icon-bar a {
     transform: translateY(-15px); /* scroll upward subtly */
   }
 }
+
 
 
 
