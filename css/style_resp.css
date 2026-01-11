@@ -10,31 +10,41 @@
 /* --- 1. Fix the "White Border" and Background globally --- */
 /* This ensures the entire browser window background turns dark */
 html, body {
-    background-color: #ffffff; /* Default light */
-    transition: background-color 0.3s ease;
+    background-color: #ffffff; /* Default Light */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* --- 3. Remove Margins & Spread Content to Edge --- */
+/* --- Content Width & Padding --- */
 .main {
-    max-width: 100% !important; /* Removes the 900px limit */
+    flex: 1; /* Pushes footer to bottom */
     width: 100% !important;
-    padding: 2rem 0 !important; /* Removes left/right padding */
+    max-width: 100% !important;
     margin: 0 !important;
+    padding: 0 !important;
 }
 
 /* Add padding inside sections so text doesn't touch the screen edge */
 /* Internal sections now handle their own side-spacing */
+/* Ensure all sections span the full width of the screen */
 section {
     width: 100%;
-    max-width: 100%;
-    padding: 2rem 5%; /* 5% padding keeps text from touching the glass */
-    margin: 0 auto;
+    max-width: 100% !important;
+    padding: 2rem 5%; /* Side padding for text readability */
+    box-sizing: border-box;
 }
 
 /* --- 4. Fix Footer Width & Color --- */
+footer, .flex-container2 {
+    width: 100%;
+    background-color: #333 !important; /* Matches Header Grey */
+    margin: 0 !important;
+}
 footer {
-    width: 100% !important;
-    background-color: #333333; /* Matches Header Grey */
     color: white;
     padding: 20px 0;
     margin-top: 50px;
@@ -1252,16 +1262,20 @@ body.dark-mode .shop-links a {
 ----------------------------- */
 /* --- 1. Fix the "White Border" and Background globally --- */
 body.dark-mode {
-    background-color: #121212 !important;
-    color: #e0e0e0;
+    background-color: #121212 !important; /* Force background dark everywhere */
+    color: #e0e0e0 !important;
 }
 
 
 /* --- 2. Fix the Title/Subtitle not responding to Dark Mode --- */
-body.dark-mode .site-title, 
+/* --- Target Non-Responsive Text in Dark Mode --- */
+body.dark-mode .pillar-header,
+body.dark-mode .site-title,
 body.dark-mode .highlight-subtitle,
 body.dark-mode h1, 
-body.dark-mode h2 {
+body.dark-mode h2, 
+body.dark-mode p,
+body.dark-mode li {
     color: #ffffff !important;
 }
 
@@ -1270,6 +1284,12 @@ body.dark-mode h3,
 {
   color: #f2f2f2;
 }
+
+/* Special Case: Highlight Subtitle Accent */
+body.dark-mode .highlight-subtitle {
+    color: #f6d1b6 !important; /* Soft peach for visibility */
+}
+
 
 body.dark-mode .topnav {
   background-color: #1e1e1e;
@@ -1308,9 +1328,7 @@ body.dark-mode .dropdown-content a:hover {
   background-color: #444; /* subtle hover highlight */
 }
 
-body.dark-mode .highlight-subtitle {
-  color: #f6d1b6;
-}
+
 
 
 
@@ -1323,19 +1341,16 @@ body.dark-mode .scroll-container {
   background-color: #1a1a1a;
 }
 
-/* dark mode footer */
 
-/* Footer Dark Mode specific */
-body.dark-mode footer {
+
+/* Footer Dark Mode specific */  /* --- Footer & Header Sync --- */
+body.dark-mode footer, body.dark-mode .flex-container2 {
     background-color: #1a1a1a !important; /* Slightly darker for dark mode */
     border-top: 1px solid #333; /* Removes white border look */
 }
 
 
-body.dark-mode .flex-container2 {
-  background-color: #111;
-  color: #aaa;
-}
+
    
 /* dark-mode customized part */
 .dark-mode .easy-read-box {
@@ -1490,6 +1505,7 @@ body.light-mode .icon-bar a {
     transform: translateY(-15px); /* scroll upward subtly */
   }
 }
+
 
 
 
