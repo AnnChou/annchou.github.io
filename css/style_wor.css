@@ -214,6 +214,7 @@ margin: 0 auto;
 /* ----------------------------------
    🧱 CONTAINERS & SCROLL, BOXES, PROJECTS, GRID & SUBSTACK
 ---------------------------------- */
+/* scrol-container on index.htnl */
 .scroll-container {
   background-color: #333;
   overflow-x: auto;
@@ -224,6 +225,8 @@ margin: 0 auto;
 .scroll-container img { height: 300px; margin-right: 10px; border-radius: 8px; }
 
 /* Unified Card logic for all toggleable containers */
+/* project, project-card on index.html */
+/* method-card, easy-read-box, collab-card, support item on practice.html */
 .project, .project-card, .method-card, .easy-read-box, .collab-card, .support-item, .substack-box {
   background: white;
   padding: 2rem;
@@ -234,10 +237,18 @@ margin: 0 auto;
   transition: all 0.3s ease;
 }
 
+/* evidence-grid , support-grid, substack-box on practice.html */
 .evidence-grid {
-  display: grid;
+  display: grid;, 
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+}
+
+support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
 }
 
 .substack-box {
