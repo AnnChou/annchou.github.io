@@ -1127,7 +1127,7 @@ body.dark-mode .evidence-grid .gallery-item {
   transform: translateY(-50%);
   gap: 2px; /* Space between icons */
   z-index: 1000;
-  background: grey;
+  background-color: #ffffff;  
 }
 
 .icon-bar a {
@@ -1163,7 +1163,8 @@ body.dark-mode .evidence-grid .gallery-item {
 }
 
 .icon-bar button {
-  background-color: #444;
+  background-color: #ffffff;
+  color: #333333;     
   color: white;
   border: none;
   font-size: 18px;
@@ -1183,7 +1184,10 @@ body.dark-mode .evidence-grid .gallery-item {
   display: inline-block;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
+/* Ko-fi floating button (iframe/container based) */
+body:not(.dark-mode) .floatingchat-container {
+  filter: none; /* ensures normal light styling */
+}
 /* --------
    shop link
       ------*/
@@ -1453,6 +1457,7 @@ body.light-mode .icon-bar a {
   .icon-bar a.youtube   { background: #bb1100; }
   .icon-bar a.substack  { background: #ff6719; }
 }
+
 
 
 
