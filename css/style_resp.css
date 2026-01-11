@@ -1127,23 +1127,54 @@ body.dark-mode .evidence-grid .gallery-item {
   transform: translateY(-50%);
   gap: 2px; /* Space between icons */
   z-index: 1000;
-  background-color: #ffffff;  
 }
 
+/* Light Mode Defaults (Light Grey Background, Black Text) */
+.icon-bar a, 
+.icon-bar button {
+  background-color: #e0e0e0; /* light grey */
+  color: #000000 !important; /* black text/icons */
+  display: block;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 44px; /* Ensure consistent width */
+}
+
+/*
 .icon-bar a {
   display: block;
   text-align: center;
   padding: 10px;
   color: white;
   font-size: 18px;
-  background-color: inherit; /* fallback */
+  background-color: inherit; /* fallback 
   transition: all 0.3s ease;
 }
-
+.icon-bar button {
+  background-color: #ffffff;
+  color: #333333;     
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  transition: transform 0.3s ease;
+}*/
+/*
 .icon-bar a:hover {
   background-color: #000;
+}*/
+.icon-bar a:hover, 
+.icon-bar button:hover {
+  background-color: #d0d0d0;
 }
-
 /*
 .instagram { background: #bc2bac; }
 .facebook  { background: #3B5998; }
@@ -1162,18 +1193,7 @@ body.dark-mode .evidence-grid .gallery-item {
   color: white;
 }
 
-.icon-bar button {
-  background-color: #ffffff;
-  color: #333333;     
-  color: white;
-  border: none;
-  font-size: 18px;
-  padding: 10px;
-  cursor: pointer;
-  display: block;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
+
 
 .icon-bar button:hover .toggle-icon {
   transform: rotate(20deg) scale(1.1);
@@ -1187,6 +1207,12 @@ body.dark-mode .evidence-grid .gallery-item {
 /* Ko-fi floating button (iframe/container based) */
 body:not(.dark-mode) .floatingchat-container {
   filter: none; /* ensures normal light styling */
+}
+
+/* Specific button icon animation */
+.icon-bar .toggle-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 /* --------
    shop link
@@ -1406,31 +1432,16 @@ body.dark-mode .icon-bar a {
 }
 */
 
-/* --- 🌙 DARK MODE ICON BAR FIX --- */
-/* Fixes the "white on white" issue by forcing brand colors */
-body.dark-mode .icon-bar a {
-  color: #ffffff !important; 
-  opacity: 1;
+/* Dark Mode Overrides (Dark Grey Background, White Text) */
+body.dark-mode .icon-bar a,
+body.dark-mode .icon-bar button {
+  background-color: #333333; /* dark grey */
+  color: #ffffff !important; /* white text/icons */
 }
 
-/* Re-stating brand colors to override any inheritance */
-/*
-body.dark-mode .icon-bar a.instagram { background: #bc2bac; }
-body.dark-mode .icon-bar a.facebook  { background: #3B5998; }
-body.dark-mode .icon-bar a.twitter   { background: #55ACEE; }
-body.dark-mode .icon-bar a.linkedin  { background: #007bb5; }
-body.dark-mode .icon-bar a.youtube   { background: #bb1100; }
-body.dark-mode .icon-bar a.substack  { background: #ff6719; }
-*/
-/* If you have a general background on the bar itself */
-body.dark-mode .icon-bar {
-  background: transparent; 
-}
-
-
-body.dark-mode .icon-bar a:hover {
-  background-color: #000;
-  color: #fff;
+body.dark-mode .icon-bar a:hover,
+body.dark-mode .icon-bar button:hover {
+  background-color: #444444;
 }
 
 body.dark-mode a {
@@ -1457,6 +1468,7 @@ body.light-mode .icon-bar a {
   .icon-bar a.youtube   { background: #bb1100; }
   .icon-bar a.substack  { background: #ff6719; }
 }
+
 
 
 
