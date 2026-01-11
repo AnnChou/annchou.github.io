@@ -528,6 +528,16 @@ body.dark-mode, html.dark-mode {
   background-color: #121212 !important;
 }
 
+body.dark-mode a {
+  color: #9cdcfe !important; /* Soft, bright sky blue for high readability */
+  text-decoration-color: rgba(156, 220, 254, 0.4);
+  transition: color 0.2s ease;
+}
+
+body.dark-mode a:hover {
+  color: #ffffff !important; /* Pure white on hover */
+  text-decoration: underline;
+}
 /* Global Background Cleansing */
 body.dark-mode .main, 
 body.dark-mode section, 
@@ -682,6 +692,8 @@ body.dark-mode .support-item:hover {
 }
 
 /* Dark Mode Override for high visibility */
+body.dark-mode .project-card a,
+body.dark-mode .project-banner-note a,
 body.dark-mode .support-item a,
 body.dark-mode .support-item strong,
 body.dark-mode .support-item p {
