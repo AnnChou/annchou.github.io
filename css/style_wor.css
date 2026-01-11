@@ -308,7 +308,7 @@ margin: 0 auto;
 
 /* evidence-grid , support-grid, substack-box on practice.html */
 .evidence-grid {
-  display: grid;, 
+  display: grid;,
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
@@ -376,6 +376,7 @@ support-grid {
   display: block;
   width: 100%;
   transition: transform 0.3s ease;
+}
 
 .icon-bar a {
   display: block;
@@ -589,4 +590,4 @@ body.dark-mode .accordion-content figcaption { color: #ccc; text-align: center; 
        right: 0;
        top: 0;
    }
-}
+
