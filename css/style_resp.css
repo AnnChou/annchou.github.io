@@ -1380,9 +1380,7 @@ body.dark-mode footer, body.dark-mode .flex-container2 {
 }
 /* dark-mode icon-bar */
 
-body.dark-mode .icon-bar {
-   background-color: #1a1a1a  !important;
-}
+
 
 body.dark-mode .icon-bar a {
   background-color: #222;
@@ -1530,6 +1528,7 @@ body.light-mode .icon-bar a {
     transform: translateY(-15px); /* scroll upward subtly */
   }
 }
+
 
 
 
