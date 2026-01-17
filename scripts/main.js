@@ -8,6 +8,7 @@ toggleAssistiveMode()    → Shared click handler for assistive mode buttons
 setupAccordion()         → Handles accordion expand/collapse with emoji swap
 toggleMobileNav()        → Responsive menu dropdown
 DOMContentLoaded         → Restores dark + assistive state, sets up accordion
+initApp(pageDefault
 ======================================================= */
 
 /* 🌙 DARK MODE LOGIC */
@@ -60,53 +61,6 @@ function toggleDarkMode() {
   applyDarkState(current ? 'disabled' : 'enabled');
 }
 
-/**
- * Initializes the app with optional page defaults
- * @param {string} pageDefault - 'enabled' for Dark, 'disabled' for Light
- */
-function initApp(pageDefault = null) {
-  const savedDark = localStorage.getItem('darkMode');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-  // Priority: Manual Save > Page Default > System Setting
-  const finalState = savedDark || pageDefault || (prefersDark ? 'enabled' : 'disabled');
-
-  applyDarkState(finalState);
-  setupAccordion();
-  
-  // Attach Listeners
-  document.getElementById('darkModeToggle')?.addEventListener('click', toggleDarkMode);
-  document.getElementById('darkModeToggleIconBar')?.addEventListener('click', toggleDarkMode);
-
-// Mobile Nav Listener (replaces onclick="myFunction")
-  document.querySelector('.topnav .icon')?.addEventListener('click', () => {
-    const nav = document.getElementById("myTopnav");
-    if (nav) nav.classList.toggle("responsive");
-  });
-  
-}
-  /*
-// Add listeners to both buttons
-darkBtnTop?.addEventListener('click', toggleDarkMode);
-darkBtnBar?.addEventListener('click', toggleDarkMode);
-*/
-
-
-/* 🖍️ ASSISTIVE CONTRAST MODE */
-const ASSISTIVE_CLASS = 'effect-assistive-mode';
-const assistBtnTop = document.getElementById('assistiveBtnTop');
-const assistBtnBar = document.getElementById('assistiveBtnBar');
-const assistIconTop = assistBtnTop?.querySelector('.assistive-icon');
-const assistIconBar = assistBtnBar?.querySelector('.assistive-icon');
-
-function applyAssistiveState(state) {
-  const isAssistive = state === 'enabled';
-  document.body.classList.toggle(ASSISTIVE_CLASS, isAssistive);
-  localStorage.setItem('effectAssistiveMode', isAssistive ? 'enabled' : 'disabled');
-  const emoji = isAssistive ? '🔳' : '🖍️';
-  if (assistIconTop) assistIconTop.textContent = emoji;
-  if (assistIconBar) assistIconBar.textContent = emoji;
-}
 
 function toggleAssistiveMode() {
   const current = document.body.classList.contains(ASSISTIVE_CLASS);
@@ -156,6 +110,54 @@ function setupAccordion() {
 function toggleMobileNav() {
   const nav = document.getElementById("myTopnav");
   if (nav) nav.classList.toggle("responsive");
+}
+
+/**
+ * Initializes the app with optional page defaults
+ * @param {string} pageDefault - 'enabled' for Dark, 'disabled' for Light
+ */
+function initApp(pageDefault = null) {
+  const savedDark = localStorage.getItem('darkMode');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  // Priority: Manual Save > Page Default > System Setting
+  const finalState = savedDark || pageDefault || (prefersDark ? 'enabled' : 'disabled');
+
+  applyDarkState(finalState);
+  setupAccordion();
+  
+  // Attach Listeners
+  document.getElementById('darkModeToggle')?.addEventListener('click', toggleDarkMode);
+  document.getElementById('darkModeToggleIconBar')?.addEventListener('click', toggleDarkMode);
+
+// Mobile Nav Listener (replaces onclick="myFunction")
+  document.querySelector('.topnav .icon')?.addEventListener('click', () => {
+    const nav = document.getElementById("myTopnav");
+    if (nav) nav.classList.toggle("responsive");
+  });
+  
+}
+  /*
+// Add listeners to both buttons
+darkBtnTop?.addEventListener('click', toggleDarkMode);
+darkBtnBar?.addEventListener('click', toggleDarkMode);
+*/
+
+
+/* 🖍️ ASSISTIVE CONTRAST MODE */
+const ASSISTIVE_CLASS = 'effect-assistive-mode';
+const assistBtnTop = document.getElementById('assistiveBtnTop');
+const assistBtnBar = document.getElementById('assistiveBtnBar');
+const assistIconTop = assistBtnTop?.querySelector('.assistive-icon');
+const assistIconBar = assistBtnBar?.querySelector('.assistive-icon');
+
+function applyAssistiveState(state) {
+  const isAssistive = state === 'enabled';
+  document.body.classList.toggle(ASSISTIVE_CLASS, isAssistive);
+  localStorage.setItem('effectAssistiveMode', isAssistive ? 'enabled' : 'disabled');
+  const emoji = isAssistive ? '🔳' : '🖍️';
+  if (assistIconTop) assistIconTop.textContent = emoji;
+  if (assistIconBar) assistIconBar.textContent = emoji;
 }
 
 /* 🔁 INITIALIZE ON LOAD */
