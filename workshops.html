@@ -328,15 +328,16 @@
 
     <div class="project project-card">
       <div class="gallery-container">
-       <div class="gallery-item-slider" id="inner-shine-slider">
-          <img src="rss-wor/Lantern Making_ Let Your Inner Shine - c1.png" alt="Inner Shine 1">
-          <img src="rss-wor/Lantern Making_ Let Your Inner Shine -c 2.png" alt="Inner Shine 2">
-          <img src="rss-wor/Lantern Making_ Let Your Inner Shine -c 3.png" alt="Inner Shine 3">
-        </div>
-        <div class="slider-nav">
-          <button onclick="scrollSlider('inner-shine-slider', -1)">❮</button>
-          <button onclick="scrollSlider('inner-shine-slider', 1)">❯</button>
-        </div>
+        <div class="gallery-container">
+            <div class="gallery-item-slider" id="inner-shine-slider">
+              <img src="rss-wor/Lantern Making_ Let Your Inner Shine - c1.png" alt="Inner Shine 1">
+              <img src="rss-wor/Lantern Making_ Let Your Inner Shine -c 2.png" alt="Inner Shine 2">
+            </div>
+            <div class="slider-nav">
+              <button onclick="scrollSlider('inner-shine-slider', -1)">❮</button>
+              <button onclick="scrollSlider('inner-shine-slider', 1)">❯</button>
+            </div>
+      </div>
     </div>
     <div class="card-text">
       <h3>Lantern Making Art Jam: Let Your Inner Shine</h3>
@@ -383,6 +384,18 @@
 </footer>
 
 <script>
+  // Function to make gallery buttons work
+  function scrollSlider(id, direction) {
+    const slider = document.getElementById(id);
+    if (slider) {
+      // Moves the scroll position by the width of the container
+      slider.scrollBy({
+        left: direction * slider.clientWidth,
+        behavior: 'smooth'
+      });
+    }
+  }
+  
   function handleDarkModeToggle() {
   const isDark = document.body.classList.toggle('dark-mode');
   localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled'); // Correctly saves state
@@ -521,6 +534,8 @@ function initializeTheme(defaultDark) {
     if (barToggle) barToggle.addEventListener('click', handleDarkModeToggle);
   });
 </script>
+
+  
 
 </body>
 </html>
