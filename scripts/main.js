@@ -24,10 +24,20 @@ function applyDarkState(state) {
   
   // Update emojis on all dark mode buttons
   const emoji = isDark ? '☀️' : '🌙';
+  const tooltip = isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+
+  // Sync both buttons
+  const buttons = [
+    document.getElementById('darkModeToggle'),
+    document.getElementById('darkModeToggleIconBar')
+  ];
+  
   [darkBtnTop, darkBtnBar].forEach(btn => {
     if (btn) {
-      const icon = btn.querySelector('.toggle-icon') || btn;
       icon.textContent = emoji;
+      /* const icon = btn.querySelector('.toggle-icon') || btn; */
+      btn.title = tooltip; // Adds the hover tooltip
+      btn.setAttribute('aria-label', tooltip); // For screen readers
     }
   });
 }
@@ -37,9 +47,30 @@ function toggleDarkMode() {
   applyDarkState(current ? 'disabled' : 'enabled');
 }
 
+/**
+ * Initializes the app with optional page defaults
+ * @param {string} pageDefault - 'enabled' for Dark, 'disabled' for Light
+ */
+function initApp(pageDefault = null) {
+  const savedDark = localStorage.getItem('darkMode');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  // Priority: Manual Save > Page Default > System Setting
+  const finalState = savedDark || pageDefault || (prefersDark ? 'enabled' : 'disabled');
+
+  applyDarkState(finalState);
+  setupAccordion();
+  
+  // Attach Listeners
+  document.getElementById('darkModeToggle')?.addEventListener('click', toggleDarkMode);
+  document.getElementById('darkModeToggleIconBar')?.addEventListener('click', toggleDarkMode);
+}
+  /*
 // Add listeners to both buttons
 darkBtnTop?.addEventListener('click', toggleDarkMode);
 darkBtnBar?.addEventListener('click', toggleDarkMode);
+*/
+
 
 /* 🖍️ ASSISTIVE CONTRAST MODE */
 const ASSISTIVE_CLASS = 'effect-assistive-mode';
@@ -108,6 +139,8 @@ function toggleMobileNav() {
 }
 
 /* 🔁 INITIALIZE ON LOAD */
+window.addEventListener('DOMContentLoaded', () => initApp());
+/* old 
 window.addEventListener('DOMContentLoaded', () => {
   // Init Dark Mode
   const savedDark = localStorage.getItem('darkMode');
@@ -117,7 +150,7 @@ window.addEventListener('DOMContentLoaded', () => {
   /*  const savedAssistive = localStorage.getItem('effectAssistiveMode');
   const assistiveActive = savedAssistive === 'enabled'; 
   applyAssistiveState(assistiveActive ? 'enabled' : 'disabled'); */
-  
+  /*
   // Init Accordion
   setupAccordion();
 
@@ -128,4 +161,4 @@ window.addEventListener('DOMContentLoaded', () => {
   // Bind Mobile Nav
   document.querySelector('.topnav .icon')?.addEventListener('click', toggleMobileNav);
   
-});
+}); */
