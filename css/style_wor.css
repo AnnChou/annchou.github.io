@@ -472,6 +472,53 @@ margin: 0 auto;
 }
 
 
+/* --- Technical Foundation Grid used on workshop--- */
+#technical-foundations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Automatically stacks when narrow */
+  gap: 2rem;
+  padding: 4rem 5%;
+}
+
+/* --- Refined Technical Card Styles --- */
+.technical-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  border-top: 5px solid #C66A53; /* Added your brand accent color top border */
+  height: 100%;
+}
+
+.technical-card .card-text {
+  padding: 1.5rem 0;
+}
+
+.technical-card h3 {
+  font-family: 'Arial', sans-serif;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.technical-card strong {
+  color: #C66A53;
+}
+
+/* Fix for technical images to ensure they don't overflow */
+.technical-card .gallery-item-slider img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain; /* Shows technical diagrams without cropping */
+  background: #eee;
+  border-radius: 4px;
+}
+
+/* dev-access-grid used on workshop.htnml */
+.dev-access-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
 .substack-box {
   background: #fffafa;
   border-color: #ffe4e1;
@@ -898,6 +945,12 @@ body.dark-mode .support-item a,
 body.dark-mode .support-item strong,
 body.dark-mode .support-item p {
   color: #f0f0f0 !important; /* High contrast white for text */
+}
+
+/* --- Dark Mode for Technical Cards --- */
+body.dark-mode .technical-card {
+  background-color: #1a1a1a !important;
+  border-top-color: #f6a21d; /* Brighter orange for dark mode */
 }
 
 body.dark-mode .support-item a {
