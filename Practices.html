@@ -48,45 +48,45 @@
   </script>
 
   <!-- ✅ Responsive Header Navigation -->
-  <header>
-    <div class="topnav" id="myTopnav">
-      <a href="index.html" class="logo">
-        <img src="rss/WenAn_Annreflection_logo-icon_clear_bg.png" height="60" alt="Ann Chou logo" />
-      </a>
-      <a href="index.html">Home 🏠</a>
-      <a href="Practices.html" class="active">Practices 🧬</a>
-      <a href="Eco_illum.html">Eco-Illum 🌘</a>
-      <a href="workshops.html">Workshops 🎨</a>
-
-      <!-- temp shop -->
-      <div class="dropdown">
-        <a href="#" class="dropbtn">Shop 👜</a>
-        <div class="dropdown-content">
-          <a href="https://annreflection.square.site/shop/sumi-e-painting-large-banner/7">Original Paintings</a>
-          <a href="https://ko-fi.com/c/e004b270d4">Cards & Commissions ($6)</a>
-          <a href="https://annreflectionarts.square.site/shop/suprise-packs/25">Surprise Packs ($5)</a>
-          <a href="https://register.inclusionartshow.com/product-category/ann-k-chou/">Inclusion Art Show</a>
-        </div>
+<header>
+  <div class="topnav" id="myTopnav">
+    <a href="index.html" class="logo">
+      <img src="rss/WenAn_Annreflection_logo-icon_clear_bg.png" height="60" alt="Annreflection Studio logo">
+    </a>
+    <a href="index.html">Home 🏠</a>
+    <a href="Practices.html">Practices 🧬</a>
+    <a href="Eco_illum.html">Eco-Illum 🌘</a>
+    <a href="workshops.html">Workshops 🎨</a>
+	<a href="https://annreflection.substack.com" target="_blank">Substack 📬</a>
+    
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Shop 👜</a>
+      <div class="dropdown-content">
+        <a href="https://annreflection.square.site/shop/sumi-e-painting-large-banner/7">Original Paintings</a>
+        <a href="https://ko-fi.com/c/e004b270d4">Cards & Commissions ($6)</a>
+        <a href="https://annreflectionarts.square.site/shop/suprise-packs/25">Surprise Packs ($5)</a>
+        <a href="https://register.inclusionartshow.com/product-category/ann-k-chou/">Inclusion Art Show</a>
       </div>
-	    
-      <button id="darkModeToggle" class="button-ghost" onclick="toggleDarkMode()">🌙</button>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
     </div>
-  </header>
-
-  <!-- ✅ Floating Social Icon Bar -->
-  <div class="icon-bar" aria-label="Social media links">
-    <a href="https://www.instagram.com/annreflection/" class="instagram" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
-    <a href="https://www.facebook.com/AnnReflectionArts/" class="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-    <a href="https://linkedin.com/in/annkchou" class="linkedin" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
-    <a href="https://www.youtube.com/@annchou9171" class="youtube" aria-label="YouTube"><i class="fa fa-youtube"></i></a>
-    <a href="https://www.flickr.com/photos/annchou/" class="twitter" aria-label="Flickr"><i class="fa fa-flickr"></i></a>
-    <a href="https://annreflection.substack.com" class="substack"><i class="fa fa-stack-exchange"></i></a>
-     <!-- ✅ Optional second toggle at the bottom -->
-    <button id="darkModeToggleIconBar"  class="button-ghost"  aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+    
+    <button id="darkModeToggle" class="button-ghost">🌙</button>
+    <a href="javascript:void(0);" class="icon" onclick="initializeResponsiveNav()">
+      <i class="fa fa-bars"></i>
+    </a>
   </div>
+</header>
+
+<div class="icon-bar" role="navigation" aria-label="Social media and accessibility links">
+  <a href="https://beacons.ai/annreflection" class="beacons" aria-label="Annreflection Hub" title="Annreflection Hub">
+    <i class="fa fa-external-link" aria-hidden="true"></i>
+  </a>
+  <a href="https://www.instagram.com/annreflection/" class="instagram" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+  <a href="https://www.facebook.com/AnnReflectionArts/" class="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+  <a href="https://linkedin.com/in/annkchou" class="linkedin" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+  <a href="http://www.youtube.com/@annchou9171" class="youtube" aria-label="YouTube"><i class="fa fa-youtube"></i></a>
+  <a href="https://annreflection.substack.com" class="substack" aria-label="Substack"><i class="fa fa-stack-exchange"></i></a>
+  <button id="darkModeToggleIconBar" class="button-ghost" aria-label="Toggle dark mode">🌙</button>
+</div>
 
   <main class="main">
 	<h1 class="pillar-header">📖 The Narrative</h1>
@@ -259,18 +259,29 @@
     </ul>
   </section>
 
-	  <section id="cta-section" class="cta-container">
+<section id="cta-section" class="cta-container">
   <h1 class="pillar-header">🤝 Let’s Collaborate</h1>
   
   <div class="collab-card">
     <h2>Build Access and Meaning</h2>
-    <p>I welcome <strong>commissions, storefront activations, and cross-sector collaborations</strong> at the intersection of art, accessibility, and community care. With a background in healthcare and inclusive design, I bring a systems-informed approach to lantern-based artmaking that is adaptable, participatory, and environmentally responsive.</p>
-    <p>I invite partners across cultural, civic, and access-related sectors to help shape multisensory public experiences that are both artistically resonant and socially meaningful.</p>
+    <p>I welcome <strong>commissions, storefront activations, and cross-sector collaborations</strong> at the intersection of art, accessibility, and community care. With a background in healthcare and inclusive design, I bring a systems-informed approach to lantern-based artmaking.</p>
   </div>
 
-  <div class="workshop-info" style="margin-bottom: 2rem;">
-    <h3>Workshops & Community Projects</h3>
-    <p>Interested in a lantern-making or sumi-e storytelling workshop for your school, gallery, or community space? Let’s co-create accessible, sensory experiences together.</p>
+  <div class="project-banner-note">
+    <h3>📬 Stay Connected</h3>
+    <p>For reflections on access design, brushwork process, or upcoming projects, subscribe to my newsletter:</p>
+    <p>
+      <strong>
+        <a href="https://annreflection.substack.com" target="_blank" class="cta glow" style="display: inline-flex; margin: 1rem 0;">
+          My Substack – Stories and sketches from the studio
+        </a>
+      </strong>
+    </p>
+    <hr style="width: 50%; margin: 1rem 0; border: 0; border-top: 1px solid #C66A53; opacity: 0.3;">
+    <p>
+      I’d love to hear what kind of content you’d like more of. Reply anytime on Substack or email me at 
+      <strong>annreflection [at] gmail [dot] com</strong>.
+    </p>
   </div>
 
   <h2 style="text-align: center; margin-top: 3rem;">✨ Support the Practice</h2>
@@ -293,53 +304,18 @@
       <p>$5 joyful sensory bundles.</p>
     </a>
   </div>
-
-  <div class="substack-box">
-    <h3>📬 Stay Connected</h3>
-    <p>For reflections on access design, brushwork process, or upcoming projects, subscribe to my newsletter:</p>
-    <p><strong><a href="https://annreflection.substack.com" target="_blank">My Substack – Stories and sketches from the studio</a></strong>.</p>
-    <hr style="width: 50%; margin: 1.5rem auto; border: 0; border-top: 1px solid #ddd;">
-    <p>I’d love to hear what kind of content you’d like more of. Reply anytime on Substack or email me at <strong>annreflection [at] gmail [dot] com</strong>.</p>
-  </div>
 </section>
 
-   <!--section id="mission-driven" class="easy-read-box">
-    <h2>Let’s Collaborate to Build Access and Meaning</h2>
-	<p>I welcome commissions, storefront activations, and cross-sector collaborations at the intersection of art, accessibility, and community care. With a background in healthcare and inclusive design, I bring a systems-informed approach to lantern-based artmaking that is adaptable, participatory, and environmentally responsive.
-	<p>I invite partners across cultural, civic, and access-related sectors to help shape multisensory public experiences that are both artistically resonant and socially meaningful.  
-   </section>
-
-
- 
-	<section id="connect-call">
-	  <h2>Stay Connected & Co-Create</h2>
-	  <p>Interested in a lantern-making or sumi-e storytelling workshop for your school, gallery, or community space? Let’s co-create accessible, sensory experiences together.</p>
-	
-	  <p>You can also support my small-scale art practice and inclusive arts research through a few offerings while I continue refining the full shop experience:</p>
-	  <ul>
-	    <li>🖼️ <a href="https://annreflection.square.site/shop/sumi-e-painting-large-banner/7" target="_blank">Original sumi-e paintings</a> – one-of-a-kind plein-air and brushwork pieces</li>
-	    <li>✨ <a href="https://ko-fi.com/c/e004b270d4" target="_blank">$6 custom art cards via Ko-fi</a> – tiny works made to order</li>
-	    <li>🎁 <a href="https://annreflectionarts.square.site/shop/suprise-packs/25" target="_blank">$5 surprise packs</a> – joyful sensory bundles</li>
-	  </ul>
-	
-	  <p>For reflections on access design, brushwork process, or upcoming projects, you can also subscribe to:</p>
-	  <ul>
-	    <li>📫 <a href="https://annreflection.substack.com" target="_blank">My Substack newsletter</a> – stories and sketches from the studio</li>
-	  </ul>
-	
-	  <p>I’d love to hear what kind of content you’d like more of—art techniques, access culture, or collaborative walkthroughs. Reply anytime on Substack or email me at annreflection [at] gmail [dot] com.</p>
-	</section-->
-
-
-  </main>
-
-  <!-- ✅ Footer -->
-  <footer>
-    <div class="flex-container2">
-      <div class="flex-item-left">Art across generations: lanterns, sumi-e, movement & workshops</div>
-      <div class="flex-item-right">© 2025-2026 Ann K. Chou (annreflection) – All rights reserved</div>
+<footer>
+  <div class="flex-container2">
+    <div class="flex-item-left">
+      Art across generations: lanterns, sumi-e, movement & workshops. 
+      <br>
+      <strong>Visit my <a href="https://beacons.ai/annreflection" style="color: #f6a21d;">Quick Links Hub</a></strong>
     </div>
-  </footer>
+    <div class="flex-item-right">© 2020-2026 Ann K. Chou – All rights reserved</div>
+  </div>
+</footer>
 
   <!-- ✅ Scripts for nav + dark mode -->
  <script>
@@ -415,6 +391,7 @@
 
 </body>
 </html>
+
 
 
 
