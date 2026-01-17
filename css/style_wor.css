@@ -717,6 +717,7 @@ gallery-item-slider img,
 }
 */
 /* --- Improved Technical Card Image Handling with Dark Mode Support --- */
+ /* Ensure the diagrams inside are fully visible (Scientific Accuracy) */
 .technical-card .gallery-item-slider img {
   width: 100%;
   height: 250px;
@@ -728,11 +729,24 @@ gallery-item-slider img,
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
-/* Ensure the diagrams inside are fully visible (Scientific Accuracy) */
-.technical-card .gallery-item-slider img {
-    object-fit: contain; 
-    background-color: #fcfcfc;
-    padding: 15px; /* Adds breathing room for technical drawings */
+
+/* Slider Nav Fix: Ensures buttons are clickable */
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none; /* Allows clicking through the container */
+}
+.slider-nav button {
+  pointer-events: auto; /* Makes only the buttons clickable */
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
 }
 
 .technical-card .card-text {
