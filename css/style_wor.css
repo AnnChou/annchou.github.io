@@ -360,6 +360,7 @@ margin: 0 auto;
   grid-template-columns: repeat(2, 1fr); 
   gap: 2rem;
   margin: 2rem 0;
+  width: 100%; /* Ensures it doesn't overflow or stay too narrow */
 }
 
 /* Ensure the cards inside look consistent */
@@ -730,7 +731,39 @@ body.dark-mode .support-item a:hover {
   .project-grid {
     grid-template-columns: 1fr; /* Stacks to 1 column on tablets/phones */
   }
-   
+
+   /* --- Mobile Responsiveness (1 Column) --- */
+  .project-grid {
+    grid-template-columns: 1fr !important; /* Forces cards to stack */
+    gap: 1.5rem;
+  }
+                         
+  /* Resetting the cards to ensure they don't stretch past the screen */
+  .project-card {
+    width: 100%;
+    margin: 0 0 1rem 0;
+    box-sizing: border-box;
+  }
+
+/* Standardize images within project cards */
+.project-card figure img {
+  width: 100%;
+  height: 220px;      /* Shorter fixed height for all project images */
+  object-fit: cover;  /* This crops the image to fill the space without stretching */
+  /* object-fit: position: center; /* Keeps the focus on the middle of the art */
+  object-fit: cover;  /* Crops to fit without distortion */
+  border-radius: 6px;
+  display: block;
+}
+
+/* Ensure captions don't push cards out of alignment */
+.project-card figcaption {
+  min-height: 3em; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+                         
   .evidence-grid, .lightbox-gallery {
     grid-template-columns: 1fr; /* Stacks 2x2 to 1 column */
   }
