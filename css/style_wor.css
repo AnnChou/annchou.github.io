@@ -494,7 +494,7 @@ margin: 0 auto;
   flex-direction: column;
 }
 
-.icon-bar button {
+.button-ghost, .icon-bar button {
   background-color: #444;
   color: white;
   border: none;
@@ -568,6 +568,11 @@ footer, .flex-container2 {
 ---------------------------------- */
 body.dark-mode, html.dark-mode {
   background-color: #121212 !important;
+}
+
+body.dark-mode .button-ghost {
+  background-color: #222 !important; 
+  color: #81c784 !important;
 }
 
 body.dark-mode a {
