@@ -943,6 +943,10 @@ gallery-item-slider img,
   color: white;
 }*/
 
+.icon-bar a.beacons {
+  background-color: #C66A53; /* Using your brand accent color */
+  color: white;
+}
 .icon-bar .toggle-icon {
   display: inline-block;
   transition: transform 0.3s ease;
@@ -1120,6 +1124,8 @@ body.dark-mode .icon-bar a {
   color: #ddd !important;
   border: 1px solid #333;
 }
+
+
 
 body.dark-mode .icon-bar a:hover {
   background-color: #000000 !important; /* True black background */
