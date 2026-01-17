@@ -113,10 +113,18 @@ p {
 .topnav {
   overflow: hidden;
   background-color: #333;
+  display: flex;        /* Align items in a row */
+  align-items: center;  /* Vertically center everything */
+  flex-wrap: wrap;      /* Allow wrapping on small screens */
+}
+
+/* Ensure the topnav mobile icon stays on the right */
+.topnav .icon {
+  margin-left: auto;
 }
 
 .topnav a {
-  float: left;
+  float: none;          /* Changed from float:left to flex-flow */
   color: #f2f2f2;
   padding: 14px 16px;
   text-decoration: none;
@@ -126,13 +134,18 @@ p {
 
 /* .topnav .button-ghost { display: none;  }*/
 /* Ensure the button is visible by default on Desktop */
+/* Small square toggle buttons in nav */
 .topnav .button-ghost {
-  display: inline-flex !important; 
-  margin: 0 10px;
-  height: 36px; /* Slightly smaller for the nav bar */
-  padding: 0 15px;
-  font-size: 0.9rem;
+  justify-content: center;
+  align-items: center;
+  width: 38px;          /* Small square shape */
+  height: 38px;
+  min-width: 38px;
+  padding: 0;
+  margin: 0 5px;
+  font-size: 1.1rem;
   align-self: center;
+  flex: 0 0 auto;       /* Prevents stretching */
 }
 
 
@@ -457,17 +470,35 @@ margin: 0 auto;
 /* ----------------------------------
    UI Elements Group 2 (BUTTONS & GLOWS)
 ---------------------------------- */
+/* --- Improved Button Sizing (Prevent Full Width) --- */
+/* before jan 17 
 .cta, .button, .button-ghost {
   height: 48px;
   padding: 0 24px;
   display: inline-flex;
   align-self: flex-start;
-  position: static; /* Ensure they stay in normal flow */
+  position: static; /* Ensure they stay in normal flow 
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   clear: both;
+}  */
+
+.cta, .button, .button-ghost {
+  height: 48px;
+  padding: 0 24px;
+  display: inline-flex; /* Changed from block to inline-flex */
+  align-items: center;
+  justify-content: center;
+  width: auto;          /* Explicitly fit content */
+  max-width: fit-content;
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .cta { background-color: #f6a21d; color: #fff; }
@@ -477,6 +508,13 @@ margin: 0 auto;
 .glow { box-shadow: 0 0 12px 2px rgba(246, 162, 29, 0.6); }
 .glow-ink { box-shadow: 0 0 10px 1px rgba(50, 50, 50, 0.5); }
 .glow-green { box-shadow: 0 0 12px 2px rgba(76, 175, 80, 0.6); }
+
+/* Specific fix for Green Glow buttons to match "Reflections" button behavior */
+.button-ghost.glow-green {
+  border: 2px solid #4caf50;
+  color: #4caf50;
+  background-color: transparent;
+}
 
 
 /* ----------------------------------
@@ -570,10 +608,23 @@ body.dark-mode, html.dark-mode {
   background-color: #121212 !important;
 }
 
+/* before Jan 17
 body.dark-mode .button-ghost {
   background-color: #222 !important; 
   color: #81c784 !important;
+} */
+
+remove the !important background-colors to let the base styles shine */
+body.dark-mode .button-ghost {
+  border-color: #81c784;
+  color: #81c784;
 }
+
+body.dark-mode .button-ghost:hover {
+  background-color: #2e7d32;
+  color: #fff;
+}
+
 
 body.dark-mode a {
   color: #9cdcfe !important; /* Soft, bright sky blue for high readability */
