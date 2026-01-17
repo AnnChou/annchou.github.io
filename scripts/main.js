@@ -33,15 +33,6 @@ function applyDarkState(state) {
     document.getElementById('darkModeToggleIconBar')
   ];
 
-  /*
-  [darkBtnTop, darkBtnBar].forEach(btn => {
-    if (btn) {
-      icon.textContent = emoji;
-      /* const icon = btn.querySelector('.toggle-icon') || btn; 
-      btn.title = tooltip; // Adds the hover tooltip
-      btn.setAttribute('aria-label', tooltip); // For screen readers
-    }
-  }); */
   buttons.forEach(btn => {
     if (btn) {
       // 1. Define the icon container first
@@ -50,6 +41,7 @@ function applyDarkState(state) {
       // 2. Now you can safely use it
       iconContainer.textContent = emoji;
       
+      // 3. Update accessibility labels
       btn.title = tooltip; 
       btn.setAttribute('aria-label', tooltip); 
     }
