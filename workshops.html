@@ -248,11 +248,6 @@ function initializeTheme(defaultDark) {
   
   updateDarkModeIcons(shouldBeDark);
 
-    // Bind listeners to both toggles
-    const topToggle = document.getElementById('darkModeToggle');
-    const barToggle = document.getElementById('darkModeToggleIconBar');
-    if (topToggle) topToggle.addEventListener('click', handleDarkModeToggle);
-    if (barToggle) barToggle.addEventListener('click', handleDarkModeToggle);
 }
 
     function setupAccordion() {  // use this one Jan 17
@@ -323,11 +318,20 @@ function initializeTheme(defaultDark) {
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    /* initializeDarkMode();*/
-    initializeTheme(false);
+    // 1. Set the initial theme (true for index, false for workshops)
+    initializeTheme(true);
+    
+    // 2. Initialize other UI features
     /* initializeAccordion();*/
     setupAccordion();
     initializeResponsiveNav();
+
+    // 3. Bind listeners to both toggles
+    const topToggle = document.getElementById('darkModeToggle');
+    const barToggle = document.getElementById('darkModeToggleIconBar');
+    
+    if (topToggle) topToggle.addEventListener('click', handleDarkModeToggle);
+    if (barToggle) barToggle.addEventListener('click', handleDarkModeToggle);
   });
 </script>
 
