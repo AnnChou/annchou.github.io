@@ -466,7 +466,7 @@ gallery-item-slider img,
     border-radius: 8px;
 }
 
-/* --- Lightbox & Zoom Styling --- */
+/* --- Lightbox (for technical detail) & Zoom Styling --- */
 .lightbox-trigger {
   display: block;
   position: relative;
