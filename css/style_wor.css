@@ -444,6 +444,12 @@ margin: 0 auto;
   transform: scale(1.02); /* Makes it slightly larger to stand out */
   position: relative;
   z-index: 1; /* Ensures the glow appears above other cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 20px 4px rgba(246, 162, 29, 0.6);
 }
 
 /* Optional: Add a "Featured" badge inside the card */
@@ -978,8 +984,9 @@ body.dark-mode .project-card {
   color: #ffffff !important;
 }
 
-/* Dark Mode Glow for Featured Cards */
+/* Dark Mode adjustment for Featured Cards */
 body.dark-mode .featured-card {
+  background-color: #1a1a1a !important;
   box-shadow: 0 0 20px 3px rgba(246, 162, 29, 0.6) !important;
   border-color: #ffd166 !important;
 }
