@@ -115,7 +115,7 @@ p {
   text-align: center;
 } */
 
-/* Enhanced Hero for Art Jams & Studio Services */
+/* Enhanced Hero for Art Jams & Studio Services (workshop.html)*/
 .hero-banner {
     background-attachment: fixed; /* Reuses your banner image with a parallax effect */
     background-position: center;
@@ -136,6 +136,34 @@ p {
   color: #222;
 }
 
+/* --- Workshop Hero Styling --- */
+.workshop-hero-bg {
+  /* Move the inline linear-gradient and URL here */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                    url('../rss/AnnReflectionBannerforLetter_clear.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff; /* Ensures text is white against the dark overlay */
+  min-height: 50vh;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds readability */
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center !important; /* Center the hero subtext */
+}
 
 /* ----------------------------------
    🌐 NAVIGATION & DROPDOWN (UI Element Group 1)
@@ -951,6 +979,13 @@ body.dark-mode .support-item p {
 body.dark-mode .technical-card {
   background-color: #1a1a1a !important;
   border-top-color: #f6a21d; /* Brighter orange for dark mode */
+}
+
+/* Dark Mode Adjustment */
+body.dark-mode .workshop-hero-bg {
+  /* Slightly darker overlay for dark mode to blend with the rest of the site */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), 
+                    url('../rss/AnnReflectionBannerforLetter_clear.png');
 }
 
 body.dark-mode .support-item a {
