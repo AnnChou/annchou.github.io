@@ -333,12 +333,17 @@ margin: 0 auto;
 }
 
 /* (2x2 Desktop / 1 Col Mobile) for Evidence/Gallery sections */
+/* --- Consolidating Gallery Grids --- */
 .evidence-grid, .lightbox-gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2x2 Desktop */
+    /* This replaces the fixed '2' with a responsive minimum of 350px */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
     gap: 1.5rem;
     margin: 2rem 0;
+    width: 100%;
 }
+
+
 
 .gallery-item {
   display: flex;             /* Centers image vertically and horizontally */
@@ -360,6 +365,13 @@ margin: 0 auto;
   height: auto;     /* Prevents stretching to height */
   object-fit: contain; /* Shows full image without cropping */
     display: block;
+}
+
+/* Ensure the container is stable */
+.gallery-item {
+  height: 350px; /* Consistent height for the 'mold' */
+  overflow: hidden;
+  background-color: #f9f9f9; /* Fills gaps if you use 'contain' */
 }
 
 /* Horizontal Slider for Archive Evidence (workshop.html) */
@@ -560,6 +572,30 @@ margin: 0 auto;
   color: #C66A53;
 }
 
+/* Ensure images within these grids maintain their integrity */
+.evidence-grid .project-card img, 
+.lightbox-gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* --- Updated Gallery Item Handling --- */
+.gallery-item img {
+  width: 100%;
+  height: 100%; /* Fill the container height you defined (350px) */
+  display: block;
+  
+  /* OPTION A: Artistic Uniformity (Crops slightly to fill the box) */
+  object-fit: cover; 
+  
+  /* OPTION B: Scientific Accuracy (Shows whole image, may leave gaps) */
+  /* object-fit: contain; */ 
+  
+  transition: transform 0.3s ease;
+}
+
 /* Fix for technical images to ensure they don't overflow */
 .technical-card .gallery-item-slider img {
   width: 100%;
@@ -575,11 +611,21 @@ margin: 0 auto;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
-
+/* substack-box is removed, as i move to grid and card system.
 .substack-box {
   background: #fffafa;
   border-color: #ffe4e1;
   text-align: center;
+} */
+.status-badge-live {
+  background: #C66A53;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 /* --
@@ -671,6 +717,15 @@ margin: 0 auto;
     border: 2px dashed var(--accent-color, #C66A53); /* Reuses your theme's orange */
     padding: 1.5rem;
     margin: 1rem 0;
+}
+
+/* --- 2. Registration & Event Layouts --- */
+.event-details-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  font-weight: bold;
 }
 
 /* ----------------------------------
