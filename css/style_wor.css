@@ -2,6 +2,17 @@
 /* ----------------------------------
    ✨ RESET & GLOBAL FOUNDATION
 ---------------------------------- */
+/* --- Dark Mode Variables (Ensure these are at the top of your CSS) --- */
+:root {
+  --card-bg: #fcfcfc;
+  --text-main: #333;
+}
+
+body.dark-mode {
+  --card-bg: #1a1a1a; /* Fixes the white bar issue for diagrams in Dark Mode */
+  --text-main: #f0f0f0;
+}
+
 * {
   margin: 0;
   padding: 0;
