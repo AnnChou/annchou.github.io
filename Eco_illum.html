@@ -29,7 +29,16 @@
   gtag('config', 'G-JHX8G8JN6Y');
 </script>
 
-<body class="dark-mode">
+<body>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('darkMode');
+      // If user has a preference, use it. Otherwise, default to 'dark'
+      if (savedTheme === 'enabled' || (!savedTheme && true)) { 
+        document.body.classList.add('dark-mode');
+      }
+    })();
+  </script>
   <header>
   <div class="topnav" id="myTopnav">
     <a href="index.html" class="logo">
@@ -562,6 +571,7 @@
 
 </body>
 </html>
+
 
 
 
