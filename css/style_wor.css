@@ -673,13 +673,23 @@ gallery-item-slider img,
 } 
 
 /* --- Refined Technical Card Styles --- */
-// befire jan 17
+/* befire jan 17
 .technical-card {
   display: flex;
   flex-direction: column;
   background-color: #fafafa;
   border-top: 5px solid #C66A53; /* Added your brand accent color top border */
   height: 100%;
+}*/
+
+/* --- Technical Foundation Grid: Fixed 3-Column Desktop Start --- */
+.technical-grid {
+  display: grid;
+  /* Forces a 3-column start on desktop, then scales down */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
 }
 
 
@@ -700,12 +710,24 @@ gallery-item-slider img,
   display: flex;
   flex-direction: column;
   background-color: #fafafa;
-  /* This orange top-border distinguishes your "Science" from your "Gallery" */
+  //This orange top-border distinguishes your "Science" from your "Gallery"
   border-top: 5px solid #C66A53; 
   height: 100%;
   transition: transform 0.3s ease;
 }
 */
+/* --- Improved Technical Card Image Handling with Dark Mode Support --- */
+.technical-card .gallery-item-slider img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain; /* Ensures technical diagrams like the 5 joints are not cropped */
+  
+  /* Replaces hardcoded white with a variable that changes in Dark Mode */
+  background-color: var(--card-bg, #fcfcfc); 
+  padding: 20px; /* Padding around technical drawings */
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
 /* Ensure the diagrams inside are fully visible (Scientific Accuracy) */
 .technical-card .gallery-item-slider img {
     object-fit: contain; 
