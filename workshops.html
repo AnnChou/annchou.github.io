@@ -199,7 +199,11 @@
       document.getElementById('darkModeToggleIconBar')
     ];
     icons.forEach(btn => {
-      if (btn) btn.textContent = isDark ? '☀️' : '🌙';
+      if (btn) {
+        btn.textContent = isDark ? '☀️' : '🌙';
+        // Update the aria-label dynamically
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
     });
   }
 
@@ -218,6 +222,41 @@
     if (barToggle) barToggle.addEventListener('click', handleDarkModeToggle);
   }
 
+    function setupAccordion() {  // use this one Jan 17
+    document.querySelectorAll('.accordion-toggle').forEach(button => {
+      const content = button.nextElementSibling;
+      if (!content) return;
+  
+      // Reset styles for smooth JS transition, height animation
+      content.style.display = "block"; // Required for scrollHeight calculation, Ensure it's not display:none
+      content.style.maxHeight = '0px';
+      content.style.overflow = 'hidden';
+      content.style.transition = 'max-height 0.5s ease, padding 0.5s ease';
+  
+      // Get the label (e.g., "View more") from data-label attribute or button text
+      /* const label = button.getAttribute('data-label') || 'View details';
+      button.textContent = `🔻 ${label}`;*/
+      const label = button.getAttribute('data-label') || button.textContent.replace(/[🔻🔺]/g, '').trim();
+  
+      /* button.addEventListener('click', () => {
+        const isOpen = button.classList.toggle('active');
+        content.style.maxHeight = isOpen ? content.scrollHeight + 'px' : '0px';
+        button.textContent = isOpen ? `🔺 ${label}` : `🔻 ${label}`;
+        button.setAttribute('aria-expanded', isOpen);
+      }); */
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = button.classList.toggle('active');
+        
+        // Calculate height dynamically
+        content.style.maxHeight = isOpen ? content.scrollHeight + 'px' : '0px';
+        button.textContent = isOpen ? `🔺 ${label}` : `🔻 ${label}`;
+        button.setAttribute('aria-expanded', isOpen);
+      });
+      
+    });
+  }
+  
   function initializeAccordion() {
     document.querySelectorAll('.accordion-toggle').forEach(button => {
       const content = button.nextElementSibling;
@@ -252,7 +291,8 @@
 
   window.addEventListener('DOMContentLoaded', () => {
     initializeDarkMode();
-    initializeAccordion();
+    /* initializeAccordion();*/
+    setupAccordion();
     initializeResponsiveNav();
   });
 </script>
