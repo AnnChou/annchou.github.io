@@ -197,10 +197,10 @@
 
 <script>
   function handleDarkModeToggle() {
-    const isDark = document.body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-    updateDarkModeIcons(isDark);
-  }
+  const isDark = document.body.classList.toggle('dark-mode');
+  localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled'); // Correctly saves state
+  updateDarkModeIcons(isDark);
+}
 
   function updateDarkModeIcons(isDark) {
     const icons = [
@@ -216,6 +216,7 @@
     });
   }
 
+  /*-- before Jan 17
   function initializeDarkMode() {
     const savedDark = localStorage.getItem('darkMode');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -229,7 +230,30 @@
     const barToggle = document.getElementById('darkModeToggleIconBar');
     if (topToggle) topToggle.addEventListener('click', handleDarkModeToggle);
     if (barToggle) barToggle.addEventListener('click', handleDarkModeToggle);
+  } */
+
+  // Pass 'true' for pages that should be dark by default (index, eco-illum)
+// Pass 'false' for pages that should be light by default (workshops)
+function initializeTheme(defaultDark) {
+  const savedTheme = localStorage.getItem('darkMode');
+  
+  // Logic: Use saved preference if it exists; otherwise use the page default
+  const shouldBeDark = savedTheme === 'enabled' || (savedTheme === null && defaultDark);
+
+  if (shouldBeDark) {
+    document.body.classList.add('dark-mode');
+  } else {
+    document.body.classList.remove('dark-mode');
   }
+  
+  updateDarkModeIcons(shouldBeDark);
+
+    // Bind listeners to both toggles
+    const topToggle = document.getElementById('darkModeToggle');
+    const barToggle = document.getElementById('darkModeToggleIconBar');
+    if (topToggle) topToggle.addEventListener('click', handleDarkModeToggle);
+    if (barToggle) barToggle.addEventListener('click', handleDarkModeToggle);
+}
 
     function setupAccordion() {  // use this one Jan 17
     document.querySelectorAll('.accordion-toggle').forEach(button => {
@@ -299,7 +323,8 @@
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    initializeDarkMode();
+    /* initializeDarkMode();*/
+    initializeTheme(false);
     /* initializeAccordion();*/
     setupAccordion();
     initializeResponsiveNav();
