@@ -17,8 +17,8 @@
   <!--  <link rel="stylesheet" href="css/effects-assistive-mode.css" 
   <link rel="stylesheet" href="css/dark.css" /> -->
  <!-- <link rel="stylesheet" href="css/master.css" /> -->
-  <script src="scripts/main.js"></script>
-  <script src="scripts/social-widgets.js"></script>
+ <!-- <script src="scripts/main.js"></script> not sure why main.js not working
+  <script src="scripts/social-widgets.js"></script>-->
   <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
   
 </head>
@@ -33,7 +33,7 @@
   gtag('config', 'G-JHX8G8JN6Y');
 </script>
   
-<body>
+<body class="dark-mode">
   <header>
     <div class="topnav" id="myTopnav">
       <a href="#home" class="logo">
@@ -43,7 +43,7 @@
       <a href="Practices.html">Practices 🧬</a>
       <a href="Eco_illum.html" class="eco-link">Eco-Illum 🌘</a>
       <a href="workshops.html">Workshops 🎨</a>
-      <!-- temp shop --> <!--
+      <!-- temp shop --> 
       <div class="dropdown">
         <a href="#" class="dropbtn">Shop 👜</a>
         <div class="dropdown-content">
@@ -52,7 +52,7 @@
           <a href="https://annreflectionarts.square.site/shop/suprise-packs/25">Surprise Packs ($5)</a>
           <a href="https://register.inclusionartshow.com/product-category/ann-k-chou/">Inclusion Art Show</a>
         </div>
-      </div> -->
+      </div>
 
 
       <!-- 🌙 Dark mode toggle button problem
@@ -65,13 +65,16 @@
         </button>
       </div>  -->
 
-    <!-- Dark mode + assistive toggle button -->
+    <!-- Dark mode toggle button -->
+    <button id="darkModeToggle" class="button-ghost" onclick="toggleDarkMode()">🌙</button>
+    
+    <!-- Dark mode + assistive toggle button --> <!--
     <button id="darkModeToggle" class="button-ghost">🌙</button>
-    <button id="assistiveBtnTop" class="button-ghost">🖍️</button>
-      <!-- Hamburger icon -->
+    <button id="assistiveBtnTop" class="button-ghost">🖍️</button> -->
+      <!-- Hamburger icon --> <!--
      <a href="javascript:void(0);" class="icon" > 
         <i class="fa fa-bars"></i>
-    </a>
+    </a>-->
     </div>
   </header>
 
@@ -502,7 +505,7 @@
       <div class="flex-item-right">© 2020-2026 Ann K. Chou (annreflection) – All rights reserved</div>
     </div>
   </footer>
-<!---        
+      
 <script>
   function handleDarkModeToggle() {
     const isDark = document.body.classList.toggle('dark-mode');
@@ -578,11 +581,12 @@
 
 
 <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
--->
+
   
 </body>
 
 </html>
+
 
 
 
