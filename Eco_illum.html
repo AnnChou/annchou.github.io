@@ -460,10 +460,10 @@
 
 <script>
   function handleDarkModeToggle() {
-    const isDark = document.body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-    updateDarkModeIcons(isDark);
-  }
+  const isDark = document.body.classList.toggle('dark-mode');
+  localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled'); // Correctly saves state
+  updateDarkModeIcons(isDark);
+}
 
   function updateDarkModeIcons(isDark) {
     const icons = [
@@ -471,13 +471,15 @@
       document.getElementById('darkModeToggleIconBar')
     ];
     icons.forEach(btn => {
-      if (btn) btn.textContent = isDark ? '☀️' : '🌙';
-      // Update the aria-label dynamically
-      btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-    }
+      if (btn) {
+        btn.textContent = isDark ? '☀️' : '🌙';
+        // Update the aria-label dynamically
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
     });
   }
 
+  /*-- before Jan 17
   function initializeDarkMode() {
     const savedDark = localStorage.getItem('darkMode');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -491,9 +493,30 @@
     const barToggle = document.getElementById('darkModeToggleIconBar');
     if (topToggle) topToggle.addEventListener('click', handleDarkModeToggle);
     if (barToggle) barToggle.addEventListener('click', handleDarkModeToggle);
-  }
+  } */
 
-    function setupAccordion() {  // use this one Jan 17
+  // Pass 'true' for pages that should be dark by default (index, eco-illum)
+// Pass 'false' for pages that should be light by default (workshops)
+function initializeTheme(defaultDark) {
+  const savedTheme = localStorage.getItem('darkMode');
+  
+  // Logic: Use saved preference if it exists; otherwise use the page default
+  const shouldBeDark = savedTheme === 'enabled' || (savedTheme === null && defaultDark);
+
+  if (shouldBeDark) {
+    document.body.classList.add('dark-mode');
+  } else {
+    document.body.classList.remove('dark-mode');
+  }
+  
+  updateDarkModeIcons(shouldBeDark);
+
+}
+
+
+
+
+  function setupAccordion() {  // use this one Jan 17
     document.querySelectorAll('.accordion-toggle').forEach(button => {
       const content = button.nextElementSibling;
       if (!content) return;
@@ -527,7 +550,8 @@
       
     });
   }
-  
+
+
   function initializeAccordion() {
     document.querySelectorAll('.accordion-toggle').forEach(button => {
       const content = button.nextElementSibling;
@@ -561,16 +585,31 @@
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    initializeDarkMode();
+    // 1. Set the initial theme (true for index, false for workshops)
+    initializeTheme(false);
+    
+    // 2. Initialize other UI features
     /* initializeAccordion();*/
     setupAccordion();
     initializeResponsiveNav();
+
+    // 3. Bind listeners to both toggles
+    const topToggle = document.getElementById('darkModeToggle');
+    const barToggle = document.getElementById('darkModeToggleIconBar');
+    
+    if (topToggle) topToggle.addEventListener('click', handleDarkModeToggle);
+    if (barToggle) barToggle.addEventListener('click', handleDarkModeToggle);
   });
 </script>
 
 
+
+
+<script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+
 </body>
 </html>
+
 
 
 
