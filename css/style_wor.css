@@ -96,6 +96,13 @@ p {
   line-height: 1.6;
 }
 
+/* Hero Banner Styles , used in workshop.html */
+.hero-banner {
+  background: linear-gradient(rgba(253, 247, 242, 0.9), rgba(253, 247, 242, 0.95)), url('../images/hero-artjam.jpg') center/cover no-repeat;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
 .hero-text {
   font-size: 1.5rem;
   line-height: 1.4;
@@ -608,6 +615,8 @@ body.dark-mode, html.dark-mode {
   background-color: #121212 !important;
 }
 
+
+
 /* before Jan 17
 body.dark-mode .button-ghost {
   background-color: #222 !important; 
@@ -686,6 +695,11 @@ body.dark-mode .project-banner-note {
 
 body.dark-mode .project-banner-note em {
   color: #ffffff !important;
+}
+
+body.dark-mode .hero-banner {
+  background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.95)), url('../images/hero-artjam.jpg') center/cover no-repeat;
+  color: #ffffff;
 }
 
 body.dark-mode .highlight-subtitle { color: #f6d1b6 !important; }
