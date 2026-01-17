@@ -520,6 +520,9 @@
     ];
     icons.forEach(btn => {
       if (btn) btn.textContent = isDark ? '☀️' : '🌙';
+      // Update the aria-label dynamically
+      btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
     });
   }
 
@@ -625,6 +628,7 @@
 </body>
 
 </html>
+
 
 
 
