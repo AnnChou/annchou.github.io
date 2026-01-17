@@ -37,6 +37,15 @@
 </script>
 	
 <body>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('darkMode');
+      // If user has a preference, use it. Otherwise, default to 'light'
+      if (savedTheme === 'enabled') { 
+        document.body.classList.add('dark-mode');
+      }
+    })();
+  </script>
 
   <!-- ✅ Responsive Header Navigation -->
   <header>
@@ -406,6 +415,7 @@
 
 </body>
 </html>
+
 
 
 
