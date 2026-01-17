@@ -59,7 +59,7 @@ h3 { font-size: 1.5rem; margin-bottom: 0.75rem; color: #444; }
   margin-bottom: 2rem;
   padding-left: 1rem;
 }
-/* used on Index.html: project-banner-not*/
+/* used on Index.html, and workshop.html: project-banner-not*/
 .project-banner-note {
   max-width: 850px;
   margin: 2rem 0;          /* Matches your left-aligned flow */
@@ -71,11 +71,23 @@ h3 { font-size: 1.5rem; margin-bottom: 0.75rem; color: #444; }
   font-size: 1.1rem;
   color: #444;
   text-align: left !important;
+  width: 100%;
+  overflow: hidden; /* Prevents anything from sticking out */
+  box-sizing: border-box; /* Ensures padding doesn't add to the width */
 }
 
 .project-banner-note em {
   font-weight: 600;
   color: #222;
+}
+
+/* This tells the image to never be wider than the 850px container */
+.project-banner-note img {
+  max-width: 95%;
+  height: auto;
+  display: block;
+  margin: 1.5rem 0; /* Adds space between the text and the image */
+  border-radius: 4px; /* Optional: matches your container's corners */
 }
 
 /* Used on Practices.html: 🧠 The Philosophy, etc. */
