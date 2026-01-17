@@ -437,6 +437,29 @@ margin: 0 auto;
   transition: all 0.3s ease;
 }
 
+/* --- Featured Card Modifier -used for workshop.html -- */
+.featured-card {
+  border: 2px solid #f6a21d; /* Matches your glow color */
+  box-shadow: 0 0 15px 2px rgba(246, 162, 29, 0.4); /* Your existing glow effect */
+  transform: scale(1.02); /* Makes it slightly larger to stand out */
+  position: relative;
+  z-index: 1; /* Ensures the glow appears above other cards */
+}
+
+/* Optional: Add a "Featured" badge inside the card */
+.featured-card::before {
+  content: "⭐ FEATURED";
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #C66A53;
+  color: white;
+  padding: 2px 10px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
 /* project grid is on index.html */
 /* -----
    🧱 PROJECT GRID 
@@ -953,6 +976,12 @@ body.dark-mode .project-card {
   background-color: #1a1a1a !important;
   border-color: #333 !important;
   color: #ffffff !important;
+}
+
+/* Dark Mode Glow for Featured Cards */
+body.dark-mode .featured-card {
+  box-shadow: 0 0 20px 3px rgba(246, 162, 29, 0.6) !important;
+  border-color: #ffd166 !important;
 }
 
 /* 🌓 Dark Mode Sync for Support Items */
