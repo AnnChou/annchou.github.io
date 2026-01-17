@@ -190,7 +190,7 @@ p {
 
 .topnav a.active { background-color: #C66A53; }
 
-/* .topnav .button-ghost { display: none;  }*/
+
 /* Ensure the button is visible by default on Desktop */
 /* Small square toggle buttons in nav */
 .topnav .button-ghost {
@@ -552,7 +552,7 @@ margin: 0 auto;
 
 /* evidence-grid , support-grid, substack-box on practice.html */
 .evidence-grid {
-  display: grid;,
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
@@ -932,7 +932,6 @@ body.dark-mode .method-card,
 body.dark-mode .easy-read-box,
 body.dark-mode .collab-card,
 body.dark-mode .support-item,
-body.dark-mode .substack-box,
 body.dark-mode .filter-btn {
   background-color: #1a1a1a !important;
   border-color: #333 !important;
@@ -1111,7 +1110,7 @@ body.dark-mode .support-item a:hover {
 @media screen and (max-width: 768px) {
   section { padding: 3rem 5%; }
 
-  .topnav .button-ghost { display: none !important; 
+  .topnav .button-ghost { display: none !important; }
   .project-grid {
     grid-template-columns: 1fr; /* Stacks to 1 column on tablets/phones */
   }
