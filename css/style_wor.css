@@ -533,10 +533,10 @@ margin: 0 auto;
   right: 20px;
   bottom: 20px;
   transform: translateY(-50%);
-  gap: 2px; /* Space between icons */
   z-index: 1000;
   display: flex;
   flex-direction: column;
+  gap: 4px; /* Slight spacing for touch targets */
 }
 
 .button-ghost, .icon-bar button {
@@ -551,16 +551,38 @@ margin: 0 auto;
   transition: transform 0.3s ease;
 }
 
+/* Ensure keyboard users see where they are focusing */
+.icon-bar a:focus, 
+.icon-bar button:focus {
+  outline: 3px solid #f6a21d; /* High contrast orange for focus */
+  outline-offset: 2px;
+}
+
+/* Base style for the icon links */
+/* before Jan 17
 .icon-bar a {
   display: block;
   text-align: center;
   padding: 7px;
   font-size: 14px;
-  background-color: inherit; /* fallback */
+  background-color: inherit; /* fallback 
   background-color: #ddd;
   color: #222;
   box-sizing: border-box;
   transition: all 0.3s ease;
+} */
+
+.icon-bar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #ddd;
+  color: #222;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 4px; /* Makes them distinct squares */
 }
 
 /* 
@@ -578,9 +600,30 @@ margin: 0 auto;
   transition: transform 0.3s ease;
 }
 
+/* Tooltip behavior: While aria-label is for screen readers, 
+   the 'title' attribute provides a visual hover hint for sighted users. *
+/* before Jan 17
 .icon-bar a:hover {
   background-color: #fff;
   color: #fff;
+} */
+
+.icon-bar a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Ensure the button matches the square link style */
+#darkModeToggleIconBar.button-ghost {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #444;
+  cursor: pointer;
 }
 
 footer, .flex-container2 {
