@@ -389,11 +389,25 @@ margin: 0 auto;
     border-radius: 8px 8px 0 0; /* Clips image corners to match card top */
 }
 
+Since you are working with the Tactile Series owl image, the issue likely comes from the image not having a "parent" container to tell it how to behave. In your previous code, you had a rule for .slider-wrapper img, but if your HTML only has the <img> tag directly inside the .gallery-item-slider, that rule won't apply.
+
+Here is the "Artist-Scientist" fix to ensure everything is bound and aligned properly before you get some rest.
+
+1. The CSS Fix (style_wor.css)
+We will make the rule more "inclusive" so it catches the image whether it is in a wrapper or not. This ensures the image height is locked to 300px and stays within the "frame" of the card.
+
+CSS
+
+/* --- Binding the Image to the Card --- */
+.gallery-item-slider img, 
 .slider-wrapper img {
-    flex: 0 0 100%; /* Ensures each photo takes full card width */
+    flex: 0 0 100%;       /* Ensures the photo takes full card width */
+    width: 100%;          /* Forces horizontal bound */
+    height: 300px;        /* Forces vertical bound */
+    object-fit: cover;    /* Crops the 'Specimen' to fit the 'Slide' */
     scroll-snap-align: start;
-    object-fit: cover;
-    height: 300px;
+    display: block;
+    border-radius: 8px 8px 0 0; /* Matches card corners */
 }
 
 .filter-btn {
