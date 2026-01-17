@@ -653,25 +653,27 @@ gallery-item-slider img,
 
 
 /* --- Technical Foundation Grid used on workshop--- */
-/*  befire jan 17
+// befire jan 17
 #technical-foundations {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Automatically stacks when narrow */
   gap: 2rem;
   padding: 4rem 5%;
-} */
+} 
 
 /* --- Refined Technical Card Styles --- */
-/* befire jan 17
+// befire jan 17
 .technical-card {
   display: flex;
   flex-direction: column;
   background-color: #fafafa;
   border-top: 5px solid #C66A53; /* Added your brand accent color top border */
   height: 100%;
-}*/
+}
+
 
 /* --- Technical Grid: 2-Column Desktop Start --- */
+/* revert back 
 .technical-grid {
   display: grid;
   /* Increased minimum width to 450px to ensure a 2-column start on desktop */
@@ -680,8 +682,9 @@ gallery-item-slider img,
   margin-top: 2rem;
   width: 100%;
 }
-
+*/
 /* --- Keep these Refined Technical Card Styles --- */
+/*
 .technical-card {
   display: flex;
   flex-direction: column;
@@ -691,7 +694,7 @@ gallery-item-slider img,
   height: 100%;
   transition: transform 0.3s ease;
 }
-
+*/
 /* Ensure the diagrams inside are fully visible (Scientific Accuracy) */
 .technical-card .gallery-item-slider img {
     object-fit: contain; 
