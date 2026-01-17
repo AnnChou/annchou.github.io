@@ -449,6 +449,24 @@ gallery-item-slider img,
     margin-right: 10px; /* Adds a physical gap between images */
 }
 
+/* --- Square Archive Binding --- */
+#archive .gallery-item-slider {
+    height: auto; /* Let the height be determined by the square ratio */
+    padding-bottom: 20px;
+}
+
+#archive .slider-wrapper img, 
+#archive .gallery-item-slider img {
+    flex: 0 0 85%; /* Slightly smaller 'peek' to keep the square shape prominent */
+    height: auto; 
+    aspect-ratio: 1 / 1; /* Forces the image to stay a perfect square */
+    object-fit: contain; /* Shows the WHOLE image without trimming */
+    background-color: #f9f9f9; /* Adds a clean background for non-square edge cases */
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+/* btn */
 
 .filter-btn {
   padding: 0.5rem 1.2rem;
@@ -1103,6 +1121,12 @@ body.dark-mode .featured-card {
   background-color: #1a1a1a !important;
   box-shadow: 0 0 20px 3px rgba(246, 162, 29, 0.6) !important;
   border-color: #ffd166 !important;
+}
+
+ /* Dark Mode adjustment for square archive */
+body.dark-mode #archive .gallery-item-slider img {
+    background-color: #1a1a1a;
+    border-color: #333;
 }
 
 /* 🌓 Dark Mode Sync for Support Items */
