@@ -97,10 +97,21 @@ p {
 }
 
 /* Hero Banner Styles , used in workshop.html */
-.hero-banner {
+/* .hero-banner {
   background: linear-gradient(rgba(253, 247, 242, 0.9), rgba(253, 247, 242, 0.95)), url('../images/hero-artjam.jpg') center/cover no-repeat;
   padding: 5rem 2rem;
   text-align: center;
+} */
+
+/* Enhanced Hero for Art Jams & Studio Services */
+.hero-banner {
+    background-attachment: fixed; /* Reuses your banner image with a parallax effect */
+    background-position: center;
+    background-size: cover;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-text {
@@ -311,6 +322,22 @@ margin: 0 auto;
     display: block;
 }
 
+/* Horizontal Slider for Archive Evidence (workshop.html) */
+.gallery-item-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    cursor: grab;
+}
+
+.slider-wrapper img {
+    flex: 0 0 100%; /* Ensures each photo takes full card width */
+    scroll-snap-align: start;
+    object-fit: cover;
+    height: 300px;
+}
+
 .filter-btn {
   padding: 0.5rem 1.2rem;
   border: 1px solid #ccc;
@@ -475,7 +502,7 @@ margin: 0 auto;
     background-color: #f9f9f9;
 }
 /* ----------------------------------
-   UI Elements Group 2 (BUTTONS & GLOWS)
+   UI Elements Group 2 (BUTTONS & GLOWS, registration box)
 ---------------------------------- */
 /* --- Improved Button Sizing (Prevent Full Width) --- */
 /* before jan 17 
@@ -523,6 +550,12 @@ margin: 0 auto;
   background-color: transparent;
 }
 
+/* Specific styling for the 24-person limit box */
+.registration-box {
+    border: 2px dashed var(--accent-color, #C66A53); /* Reuses your theme's orange */
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
 
 /* ----------------------------------
    🌐 UI ELEMENTS Group 3 (Icons, Footer)
