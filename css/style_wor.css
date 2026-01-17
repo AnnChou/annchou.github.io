@@ -352,8 +352,9 @@ margin: 0 auto;
 
 /* project grid is on index.html */
 /* -----
-   🧱 PROJECT GRID (2 Columns Desktop)
+   🧱 PROJECT GRID 
 ---- */
+/* Standard 2-Column Grid for Art Projects */
 .project-grid {
   display: grid;
   /* Creates exactly 2 equal columns on large screens */
@@ -361,6 +362,15 @@ margin: 0 auto;
   gap: 2rem;
   margin: 2rem 0;
   width: 100%; /* Ensures it doesn't overflow or stay too narrow */
+}
+
+/* AI Portfolio Override: 1 Column for Wide Technical Images */
+.single-col-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 2.5rem;
+  max-width: 900px; 
+  margin: 0 auto;
 }
 
 /* Ensure the cards inside look consistent */
@@ -373,6 +383,26 @@ margin: 0 auto;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease;
+}
+
+/* --- 🖼️ IMAGE HANDLING --- */
+
+/* Artistic Photos: Uniform Crop */
+.project-card figure img {
+  width: 100%;
+  height: 280px; 
+  object-fit: cover; 
+  border-radius: 8px;
+  display: block;
+}
+
+/* AI & Technical Diagrams: No Cropping */
+.single-col-grid .project figure img {
+  height: auto; 
+  max-height: 500px;
+  object-fit: contain; 
+  background: #fdfdfd;
+  border: 1px solid #eee;
 }
 
 /* evidence-grid , support-grid, substack-box on practice.html */
@@ -733,7 +763,7 @@ body.dark-mode .support-item a:hover {
   }
 
    /* --- Mobile Responsiveness (1 Column) --- */
-  .project-grid {
+  .project-grid, .single-col-grid {
     grid-template-columns: 1fr !important; /* Forces cards to stack */
     gap: 1.5rem;
   }
