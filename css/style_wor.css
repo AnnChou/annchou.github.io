@@ -374,13 +374,19 @@ margin: 0 auto;
   background-color: #f9f9f9; /* Fills gaps if you use 'contain' */
 }
 
-/* Horizontal Slider for Archive Evidence (workshop.html) */
+/* --- Updated Slider: "Binds" images to the card --- */
 .gallery-item-slider {
     display: flex;
-    overflow-x: auto;
+    overflow-x: auto; /* Allows horizontal scrolling if multiple images */
+    overflow-y: hidden; /* Fixes the vertical "spilling out" issue */
     scroll-snap-type: x mandatory;
     gap: 10px;
     cursor: grab;
+    
+    /* CRITICAL FIXES BELOW */
+    height: 300px; /* Sets a standard height for all card images */
+    width: 100%;   /* Ensures it fills the card width */
+    border-radius: 8px 8px 0 0; /* Clips image corners to match card top */
 }
 
 .slider-wrapper img {
