@@ -26,18 +26,31 @@ function applyDarkState(state) {
   const emoji = isDark ? '☀️' : '🌙';
   const tooltip = isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
 
-  // Sync both buttons
+  // Define the buttons, Sync both buttons
   const buttons = [
     document.getElementById('darkModeToggle'),
     document.getElementById('darkModeToggleIconBar')
   ];
-  
+
+  /*
   [darkBtnTop, darkBtnBar].forEach(btn => {
     if (btn) {
       icon.textContent = emoji;
-      /* const icon = btn.querySelector('.toggle-icon') || btn; */
+      /* const icon = btn.querySelector('.toggle-icon') || btn; 
       btn.title = tooltip; // Adds the hover tooltip
       btn.setAttribute('aria-label', tooltip); // For screen readers
+    }
+  }); */
+  buttons.forEach(btn => {
+    if (btn) {
+      // 1. Define the icon container first
+      const iconContainer = btn.querySelector('.toggle-icon') || btn;
+      
+      // 2. Now you can safely use it
+      iconContainer.textContent = emoji;
+      
+      btn.title = tooltip; 
+      btn.setAttribute('aria-label', tooltip); 
     }
   });
 }
