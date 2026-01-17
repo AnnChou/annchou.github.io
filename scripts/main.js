@@ -77,6 +77,13 @@ function initApp(pageDefault = null) {
   // Attach Listeners
   document.getElementById('darkModeToggle')?.addEventListener('click', toggleDarkMode);
   document.getElementById('darkModeToggleIconBar')?.addEventListener('click', toggleDarkMode);
+
+// Mobile Nav Listener (replaces onclick="myFunction")
+  document.querySelector('.topnav .icon')?.addEventListener('click', () => {
+    const nav = document.getElementById("myTopnav");
+    if (nav) nav.classList.toggle("responsive");
+  });
+  
 }
   /*
 // Add listeners to both buttons
