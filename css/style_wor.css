@@ -819,6 +819,50 @@ gallery-item-slider img,
   margin-bottom: 10px;
 }
 
+
+ /* Container for the material science sections */
+#material-resistance {
+  padding: 3rem 0;
+}
+
+/* Micro-chapter headers for a timeline feel */
+.micro-chapter h3 {
+  border-left: 4px solid #C66A53;
+  padding-left: 1rem;
+  color: #C66A53;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+/* Specific styling for the Large-Scale Build section */
+.solo-builds-highlight {
+  background: rgba(198, 106, 83, 0.03);
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+/* The Stress-Test Cards */
+.geo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.geo-card {
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-top: 4px solid #C66A53;
+  transition: transform 0.3s ease;
+}
+
+.target-site {
+  border-top: 4px solid #f6a21d; /* Burnaby target gets a 'warning' yellow/orange */
+  background: rgba(246, 162, 29, 0.05);
+}
 /* --
    🧱 Support Grid & Items
 --- */
